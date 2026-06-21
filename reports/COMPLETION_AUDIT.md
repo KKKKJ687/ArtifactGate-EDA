@@ -70,6 +70,9 @@ The project is not fully complete against the original plan until:
 3. The final external release check passes with the real DOI.
 4. Author-side SoftwareX submission metadata is finalized.
 
+The account-side Zenodo handoff is documented in
+`docs/zenodo_doi_finalization.md`.
+
 ## External Verification Command
 
 After the Zenodo DOI exists, run:

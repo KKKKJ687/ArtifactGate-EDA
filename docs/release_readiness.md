@@ -25,6 +25,8 @@ external state.
 7. Pending: replace DOI values in `CITATION.cff`,
    `codemeta.json`, `.zenodo.json`, `README.md`, and the manuscript.
 
+Detailed DOI handoff: `docs/zenodo_doi_finalization.md`.
+
 The replacement step can be dry-run first:
 
 ```bash

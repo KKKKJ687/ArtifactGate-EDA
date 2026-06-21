@@ -92,6 +92,8 @@ def update_markdown(text: str, repo_url: str, doi: str) -> tuple[str, list[str]]
             f"Repository: {repo_url}. Archived release DOI: {doi}."
         ),
         "A Zenodo DOI is still a\nrelease-stage task.": f"Archived release DOI: {doi}.",
+        "The archived Zenodo\nDOI will be added before SoftwareX submission.": f"Archived release DOI: {doi}.",
+        "A Zenodo\nDOI archive will be added before SoftwareX submission.": f"Archived release DOI: {doi}.",
     }
     for old, new in replacements.items():
         text, count = replace(text, old, new)
@@ -110,11 +112,15 @@ def update_tex(text: str, repo_url: str, doi: str) -> tuple[str, list[str]]:
         "Repository URL, archived DOI, and release metadata will be finalized at release\ntime.": (
             f"Repository: {repo_url}. Archived release DOI: {doi}."
         ),
+        "The archived Zenodo DOI\nwill be added before SoftwareX submission.": f"Archived release DOI: {doi}.",
     }
     for old, new in replacements.items():
         text, count = replace(text, old, new)
         if count:
             changes.append(old[:40])
+    if doi not in text and "Archived release DOI" not in text:
+        text = text.replace("\\end{document}", f"Archived release DOI: {doi}.\n\n\\end{{document}}")
+        changes.append("append doi")
     return text, changes
 
 

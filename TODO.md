@@ -20,6 +20,7 @@
       and release date.
 - [x] Publish public GitHub repository, push `main`, verify live CI, and
       create the `v0.1.0` GitHub release.
+- [x] Add DOI finalization handoff for Zenodo account-side publication.
 - [ ] Complete remaining external blockers: Zenodo DOI and SoftwareX final
       submission package.
 
@@ -37,6 +38,8 @@ Verified public release state:
 - Repository: https://github.com/KKKKJ687/ArtifactGate-EDA
 - Passing CI run: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27919622621
 - Release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.0
+
+Zenodo DOI finalization steps are in `docs/zenodo_doi_finalization.md`.
 
 After Zenodo publication, run the external checker with the real DOI:
 

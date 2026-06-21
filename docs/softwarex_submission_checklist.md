@@ -36,3 +36,6 @@ organization.
 2. Author-side support email, funding, competing interest, and CRediT metadata.
 3. Final manuscript polish against the released repository URL and DOI.
 4. Final external release check with the real DOI.
+
+Zenodo account-side steps and local DOI metadata commands are documented in
+`docs/zenodo_doi_finalization.md`.

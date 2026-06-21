@@ -93,7 +93,7 @@ release-preflight:
 	$(PYTHON_RUN) scripts/release_preflight.py
 
 prepare-release-metadata-dry-run:
-	$(PYTHON_RUN) scripts/prepare_release_metadata.py --repo-url https://github.com/OWNER/ArtifactGate-EDA --doi 10.5281/zenodo.0000000 --release-date 2026-06-22
+	$(PYTHON_RUN) scripts/prepare_release_metadata.py --repo-url https://github.com/KKKKJ687/ArtifactGate-EDA --doi 10.5281/zenodo.0000000 --release-date 2026-06-22
 
 external-release-check:
 	$(PYTHON_RUN) scripts/external_release_check.py
