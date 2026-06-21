@@ -21,8 +21,8 @@ external state.
 3. Done: verify GitHub Actions passes on the public repository.
 4. Done: create the `v0.1.2` version tag for Zenodo ingestion.
 5. Done: create a GitHub release from that tag and attach release artifacts.
-6. Pending: connect the v0.1.2 GitHub release to Zenodo and publish a DOI.
-7. Pending: replace DOI values in `CITATION.cff`,
+6. Done: connect the v0.1.2 GitHub release to Zenodo and publish a DOI.
+7. Done: replace DOI values in `CITATION.cff`,
    `codemeta.json`, `.zenodo.json`, `README.md`, and the manuscript.
 
 Detailed DOI handoff: `docs/zenodo_doi_finalization.md`.
@@ -32,7 +32,7 @@ The DOI metadata replacement can be dry-run first:
 ```bash
 .venv/bin/python scripts/prepare_release_metadata.py \
   --repo-url https://github.com/KKKKJ687/ArtifactGate-EDA \
-  --doi <v0.1.2 DOI> \
+  --doi 10.5281/zenodo.20789516 \
   --release-date 2026-06-22
 ```
 
@@ -41,7 +41,7 @@ Apply after the public v0.1.2 DOI is real:
 ```bash
 .venv/bin/python scripts/prepare_release_metadata.py \
   --repo-url https://github.com/KKKKJ687/ArtifactGate-EDA \
-  --doi <v0.1.2 DOI> \
+  --doi 10.5281/zenodo.20789516 \
   --release-date 2026-06-22 \
   --apply
 ```
@@ -58,7 +58,7 @@ or, when the repository/DOI are not inferable from local metadata yet:
 .venv/bin/python scripts/external_release_check.py \
   --repo KKKKJ687/ArtifactGate-EDA \
   --tag v0.1.2 \
-  --doi <v0.1.2 DOI>
+  --doi 10.5281/zenodo.20789516
 ```
 
 This check is intentionally not part of `make preflight` because it depends on
@@ -68,15 +68,16 @@ public GitHub, GitHub Actions, release, and Zenodo state.
 
 - Public repository: https://github.com/KKKKJ687/ArtifactGate-EDA
 - Public CI: verified by `scripts/external_release_check.py`
-- GitHub release: pending v0.1.2 publication
-- Zenodo DOI: pending for v0.1.2
+- GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.2
+- Zenodo record: https://zenodo.org/records/20789516
+- Zenodo DOI: 10.5281/zenodo.20789516
 
 ## Current Local Blockers
 
 No local blocker is known after `make reproduce-all`, `make package-release`,
-and `make preflight`. Public repository and local release artifacts are ready.
-The v0.1.2 GitHub release, Zenodo DOI, DOI metadata, and author-side SoftwareX
-submission metadata remain to be completed.
+and `make preflight`. Public repository, v0.1.2 GitHub release, Zenodo DOI,
+and DOI metadata are complete. Author-side SoftwareX submission metadata remains
+to be completed.
 
 ## GitHub Connector Status
 

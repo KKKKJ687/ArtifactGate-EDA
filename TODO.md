@@ -21,15 +21,15 @@
 - [x] Publish public GitHub repository, push `main`, verify live CI, and
       create the `v0.1.2` GitHub release for Zenodo ingestion.
 - [x] Add DOI finalization handoff for Zenodo account-side publication.
-- [ ] Publish Zenodo DOI for v0.1.2 and apply DOI metadata.
+- [x] Publish Zenodo DOI for v0.1.2 and apply DOI metadata.
 - [x] Polish the SoftwareX manuscript draft against released repository and DOI.
 - [x] Add author-side metadata request checklist.
 - [ ] Complete author-side SoftwareX final submission metadata.
 
 ## Next Gate
 
-Complete the v0.1.2 DOI and author-side final submission metadata gate. Local
-reproducibility already passes with:
+Complete the author-side final submission metadata gate. Local reproducibility
+already passes with:
 
 ```bash
 make preflight
@@ -40,13 +40,14 @@ Verified public release state:
 - Repository: https://github.com/KKKKJ687/ArtifactGate-EDA
 - Public CI: verified by `scripts/external_release_check.py`
 - Release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.2
-- Zenodo DOI: pending for v0.1.2
+- Zenodo record: https://zenodo.org/records/20789516
+- Zenodo DOI: 10.5281/zenodo.20789516
 
-Final external checker after the v0.1.2 DOI is public:
+Final external checker:
 
 ```bash
 .venv/bin/python scripts/external_release_check.py \
   --repo KKKKJ687/ArtifactGate-EDA \
   --tag v0.1.2 \
-  --doi <v0.1.2 DOI>
+  --doi 10.5281/zenodo.20789516
 ```

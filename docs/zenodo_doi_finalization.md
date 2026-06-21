@@ -1,8 +1,8 @@
 # Zenodo DOI Finalization
 
-This note is the final external handoff for the SoftwareX release gate. It is
-separate from local preflight because Zenodo publication creates account-side
-external state.
+This note records the external DOI finalization for the SoftwareX release gate.
+It is separate from local preflight because Zenodo publication creates
+account-side external state.
 
 ## Current Verified State
 
@@ -10,33 +10,29 @@ external state.
 - GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.2
 - Public CI: passing on `main`
 - Local release preflight: passing
-- Zenodo DOI: pending for v0.1.2
+- Zenodo record: https://zenodo.org/records/20789516
+- Zenodo DOI: 10.5281/zenodo.20789516
 
-Public Zenodo searches should find the v0.1.2 ArtifactGate-EDA record after
-Zenodo processes the GitHub release.
+Public Zenodo version lookup confirms two versions under concept DOI
+10.5281/zenodo.20789287:
 
-- Record: pending
-- DOI: pending
+- v0.1.2: 10.5281/zenodo.20789516
+- v0.1.1: 10.5281/zenodo.20789288
 
-The exact searches used were:
+The exact API checks used were:
 
 ```bash
-curl -fsS --get \
-  --data-urlencode 'q="ArtifactGate-EDA"' \
-  --data-urlencode 'size=10' \
-  https://zenodo.org/api/records
+curl -fsS https://zenodo.org/api/records/20789288/versions/latest
 
-curl -fsS --get \
-  --data-urlencode 'q="https://github.com/KKKKJ687/ArtifactGate-EDA"' \
-  --data-urlencode 'size=10' \
-  https://zenodo.org/api/records
+curl -fsS https://zenodo.org/api/records/20789288/versions
+
+curl -fsS https://zenodo.org/api/records/20789516
 ```
 
-The title search returned the public record. The repository URL search may not
-match Zenodo metadata text directly, so the final checker validates the record
-by DOI and title.
+Browser verification also confirmed the public record page title, version
+`v0.1.2`, file `KKKKJ687/ArtifactGate-EDA-v0.1.2.zip`, and citation DOI.
 
-## Account-Side Zenodo Steps
+## Account-Side Zenodo Steps Completed
 
 Use the official Zenodo GitHub integration pages:
 
@@ -44,7 +40,7 @@ Use the official Zenodo GitHub integration pages:
 - https://help.zenodo.org/docs/github/archive-software/github-upload/
 - https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content
 
-Required account-side actions:
+Required account-side actions were:
 
 1. Log in to Zenodo with the GitHub account that can access
    `KKKKJ687/ArtifactGate-EDA`.
@@ -53,8 +49,8 @@ Required account-side actions:
 4. Enable the repository toggle for `KKKKJ687/ArtifactGate-EDA`.
 5. Select the repository in Zenodo and process the `v0.1.2` GitHub release.
 6. Wait for Zenodo to finish processing the release.
-7. Copy the v0.1.2 version DOI.
-8. Confirm the Zenodo record links back to the GitHub release/repository.
+7. Copy the v0.1.2 version DOI: 10.5281/zenodo.20789516.
+8. Confirm the Zenodo record links back to the GitHub repository.
 
 Do not move or rewrite existing Git tags after Zenodo has archived them. If a
 DOI-bearing source snapshot is required after metadata is committed, create a
@@ -62,12 +58,12 @@ follow-up patch release instead of mutating an archived tag.
 
 ## Local Finalization After DOI
 
-After the v0.1.2 DOI exists, apply DOI metadata with:
+The v0.1.2 DOI metadata was applied with:
 
 ```bash
 .venv/bin/python scripts/prepare_release_metadata.py \
   --repo-url https://github.com/KKKKJ687/ArtifactGate-EDA \
-  --doi <v0.1.2 DOI> \
+  --doi 10.5281/zenodo.20789516 \
   --release-date 2026-06-22 \
   --apply
 
@@ -76,7 +72,7 @@ make preflight
 .venv/bin/python scripts/external_release_check.py \
   --repo KKKKJ687/ArtifactGate-EDA \
   --tag v0.1.2 \
-  --doi <v0.1.2 DOI>
+  --doi 10.5281/zenodo.20789516
 ```
 
 Expected final checker result:
@@ -85,7 +81,7 @@ Expected final checker result:
 external release check: PASS
 ```
 
-Then inspect and commit only the DOI metadata updates:
+Inspect and commit only the DOI metadata updates:
 
 ```bash
 git status --short --branch
@@ -94,7 +90,7 @@ git diff -- CITATION.cff codemeta.json .zenodo.json README.md paper/softwarex_ma
 
 ## Completion Rule
 
-The original execution plan is not complete until:
+The external release and DOI portion is complete when:
 
 1. The Zenodo DOI exists and is publicly accessible.
 2. DOI metadata is present in the repository and manuscript files.

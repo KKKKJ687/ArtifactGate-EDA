@@ -35,5 +35,5 @@ make preflight
 .venv/bin/python scripts/external_release_check.py \
   --repo KKKKJ687/ArtifactGate-EDA \
   --tag v0.1.2 \
-  --doi <v0.1.2 DOI>
+  --doi 10.5281/zenodo.20789516
 ```

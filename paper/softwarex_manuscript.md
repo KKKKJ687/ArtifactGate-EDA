@@ -183,8 +183,8 @@ separate artifacts, and separate validation beyond this SoftwareX core release.
 
 ## Availability
 
-Repository: https://github.com/KKKKJ687/ArtifactGate-EDA. The v0.1.2 archived
-release DOI will be finalized after Zenodo processes the v0.1.2 GitHub release.
+Repository: https://github.com/KKKKJ687/ArtifactGate-EDA. Archived release DOI:
+10.5281/zenodo.20789516.
 
 ## Author-Side Submission Metadata
 
