@@ -17,5 +17,17 @@
     "Yosys",
     "software reproducibility"
   ],
-  "access_right": "open"
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/KKKKJ687/ArtifactGate-EDA",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.20789288",
+      "relation": "isIdenticalTo",
+      "scheme": "doi"
+    }
+  ]
 }

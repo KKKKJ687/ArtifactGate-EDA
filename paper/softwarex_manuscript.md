@@ -70,5 +70,4 @@ software, simulation, and synthesis artifacts to stronger claims.
 
 ## Availability
 
-Repository: https://github.com/KKKKJ687/ArtifactGate-EDA. The archived Zenodo
-DOI will be added before SoftwareX submission.
+Repository: https://github.com/KKKKJ687/ArtifactGate-EDA. Archived release DOI: 10.5281/zenodo.20789288.

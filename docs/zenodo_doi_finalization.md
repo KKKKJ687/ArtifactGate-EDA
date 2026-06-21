@@ -10,9 +10,14 @@ external state.
 - GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.1
 - Public CI: passing on `main`
 - Local release preflight: passing
-- Zenodo DOI: pending
+- Zenodo DOI: https://doi.org/10.5281/zenodo.20789288
 
-Public Zenodo searches on 2026-06-22 did not find an ArtifactGate-EDA record:
+Public Zenodo searches on 2026-06-22 found the ArtifactGate-EDA record:
+
+- Record: https://zenodo.org/records/20789288
+- DOI: 10.5281/zenodo.20789288
+
+The exact searches used were:
 
 ```bash
 curl -fsS --get \
@@ -26,7 +31,9 @@ curl -fsS --get \
   https://zenodo.org/api/records
 ```
 
-Both exact searches returned `hits_total: 0`.
+The title search returned the public record. The repository URL search may not
+match Zenodo metadata text directly, so the final checker validates the record
+by DOI and title.
 
 ## Account-Side Zenodo Steps
 
@@ -36,7 +43,7 @@ Use the official Zenodo GitHub integration pages:
 - https://help.zenodo.org/docs/github/archive-software/github-upload/
 - https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content
 
-Required account-side actions:
+Completed account-side actions:
 
 1. Log in to Zenodo with the GitHub account that can access
    `KKKKJ687/ArtifactGate-EDA`.
@@ -45,7 +52,7 @@ Required account-side actions:
 4. Enable the repository toggle for `KKKKJ687/ArtifactGate-EDA`.
 5. Select the repository in Zenodo and process the `v0.1.1` GitHub release.
 6. Wait for Zenodo to finish processing the release.
-7. Copy the version DOI, for example `10.5281/zenodo.xxxxxxx`.
+7. Copied the version DOI: `10.5281/zenodo.20789288`.
 8. Confirm the Zenodo record links back to the GitHub release/repository.
 
 Do not move or rewrite existing Git tags after Zenodo has archived them. If a
@@ -54,12 +61,12 @@ follow-up patch release instead of mutating an archived tag.
 
 ## Local Finalization After DOI
 
-Replace `10.xxxx/zenodo.xxxxxxx` with the real Zenodo DOI:
+The DOI metadata application command used was:
 
 ```bash
 .venv/bin/python scripts/prepare_release_metadata.py \
   --repo-url https://github.com/KKKKJ687/ArtifactGate-EDA \
-  --doi 10.xxxx/zenodo.xxxxxxx \
+  --doi 10.5281/zenodo.20789288 \
   --release-date 2026-06-22 \
   --apply
 
@@ -68,10 +75,10 @@ make preflight
 .venv/bin/python scripts/external_release_check.py \
   --repo KKKKJ687/ArtifactGate-EDA \
   --tag v0.1.1 \
-  --doi 10.xxxx/zenodo.xxxxxxx
+  --doi 10.5281/zenodo.20789288
 ```
 
-Expected final checker result:
+Final checker result:
 
 ```text
 external release check: PASS

@@ -75,8 +75,7 @@ unsupported in the current core package.
 
 ## Citation
 
-Use `CITATION.cff` for software citation metadata. A Zenodo DOI is still a
-release-stage task.
+Use `CITATION.cff` for software citation metadata. Archived release DOI: 10.5281/zenodo.20789288.
 
 ## License
 

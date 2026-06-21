@@ -162,7 +162,7 @@ def experiment_matrix() -> None:
             draw.text((x + 20, y + 16), value, font=font(21), fill=color if value in {"PASS", "LOCAL ONLY"} else INK)
             x += w
         y += 58
-    draw.text((90, 735), "External release gates remain separate: public GitHub Actions and Zenodo DOI require user authorization.", font=font(22), fill=GRAY)
+    draw.text((90, 735), "External release gates verified separately: public GitHub Actions, GitHub release, and Zenodo DOI.", font=font(22), fill=GRAY)
     img.save(OUT / "experiment_matrix.png")
 
 

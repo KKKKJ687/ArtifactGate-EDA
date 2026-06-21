@@ -16,14 +16,15 @@ organization.
 | 4000-word body limit | Local pass skeleton | Manuscript is currently below this limit |
 | Maximum six figures | Local pass | 4 generated figures under `paper/figures/` |
 | Five main templated sections | Local pass skeleton | Motivation, Software description, Illustrative examples, Impact, Conclusions |
-| Metadata table C1-C8 | Local pass with blockers marked | `paper/softwarex_manuscript.md` |
-| Repository archive and DOI | Partial external pass | GitHub release exists at https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.1; Zenodo DOI remains pending |
+| Metadata table C1-C8 | Pass with author-side fields pending | `paper/softwarex_manuscript.md` |
+| Repository archive and DOI | External pass | GitHub release exists at https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.1; Zenodo DOI: https://doi.org/10.5281/zenodo.20789288 |
 
 ## Verified External State
 
 - Public repository: https://github.com/KKKKJ687/ArtifactGate-EDA
-- Passing CI run: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27919622621
+- Passing CI run: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27920587432
 - GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.1
+- Zenodo DOI: https://doi.org/10.5281/zenodo.20789288
 
 ## External Sources Checked
 
@@ -32,10 +33,7 @@ organization.
 
 ## Remaining Submission Blockers
 
-1. Zenodo DOI.
-2. Author-side support email, funding, competing interest, and CRediT metadata.
-3. Final manuscript polish against the released repository URL and DOI.
-4. Final external release check with the real DOI.
+1. Author-side support email, funding, competing interest, and CRediT metadata.
+2. Final manuscript polish against the released repository URL and DOI.
 
-Zenodo account-side steps and local DOI metadata commands are documented in
-`docs/zenodo_doi_finalization.md`.
+The final external release check passed with DOI `10.5281/zenodo.20789288`.

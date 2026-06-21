@@ -21,28 +21,28 @@ external state.
 3. Done: verify GitHub Actions passes on the public repository.
 4. Done: create the `v0.1.1` version tag for Zenodo ingestion.
 5. Done: create a GitHub release from that tag and attach release artifacts.
-6. Pending: connect the GitHub release to Zenodo and reserve/publish a DOI.
-7. Pending: replace DOI values in `CITATION.cff`,
+6. Done: connect the GitHub release to Zenodo and publish a DOI.
+7. Done: replace DOI values in `CITATION.cff`,
    `codemeta.json`, `.zenodo.json`, `README.md`, and the manuscript.
 
 Detailed DOI handoff: `docs/zenodo_doi_finalization.md`.
 
-The replacement step can be dry-run first:
+The DOI metadata replacement was dry-run capable:
 
 ```bash
 .venv/bin/python scripts/prepare_release_metadata.py \
   --repo-url https://github.com/KKKKJ687/ArtifactGate-EDA \
-  --doi 10.xxxx/zenodo.xxxxxxx \
-  --release-date YYYY-MM-DD
+  --doi 10.5281/zenodo.20789288 \
+  --release-date 2026-06-22
 ```
 
-Apply only after the public repository and DOI are real:
+The applied command was:
 
 ```bash
 .venv/bin/python scripts/prepare_release_metadata.py \
   --repo-url https://github.com/KKKKJ687/ArtifactGate-EDA \
-  --doi 10.xxxx/zenodo.xxxxxxx \
-  --release-date YYYY-MM-DD \
+  --doi 10.5281/zenodo.20789288 \
+  --release-date 2026-06-22 \
   --apply
 ```
 
@@ -58,29 +58,31 @@ or, when the repository/DOI are not inferable from local metadata yet:
 .venv/bin/python scripts/external_release_check.py \
   --repo KKKKJ687/ArtifactGate-EDA \
   --tag v0.1.1 \
-  --doi 10.xxxx/zenodo.xxxxxxx
+  --doi 10.5281/zenodo.20789288
 ```
 
-This check is intentionally not part of `make preflight` because it should fail
-until the external DOI exists.
+This check is intentionally not part of `make preflight` because it depends on
+public GitHub, GitHub Actions, release, and Zenodo state.
 
 ## Verified External State
 
 - Public repository: https://github.com/KKKKJ687/ArtifactGate-EDA
-- Passing CI run: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27919622621
+- Passing CI run: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27920587432
 - GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.1
+- Zenodo DOI: https://doi.org/10.5281/zenodo.20789288
 
 ## Current Local Blockers
 
 No local blocker is known after `make reproduce-all`, `make package-release`,
-and `make preflight`. Public repository, CI run evidence, and GitHub release
-are complete. Zenodo DOI and final DOI metadata remain external blockers.
+and `make preflight`. Public repository, CI run evidence, GitHub release,
+Zenodo DOI, and DOI metadata are complete. Author-side SoftwareX submission
+metadata remains to be confirmed.
 
 ## GitHub Connector Status
 
-The public GitHub release work has been completed with authenticated local
-`gh` CLI access. The remaining release step is account-side Zenodo publication
-and DOI metadata application.
+The public GitHub release and Zenodo publication work has been completed with
+authenticated local `gh` CLI access plus browser-verified Zenodo account-side
+publication.
 
 ## External Release Check Contract
 

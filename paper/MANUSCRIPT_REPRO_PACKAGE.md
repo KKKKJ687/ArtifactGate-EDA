@@ -12,11 +12,11 @@ make package-release
 
 | file | role | sha256 | rebuild_command |
 |---|---|---|---|
-| paper/softwarex_manuscript.md | manuscript_source | `ab04f8643adaba1f2a7ca0694112d15a44ca77133d092d4fa4321cf862317d60` | `manual edit, then make manuscript-package` |
-| paper/softwarex_manuscript.tex | manuscript_source | `7daa7d2b8058bc275fd93004ae45fe2aa2984519edb6807a9aa56d5a83701aee` | `manual edit, then make manuscript-package` |
+| paper/softwarex_manuscript.md | manuscript_source | `1e8381ff4cc89deef66f6334fb48b4761abdc40afaec73f0d00d9d1c9765ea9a` | `manual edit, then make manuscript-package` |
+| paper/softwarex_manuscript.tex | manuscript_source | `403a06f420606756fe0e516b364db8617196a4cddda1fcfa4cbeee39a3091c38` | `manual edit, then make manuscript-package` |
 | paper/figures/architecture.png | generated_figure | `6b508a854d3b895cdd8d82fdcce2ca2e7e93a94a5a4e5553ad781dd909673aec` | `make figures` |
 | paper/figures/evidence_levels.png | generated_figure | `9551b12cf1bd545c8cdd115143595b79935b0d965088162fe41a512f0913c640` | `make figures` |
-| paper/figures/experiment_matrix.png | generated_figure | `ce2b3debb0c72b965322f74c03baef1866abcff3157bccc5a63627061dc04a5a` | `make figures` |
+| paper/figures/experiment_matrix.png | generated_figure | `662f92fa208a9f9967a3f5f779cb789cd9ba1fdf604b3860fe2ff3ab86263ecd` | `make figures` |
 | paper/figures/workflow.png | generated_figure | `f48012d93ef2dc6e6f167a90c0607d15c9187f30e8732dde7809deca31263315` | `make figures` |
 | reports/e1_multi_adapter_summary.csv | generated_report | `ac2d2a591c55f6b3d331c48928d51d97308a20cb467bfaa748b1ccb8730ebdc6` | `make reproduce-all` |
 | reports/e2_replay_summary.csv | generated_report | `5091c125f0c92bbb9aa7d871e3aa1ce9713f668caa4dcfa699e13b81ebc4d59c` | `make reproduce-all` |

@@ -3,8 +3,7 @@
 ## Data And Software Availability
 
 The software, examples, generated reports, and reproducibility commands are
-prepared for release at https://github.com/KKKKJ687/ArtifactGate-EDA. A Zenodo
-DOI archive will be added before SoftwareX submission.
+prepared for release at https://github.com/KKKKJ687/ArtifactGate-EDA. Archived release DOI: 10.5281/zenodo.20789288.
 
 ## Funding
 
