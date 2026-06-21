@@ -26,4 +26,4 @@ jobs:
       - name: Corrupted artifact tests
         run: make corrupted-tests
       - name: Experiment summaries
-        run: make scalability baseline summaries
+        run: make reproduce-core scalability baseline summaries
