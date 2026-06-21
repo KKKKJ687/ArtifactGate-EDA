@@ -27,15 +27,15 @@ grep -R "<windows-user-home>" . --exclude-dir=.git --exclude-dir=.venv --exclude
 | G2 | install | 100 | 100 | Pass | `make install`; `.venv/bin/artifactgate --version` returned `0.1.0`. | None local. | None. |
 | G3 | CLI | 95 | 90 | Pass | CLI exposes `ingest`, `validate`, `replay`, `claim-check`, `report`, `package`, `compare`, plus local summary helpers. | Core commands are intentionally minimal. | Expand API ergonomics only after release blocker work. |
 | G4 | tests/lint | 100 | 100 | Pass | `make reproduce-all` ran `ruff`, `compileall`, and `pytest`: 14 passed. | None local. | None. |
-| G5 | CI | 80 | 100 | Blocked external | `.github/workflows/ci.yml` exists and now calls `make lint`, tests, smoke, negative claims, corrupted tests, scalability, baseline, and summaries. Makefile supports both local `.venv` and CI PATH tools. | No public remote run has been observed. | Create/push GitHub repo only after explicit user approval, then verify Actions. |
+| G5 | CI | 100 | 100 | Pass external | Public GitHub Actions run `27919622621` passed on `main`: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27919622621. | None external. | Keep CI green after DOI metadata commit. |
 | G6 | examples | 100 | 100 | Pass | `make ingest-all`: ngspice, icarus, yosys, verilator, plecs, logisim all passed. | None local. | None. |
 | G7 | claim-check | 100 | 100 | Pass | `make negative-claims`: 52 dangerous claims checked; expected unsupported-claim failure observed. | None local. | None. |
 | G8 | corrupted tests | 100 | 100 | Pass | `make corrupted-tests`: 7 injected cases hit expected failure classes. | None local. | None. |
 | G9 | scalability | 100 | 90 | Pass | `make scalability`: 1k, 3k, 5k, 10k synthetic rows generated; `reports/e5_scalability_summary.md` reports 10k pass. | Synthetic timing only, not a full memory profiler. | Keep wording as runtime-overhead smoke evidence, not performance proof. |
-| G10 | docs | 95 | 85 | Pass local | README, CLI, API, schema, adapter, reproducibility, SoftwareX submission checklist, and release-readiness docs exist. | Public URL/DOI placeholders remain. | Replace placeholders after external release. |
+| G10 | docs | 96 | 85 | Pass local | README, CLI, API, schema, adapter, reproducibility, SoftwareX submission checklist, and release-readiness docs exist. | DOI placeholder remains until Zenodo publication. | Replace DOI after external DOI release. |
 | G11 | license | 100 | 100 | Pass | `LICENSE` is Apache-2.0; metadata files reference Apache-2.0. | None local. | None. |
-| G12 | citation | 80 | 100 | Blocked external | `CITATION.cff`, `codemeta.json`, and `.zenodo.json` exist. | No Zenodo DOI yet. | Archive release on Zenodo after GitHub release. |
-| G13 | manuscript | 90 | 85 | Pass skeleton | `paper/softwarex_manuscript.md`, `.tex`, `highlights.md`, `declarations.md`, four generated figures, and `MANUSCRIPT_REPRO_PACKAGE.md` exist. | Public repository URL, DOI, support email, funding, conflicts, and CRediT fields are placeholders. | Fill author-side metadata and DOI after release. |
+| G12 | citation | 85 | 100 | Blocked external | `CITATION.cff`, `codemeta.json`, and `.zenodo.json` exist and record the public GitHub repository. | No Zenodo DOI yet. | Archive release on Zenodo and apply DOI metadata. |
+| G13 | manuscript | 92 | 85 | Pass skeleton | `paper/softwarex_manuscript.md`, `.tex`, `highlights.md`, `declarations.md`, four generated figures, and `MANUSCRIPT_REPRO_PACKAGE.md` exist. | DOI, support email, funding, conflicts, and CRediT fields remain author-side placeholders. | Fill author-side metadata and DOI after Zenodo release. |
 | G14 | boundary | 100 | 90 | Pass local | `make release-preflight` checks private paths, resource forks, forbidden wording contexts, capsule zip contents, and supplementary zip contents. | None local. | Keep gate review before final release. |
 | D22 | supplementary artifact package | 100 | 100 | Pass local | `make supplementary-package` creates `release/artifactgate_eda_supplementary_artifacts.zip`; `make release-preflight` verifies required files inside it. | Release zip is generated and ignored by Git. | Regenerate after manuscript/report changes. |
 | D2 | Python distribution package | 100 | 100 | Pass local | `make dist-package` creates sdist and wheel under `dist/`; `make release-preflight` verifies both files exist. | Dist artifacts are generated and ignored by Git. | Regenerate after source/package metadata changes. |
@@ -44,9 +44,9 @@ grep -R "<windows-user-home>" . --exclude-dir=.git --exclude-dir=.venv --exclude
 
 | Agent | Score | Pass/Fail | Critical Flaws | Minor Issues | Revision Actions | Change Skill/Resource? | Reduce Claim/Scope? | Next Iteration Target |
 |---|---:|---|---|---|---|---|---|---|
-| Engineering Mentor | 94 | Pass local | Public CI and DOI are not locally verifiable. | Package implementation is minimal but coherent. | Verify on GitHub Actions after remote creation. | No. | No. | Release readiness. |
-| Codex Validator | 92 | Pass local | Final acceptance cannot be declared while G5/G12 are external blockers. | Forbidden wording gate relies on context review. | Keep blocked gates explicit in status files. | No. | No. | External release packet. |
-| Reviewer | 88 | Pass skeleton | Manuscript still requires public URL, DOI, author declarations, and final prose polish. | Figures are generated and source-backed but not externally reviewed. | Expand/polish manuscript only from generated reports. | No. | No. | SoftwareX submission polish. |
+| Engineering Mentor | 96 | Pass external | DOI is not yet verifiable. | Package implementation is minimal but coherent. | Verify release checker after Zenodo DOI exists. | No. | No. | DOI metadata. |
+| Codex Validator | 94 | Pass local | Final acceptance cannot be declared while G12 is an external blocker. | Forbidden wording gate relies on context review. | Keep DOI blocker explicit in status files. | No. | No. | External DOI packet. |
+| Reviewer | 90 | Pass skeleton | Manuscript still requires DOI, author declarations, and final prose polish. | Figures are generated and source-backed but not externally reviewed. | Expand/polish manuscript only from generated reports. | No. | No. | SoftwareX submission polish. |
 
 ## SoftwareX Template Audit
 
@@ -68,7 +68,6 @@ ignored by Git and should be rebuilt after checkout.
 
 ## Final Acceptance Status
 
-Local engineering, manuscript-package, and supplementary-package gates pass.
-Final project acceptance is not complete because G5 requires an observed GitHub
-Actions run on a public repository and G12 requires a Zenodo DOI. Those external
-actions require user authorization and release metadata.
+Local engineering, manuscript-package, supplementary-package, public GitHub
+repository, public CI, and GitHub release gates pass. Final project acceptance
+is not complete because G12 requires a Zenodo DOI and final DOI metadata.

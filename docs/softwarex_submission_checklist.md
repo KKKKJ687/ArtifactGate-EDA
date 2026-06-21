@@ -9,7 +9,7 @@ organization.
 | Requirement | Local Status | Evidence |
 |---|---|---|
 | Use the SoftwareX Original Software Publication structure | Partial local pass | `paper/softwarex_manuscript.md`, `paper/softwarex_manuscript.tex` |
-| Public GitHub repository in metadata table | Blocked external | Requires user authorization to create/push public repo |
+| Public GitHub repository in metadata table | External pass | https://github.com/KKKKJ687/ArtifactGate-EDA |
 | Well documented README | Local pass | `README.md`, `docs/` |
 | Licence.txt file | Local pass | `Licence.txt`, `LICENSE` |
 | Main body focused on software | Local pass | `paper/softwarex_manuscript.md` |
@@ -17,7 +17,13 @@ organization.
 | Maximum six figures | Local pass | 4 generated figures under `paper/figures/` |
 | Five main templated sections | Local pass skeleton | Motivation, Software description, Illustrative examples, Impact, Conclusions |
 | Metadata table C1-C8 | Local pass with blockers marked | `paper/softwarex_manuscript.md` |
-| Repository archive and DOI | Blocked external | Requires GitHub release and Zenodo DOI |
+| Repository archive and DOI | Partial external pass | GitHub release exists at https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.0; Zenodo DOI remains pending |
+
+## Verified External State
+
+- Public repository: https://github.com/KKKKJ687/ArtifactGate-EDA
+- Passing CI run: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27919622621
+- GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.0
 
 ## External Sources Checked
 
@@ -26,9 +32,7 @@ organization.
 
 ## Remaining Submission Blockers
 
-1. Public GitHub repository URL.
-2. Observed GitHub Actions pass on the public repository.
-3. GitHub release tag and archived release artifact.
-4. Zenodo DOI.
-5. Author-side support email, funding, competing interest, and CRediT metadata.
-6. Final manuscript polish against the released repository URL and DOI.
+1. Zenodo DOI.
+2. Author-side support email, funding, competing interest, and CRediT metadata.
+3. Final manuscript polish against the released repository URL and DOI.
+4. Final external release check with the real DOI.

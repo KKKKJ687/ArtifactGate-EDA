@@ -16,20 +16,20 @@ make release-preflight
 These steps are intentionally not automated because they create or publish
 external state.
 
-1. Create a public GitHub repository named `ArtifactGate-EDA`.
-2. Push the local `main` branch.
-3. Verify GitHub Actions passes on the public repository.
-4. Create a version tag, for example `v0.1.0`.
-5. Create a GitHub release from that tag and attach release capsules if desired.
-6. Connect the GitHub release to Zenodo and reserve/publish a DOI.
-7. Replace placeholder repository and DOI values in `CITATION.cff`,
+1. Done: create a public GitHub repository named `ArtifactGate-EDA`.
+2. Done: push the local `main` branch.
+3. Done: verify GitHub Actions passes on the public repository.
+4. Done: create the `v0.1.0` version tag.
+5. Done: create a GitHub release from that tag and attach release artifacts.
+6. Pending: connect the GitHub release to Zenodo and reserve/publish a DOI.
+7. Pending: replace DOI values in `CITATION.cff`,
    `codemeta.json`, `.zenodo.json`, `README.md`, and the manuscript.
 
 The replacement step can be dry-run first:
 
 ```bash
 .venv/bin/python scripts/prepare_release_metadata.py \
-  --repo-url https://github.com/OWNER/ArtifactGate-EDA \
+  --repo-url https://github.com/KKKKJ687/ArtifactGate-EDA \
   --doi 10.xxxx/zenodo.xxxxxxx \
   --release-date YYYY-MM-DD
 ```
@@ -38,7 +38,7 @@ Apply only after the public repository and DOI are real:
 
 ```bash
 .venv/bin/python scripts/prepare_release_metadata.py \
-  --repo-url https://github.com/OWNER/ArtifactGate-EDA \
+  --repo-url https://github.com/KKKKJ687/ArtifactGate-EDA \
   --doi 10.xxxx/zenodo.xxxxxxx \
   --release-date YYYY-MM-DD \
   --apply
@@ -54,29 +54,31 @@ or, when the repository/DOI are not inferable from local metadata yet:
 
 ```bash
 .venv/bin/python scripts/external_release_check.py \
-  --repo OWNER/ArtifactGate-EDA \
+  --repo KKKKJ687/ArtifactGate-EDA \
   --tag v0.1.0 \
   --doi 10.xxxx/zenodo.xxxxxxx
 ```
 
 This check is intentionally not part of `make preflight` because it should fail
-until the public repository, live CI run, release tag, and DOI exist.
+until the external DOI exists.
+
+## Verified External State
+
+- Public repository: https://github.com/KKKKJ687/ArtifactGate-EDA
+- Passing CI run: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27919622621
+- GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.0
 
 ## Current Local Blockers
 
-No local blocker is known after `make reproduce-all` and `make package-release`.
-No local blocker is known after `make preflight`. Public repository, CI run
-evidence, GitHub release, and Zenodo DOI remain external authorization
-blockers.
+No local blocker is known after `make reproduce-all`, `make package-release`,
+and `make preflight`. Public repository, CI run evidence, and GitHub release
+are complete. Zenodo DOI and final DOI metadata remain external blockers.
 
 ## GitHub Connector Status
 
-The available GitHub connector can operate on existing repositories: read
-metadata and files, create blobs/trees/commits/refs, create files, and inspect
-workflow runs. It does not expose a repository-creation tool in this session.
-The next release step therefore requires either an existing empty
-`owner/name` repository or explicit authorization to use local `gh` CLI after
-`gh auth login`.
+The public GitHub release work has been completed with authenticated local
+`gh` CLI access. The remaining release step is account-side Zenodo publication
+and DOI metadata application.
 
 ## External Release Check Contract
 

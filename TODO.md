@@ -18,23 +18,31 @@
       DOI, and metadata replacement.
 - [x] Add dry-run-first metadata replacement helper for public repo URL, DOI,
       and release date.
-- [ ] Complete external release blockers: public GitHub repository, live CI
-      pass, GitHub release, Zenodo DOI, and SoftwareX final submission package.
+- [x] Publish public GitHub repository, push `main`, verify live CI, and
+      create the `v0.1.0` GitHub release.
+- [ ] Complete remaining external blockers: Zenodo DOI and SoftwareX final
+      submission package.
 
 ## Next Gate
 
-Complete the external release gate. Local reproducibility already passes with:
+Complete the DOI and final submission gate. Local reproducibility already
+passes with:
 
 ```bash
 make preflight
 ```
 
-The GitHub connector can operate on an existing repository but does not expose a
-repository-creation tool. Provide an existing empty `owner/name` repository or
-authorize local `gh` CLI login and repository creation before push/CI/DOI work.
+Verified public release state:
 
-After external publication, run:
+- Repository: https://github.com/KKKKJ687/ArtifactGate-EDA
+- Passing CI run: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27919622621
+- Release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.0
+
+After Zenodo publication, run the external checker with the real DOI:
 
 ```bash
-make external-release-check
+.venv/bin/python scripts/external_release_check.py \
+  --repo KKKKJ687/ArtifactGate-EDA \
+  --tag v0.1.0 \
+  --doi 10.xxxx/zenodo.xxxxxxx
 ```
