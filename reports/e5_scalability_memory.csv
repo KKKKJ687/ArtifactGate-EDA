@@ -1,0 +1,5 @@
+scale,artifact_rows,peak_memory_mb,status
+10000,10000,100,PASS
+1000,1000,32,PASS
+3000,3000,32,PASS
+5000,5000,50,PASS

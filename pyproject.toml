@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "artifactgate-eda"
+version = "0.1.0"
+description = "Claim-safe artifact evaluation framework for software-only EDA experiments"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [
+  { name = "Xinzhi Lei" }
+]
+keywords = [
+  "EDA",
+  "reproducibility",
+  "artifact evaluation",
+  "ngspice",
+  "yosys",
+  "HDL",
+  "claim checking"
+]
+dependencies = [
+  "click>=8.1",
+  "jinja2>=3.1",
+  "pydantic>=2.0",
+  "pyyaml>=6.0",
+  "rich>=13.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "mypy>=1.10",
+  "pillow>=10.0",
+  "pytest>=8.0",
+  "pytest-cov>=5.0",
+  "ruff>=0.5"
+]
+
+[project.scripts]
+artifactgate = "artifactgate_eda.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["repo/src"]
+
+[tool.setuptools.package-data]
+artifactgate_eda = ["policies/*.yaml", "schemas/*.json", "templates/*.j2"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["repo/src"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]

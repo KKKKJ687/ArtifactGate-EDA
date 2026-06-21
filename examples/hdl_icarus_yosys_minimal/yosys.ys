@@ -1,0 +1,4 @@
+read_verilog rm_threshold_classifier.v
+synth -top rm_threshold_classifier
+stat
+

@@ -1,0 +1,89 @@
+{
+  "artifact_index": {
+    "path": "case_circuitfaultbench_phase6_phase8/artifact_index.csv",
+    "phase_counts": {
+      "Phase6": 511,
+      "Phase8": 521,
+      "Phase9": 11
+    },
+    "row_count": 1043,
+    "sha256": "9f7d77381e3cbb3b71524bbb887350448505cee18c23d78da32111127a9d55f0"
+  },
+  "generated_at": "2026-06-19T01:41:21",
+  "generator": "case_circuitfaultbench_phase6_phase8/build_stage1_package.py",
+  "phase6": {
+    "acceptance_report_path": "circuit_fault_bench_phase6_sci_readiness_upgrade/outputs/final_acceptance_report.md",
+    "acceptance_report_sha256": "45946734b55d950bf0e3308be62e8afae311f26320aa01c4278990884eadf0c3",
+    "case_count": 240,
+    "circuit_count": 4,
+    "fault_family_count": 5,
+    "git_head": "8a88b9f",
+    "manifest_path": "circuit_fault_bench_phase6_sci_readiness_upgrade/outputs/run_manifest.json",
+    "manifest_sha256": "a3a807a89bc23ce40a60a3721a156b1170233e33b2d4d525175b396074c39d8a",
+    "replay_commands": [
+      "python3 -m unittest discover -s tests",
+      "python3 -m cfb6 build --out outputs",
+      "python3 -m cfb6 package-release --pack outputs --out cfb6_release.zip",
+      "python3 -m cfb6 acceptance --pack outputs --zip cfb6_release.zip --report outputs/final_acceptance_report.md"
+    ],
+    "sci_submission_ready": false,
+    "simulation_mode": "real_ngspice"
+  },
+  "phase8": {
+    "acceptance_report_path": "circuit_fault_bench_phase8_active_filter_external_gate/outputs/final_acceptance_report.md",
+    "acceptance_report_sha256": "77143cfbaed9be83b0fa56a8b8200bd29992ac632f3a21bfaaa3c1e6003d8103",
+    "active_filter_circuit_count": 2,
+    "benchmark_reproduction_state": "proxy_aligned_not_exact",
+    "case_count": 100,
+    "git_head": "ac3bc6d",
+    "manifest_path": "circuit_fault_bench_phase8_active_filter_external_gate/outputs/run_manifest.json",
+    "manifest_sha256": "9eb38608d8280a89c9e585ba5e2d58cd9fea9c609dbd874a11079e5c6974504c",
+    "replay_commands": [
+      "python3 -m unittest discover -s tests",
+      "python3 -m cfb8 build --out outputs",
+      "python3 -m cfb8 package-release --pack outputs --out cfb8_release.zip",
+      "python3 -m cfb8 acceptance --pack outputs --zip cfb8_release.zip --report outputs/final_acceptance_report.md"
+    ],
+    "simulation_mode": "real_ngspice"
+  },
+  "phase9": {
+    "acceptance_report_path": "circuit_fault_bench_phase9_exact_external_reproduction/outputs/final_acceptance_report.md",
+    "acceptance_report_sha256": "651b65a67ce1a1fea873f680ef027a34e39ccab338aa2643b50923f5d5a557eb",
+    "blocked_until": "source-verified schematics and fault-mode crosswalk exist",
+    "direct_evidence_for_paper2": false,
+    "git_head": "c687dbb",
+    "stage_state": "GATE_0_1_COMPLETE_EXPERIMENT_LOOP_NOT_STARTED"
+  },
+  "post_completion_rerun": {
+    "acceptance_report": "case_circuitfaultbench_phase6_phase8/reruns/20260619_182037_software_ngspice_rerun/rerun_acceptance_report.md",
+    "comparison_checks_passed": "35/35",
+    "diff_against_original": "case_circuitfaultbench_phase6_phase8/reruns/20260619_182037_software_ngspice_rerun/diff_against_original.csv",
+    "output_manifest": {
+      "hash_mismatches": 0,
+      "path": "case_circuitfaultbench_phase6_phase8/reruns/20260619_182037_software_ngspice_rerun/output_manifest.csv",
+      "row_count": 1036,
+      "self_reference_excluded": true
+    },
+    "phase6_dataset_rows": 240,
+    "phase8_browser_acceptance_all_pass": true,
+    "phase8_dataset_rows": 100,
+    "protected_outputs_hash_diff": "case_circuitfaultbench_phase6_phase8/reruns/20260619_182037_software_ngspice_rerun/protected_outputs_hash_diff.txt",
+    "protected_outputs_hash_diff_empty": true,
+    "rerun_acceptance_pass": true,
+    "run_id": "20260619_182037_software_ngspice_rerun",
+    "run_root": "case_circuitfaultbench_phase6_phase8/reruns/20260619_182037_software_ngspice_rerun"
+  },
+  "python_version": "3.14.3",
+  "root": "SOURCE_ROOT_REDACTED",
+  "software_closure": {
+    "fresh_original_output_rerun_executed": false,
+    "manual_hardware_work_deferred": true,
+    "paper_writing_deferred": true,
+    "protected_outputs_overwritten": false,
+    "root_git_repository_present": true,
+    "seed_metadata_status": "Phase6/Phase8 original manifests do not expose a dedicated seed field; the completed timestamped rerun records deterministic procedure, command, environment, source snapshot, input manifest, output manifest, and protected-output hash evidence.",
+    "timestamped_replay_hardening_rerun_executed": true
+  },
+  "stage": "CFB_STAGE_1_EDA_SPICE_EVIDENCE_CASE_SOFTWARE_HARDENED",
+  "validator": "case_circuitfaultbench_phase6_phase8/validate_stage1_package.py"
+}

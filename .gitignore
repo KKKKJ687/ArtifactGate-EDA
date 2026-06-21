@@ -1,0 +1,43 @@
+# macOS
+.DS_Store
+._*
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+.codex_workflow/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# Logs and generated artifacts
+*.log
+!examples/**/*.log
+!supplementary/**/*.log
+.cache/
+tmp/
+temp/
+outputs/*
+!outputs/.gitkeep
+reports/generated/*
+release/*
+!release/.gitkeep
+
+# Archives are deliberate release artifacts only.
+*.zip
+*.tar
+*.tar.gz
+*.tgz

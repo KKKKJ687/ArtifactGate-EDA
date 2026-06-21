@@ -1,0 +1,16 @@
+[
+  {
+    "artifact_id": "CORR-CLAIM-001",
+    "relative_path": "claim.md",
+    "artifact_type": "report",
+    "sha256": "daafc75f8495285263a465c735d7da0067aad664062b2fba9e8c47003fae089a",
+    "size_bytes": 37,
+    "tool": "artifactgate-fixture",
+    "tool_version": "0.1.0",
+    "adapter": "ngspice",
+    "evidence_level": "L1_SOURCE_EXISTS",
+    "claim_binding": "artifact:CORR-MISSING-999",
+    "unsupported_boundary": "none",
+    "created_by_command": "fixture"
+  }
+]

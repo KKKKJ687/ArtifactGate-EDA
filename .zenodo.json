@@ -1,0 +1,21 @@
+{
+  "title": "ArtifactGate-EDA: An Adapter-Based Claim-Safe Artifact Evaluation Framework for Software-Only EDA Experiments",
+  "upload_type": "software",
+  "description": "ArtifactGate-EDA is an open-source, adapter-based artifact evaluation framework for software-only EDA experiments. It standardizes artifact ingestion, provenance hashing, replay manifest generation, evidence-level classification, reproducibility checking, and unsupported-claim reporting across SPICE/ngspice, HDL simulation, and Yosys synthesis workflows.",
+  "creators": [
+    {
+      "name": "Lei, Xinzhi",
+      "affiliation": "Independent research software project"
+    }
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "EDA",
+    "artifact evaluation",
+    "claim checking",
+    "ngspice",
+    "Yosys",
+    "software reproducibility"
+  ],
+  "access_right": "open"
+}

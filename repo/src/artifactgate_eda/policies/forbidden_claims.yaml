@@ -1,0 +1,71 @@
+hardware_overclaim:
+  forbidden_patterns:
+    - "hardware validation"
+    - "hardware validated"
+    - "validated on FPGA"
+    - "FPGA validated"
+    - "board validation"
+    - "board-level validation"
+    - "real hardware"
+    - "real FPGA speedup"
+    - "energy saving measured"
+  required_evidence_levels:
+    - L7_BOARD_MEASUREMENT
+  current_status: UNSUPPORTED
+  safe_rewrite: "software-only simulation/synthesis evidence"
+
+vivado_overclaim:
+  forbidden_patterns:
+    - "Vivado timing closure"
+    - "Vivado implementation evidence"
+    - "Vivado utilization validated"
+    - "timing closure achieved"
+    - "WNS validated"
+    - "TNS validated"
+  required_evidence_levels:
+    - L5_VENDOR_IMPLEMENTATION
+  current_status: UNSUPPORTED
+  safe_rewrite: "Yosys/open-source synthesis evidence only"
+
+bitstream_overclaim:
+  forbidden_patterns:
+    - "bitstream generated"
+    - "full bitstream generated"
+    - "partial bitstream generated"
+    - "bitstream verified"
+  required_evidence_levels:
+    - L6_BITSTREAM
+  current_status: UNSUPPORTED
+  safe_rewrite: "no bitstream evidence is claimed"
+
+dfx_overclaim:
+  forbidden_patterns:
+    - "DFX deployment"
+    - "DFX implementation completed"
+    - "partial reconfiguration deployed"
+    - "runtime DFX validated"
+    - "partial reconfiguration validated"
+  required_evidence_levels:
+    - L5_VENDOR_IMPLEMENTATION
+    - L6_BITSTREAM
+    - L7_BOARD_MEASUREMENT
+  current_status: UNSUPPORTED
+  safe_rewrite: "DFX-related claims are outside the SoftwareX software-only evidence boundary"
+
+publication_overclaim:
+  forbidden_patterns:
+    - "journal-ready benchmark"
+    - "SCI-ready"
+    - "accepted"
+    - "complete external reproduction"
+    - "industrial deployment"
+    - "universal EDA framework"
+    - "general reproducibility framework for all EDA"
+    - "ReconfigRT-I results show"
+    - "LA-DFX results show"
+  required_evidence_levels:
+    - L3_SIMULATION
+    - L4_SYNTHESIS
+    - external_reproduction_report
+  current_status: BLOCKED
+  safe_rewrite: "replay-checked software evidence package"

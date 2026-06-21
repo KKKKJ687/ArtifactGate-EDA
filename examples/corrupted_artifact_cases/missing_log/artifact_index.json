@@ -1,0 +1,16 @@
+[
+  {
+    "artifact_id": "CORR-MISSING-001",
+    "relative_path": "missing.log",
+    "artifact_type": "tool_log",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "size_bytes": 0,
+    "tool": "ngspice",
+    "tool_version": "ngspice-unknown",
+    "adapter": "ngspice",
+    "evidence_level": "L3_SIMULATION",
+    "claim_binding": "software_only_artifact_evidence",
+    "unsupported_boundary": "none",
+    "created_by_command": "fixture"
+  }
+]

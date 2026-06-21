@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ArtifactGate artifact record",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "relative_path",
+    "artifact_type",
+    "sha256",
+    "size_bytes",
+    "tool",
+    "tool_version",
+    "adapter",
+    "evidence_level",
+    "claim_binding",
+    "unsupported_boundary",
+    "created_by_command"
+  ]
+}
+

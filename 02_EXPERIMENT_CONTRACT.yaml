@@ -1,0 +1,29 @@
+goal: "Build ArtifactGate-EDA into a SoftwareX-safe, installable, testable, claim-safe software package."
+allowed_paths:
+  - "."
+forbidden_paths:
+  - "../00_master_context"
+  - "../01_circuitfaultbench_case"
+  - "../02_spec2dfx_case"
+  - "../03_full_project_copies"
+  - "../ArtifactGate_EDA_SoftwareX_Codex_Execution_Plan.md"
+baseline_command: "python -m pip install -e ."
+experiment_command: "make smoke"
+evaluate_command: "pytest && make smoke && make negative-claims && make corrupted-tests"
+primary_metric: "local gate pass count"
+improvement_rule: "A work packet is kept only if it increases passed gates without weakening the SoftwareX claim boundary."
+max_iterations: 12
+max_runtime_minutes: 180
+rollback_policy: "Use git diff and file-level git restore only after reviewing the diff; never use destructive broad cleanup."
+approval_gates:
+  - "Clean repository gate: no macOS resource fork files and no private absolute paths in reproducibility files."
+  - "CLI gate: all required commands expose --help and structured output options."
+  - "Claim-safety gate: injected hardware/Vivado/DFX/bitstream/board claims are UNSUPPORTED."
+  - "Package gate: README, LICENSE, CITATION.cff, codemeta.json, pyproject.toml, Makefile, tests, docs, and examples exist."
+artifacts:
+  - "repo/src/artifactgate_eda"
+  - "examples"
+  - "tests"
+  - "reports"
+  - "paper/softwarex_manuscript.md"
+

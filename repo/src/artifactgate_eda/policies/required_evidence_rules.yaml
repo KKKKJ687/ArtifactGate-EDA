@@ -1,0 +1,9 @@
+softwarex_core_ceiling: L4_SYNTHESIS
+hardware_claims_require: L7_BOARD_MEASUREMENT
+vivado_claims_require: L5_VENDOR_IMPLEMENTATION
+bitstream_claims_require: L6_BITSTREAM
+dfx_claims_require:
+  - L5_VENDOR_IMPLEMENTATION
+  - L6_BITSTREAM
+  - L7_BOARD_MEASUREMENT
+

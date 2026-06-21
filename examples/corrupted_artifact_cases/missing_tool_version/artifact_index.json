@@ -1,0 +1,16 @@
+[
+  {
+    "artifact_id": "CORR-TOOL-001",
+    "relative_path": "run.log",
+    "artifact_type": "tool_log",
+    "sha256": "6fea5e92bcd517ef0316ff2383430a03ac070d2ed08047f6c7de047276e765e2",
+    "size_bytes": 9,
+    "tool": "ngspice",
+    "tool_version": "",
+    "adapter": "ngspice",
+    "evidence_level": "L3_SIMULATION",
+    "claim_binding": "software_only_artifact_evidence",
+    "unsupported_boundary": "none",
+    "created_by_command": "fixture"
+  }
+]

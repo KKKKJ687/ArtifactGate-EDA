@@ -1,0 +1,25 @@
+L0_METADATA:
+  meaning: "Metadata or declared context only."
+  current_project_status: "supported"
+L1_SOURCE_EXISTS:
+  meaning: "Source file exists and is hash-recorded."
+  current_project_status: "supported"
+L2_REFERENCE_OR_INTERFACE:
+  meaning: "Reference vectors, static interface checks, or finite expected-output records exist."
+  current_project_status: "supported"
+L3_SIMULATION:
+  meaning: "Software simulation executed and logged."
+  current_project_status: "supported"
+L4_SYNTHESIS:
+  meaning: "Open-source or stated synthesis tool produced synthesis reports."
+  current_project_status: "supported ceiling for SoftwareX core"
+L5_VENDOR_IMPLEMENTATION:
+  meaning: "Vendor implementation reports exist."
+  current_project_status: "unsupported in SoftwareX core"
+L6_BITSTREAM:
+  meaning: "Full or partial bitstream artifact exists and is hash-recorded."
+  current_project_status: "unsupported in SoftwareX core"
+L7_BOARD_MEASUREMENT:
+  meaning: "Board logs, measurement setup, and repeatability data exist."
+  current_project_status: "unsupported in SoftwareX core"
+

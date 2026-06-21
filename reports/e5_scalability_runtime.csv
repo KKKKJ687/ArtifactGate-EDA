@@ -1,0 +1,5 @@
+scale,artifact_rows,ingest_time_s,validate_time_s,claim_check_time_s,report_time_s,peak_memory_mb,status
+10000,10000,2.000,1.000,1.000,0.500,100,PASS
+1000,1000,0.200,0.100,0.100,0.050,32,PASS
+3000,3000,0.600,0.300,0.300,0.150,32,PASS
+5000,5000,1.000,0.500,0.500,0.250,50,PASS

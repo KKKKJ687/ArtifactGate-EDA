@@ -1,0 +1,16 @@
+[
+  {
+    "artifact_id": "BAD-001",
+    "relative_path": "/Users/example/private/output.log",
+    "artifact_type": "tool_log",
+    "sha256": "0000",
+    "size_bytes": 10,
+    "tool": "ngspice",
+    "tool_version": "unknown",
+    "adapter": "ngspice",
+    "evidence_level": "L3_SIMULATION",
+    "claim_binding": "software_only_artifact_evidence",
+    "unsupported_boundary": "none",
+    "created_by_command": "manual"
+  }
+]

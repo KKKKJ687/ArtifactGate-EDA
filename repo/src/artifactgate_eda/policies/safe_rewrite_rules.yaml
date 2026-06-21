@@ -1,0 +1,9 @@
+validates hardware: "audits software-level artifact evidence"
+proves DFX deployment: "blocks unsupported DFX claims"
+Vivado-ready: "schema-only preparation for future Vivado artifact ingestion"
+bitstream evidence: "no bitstream evidence is claimed"
+FPGA speedup: "no hardware performance claim is made"
+reproducible EDA experiments: "replay-checked software-only EDA artifact packages"
+universal EDA framework: "adapter-based framework demonstrated on bounded EDA workflows"
+validates correctness: "checks artifact-level support for stated claims"
+
