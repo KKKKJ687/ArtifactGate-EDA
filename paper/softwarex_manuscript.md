@@ -10,7 +10,7 @@
 
 | Nr | Code metadata description | Metadata |
 |---|---|---|
-| C1 | Current code version | 0.1.0 |
+| C1 | Current code version | 0.1.1 |
 | C2 | Permanent link to code/repository used for this code version | https://github.com/KKKKJ687/ArtifactGate-EDA |
 | C3 | Legal code license | Apache-2.0 |
 | C4 | Code versioning system used | git |

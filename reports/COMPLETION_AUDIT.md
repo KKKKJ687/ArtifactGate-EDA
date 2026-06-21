@@ -31,7 +31,7 @@ submission gates.
 | # | Deliverable | Evidence | Status |
 |---:|---|---|---|
 | 1 | Public GitHub repository | https://github.com/KKKKJ687/ArtifactGate-EDA. | Pass external |
-| 2 | Installable Python package | `pyproject.toml`; `make install`; `dist/artifactgate_eda-0.1.0.tar.gz`; wheel. | Pass local |
+| 2 | Installable Python package | `pyproject.toml`; `make install`; `dist/artifactgate_eda-0.1.1.tar.gz`; wheel. | Pass local |
 | 3 | README.md | `README.md`. | Pass local |
 | 4 | LICENSE | `LICENSE`. | Pass local |
 | 5 | CITATION.cff | `CITATION.cff`. | Pass local metadata |
@@ -60,7 +60,7 @@ Completed external actions:
 1. A public GitHub repository exists.
 2. The local repository is pushed to `main`.
 3. GitHub Actions passes on the public repository.
-4. The `v0.1.0` tag and GitHub release exist.
+4. The `v0.1.1` tag and GitHub release exist for Zenodo ingestion.
 
 The project is not fully complete against the original plan until:
 
@@ -80,7 +80,7 @@ After the Zenodo DOI exists, run:
 ```bash
 .venv/bin/python scripts/external_release_check.py \
   --repo KKKKJ687/ArtifactGate-EDA \
-  --tag v0.1.0 \
+  --tag v0.1.1 \
   --doi 10.xxxx/zenodo.xxxxxxx
 ```
 

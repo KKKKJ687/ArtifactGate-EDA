@@ -62,7 +62,7 @@ def main() -> int:
 
     csv_path = ROOT / "paper" / "manuscript_artifact_manifest.csv"
     with csv_path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["file", "role", "sha256", "rebuild_command"])
+        writer = csv.DictWriter(handle, fieldnames=["file", "role", "sha256", "rebuild_command"], lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     return 0

@@ -19,7 +19,7 @@ external state.
 1. Done: create a public GitHub repository named `ArtifactGate-EDA`.
 2. Done: push the local `main` branch.
 3. Done: verify GitHub Actions passes on the public repository.
-4. Done: create the `v0.1.0` version tag.
+4. Done: create the `v0.1.1` version tag for Zenodo ingestion.
 5. Done: create a GitHub release from that tag and attach release artifacts.
 6. Pending: connect the GitHub release to Zenodo and reserve/publish a DOI.
 7. Pending: replace DOI values in `CITATION.cff`,
@@ -57,7 +57,7 @@ or, when the repository/DOI are not inferable from local metadata yet:
 ```bash
 .venv/bin/python scripts/external_release_check.py \
   --repo KKKKJ687/ArtifactGate-EDA \
-  --tag v0.1.0 \
+  --tag v0.1.1 \
   --doi 10.xxxx/zenodo.xxxxxxx
 ```
 
@@ -68,7 +68,7 @@ until the external DOI exists.
 
 - Public repository: https://github.com/KKKKJ687/ArtifactGate-EDA
 - Passing CI run: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27919622621
-- GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.0
+- GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.1
 
 ## Current Local Blockers
 

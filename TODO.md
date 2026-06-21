@@ -19,7 +19,7 @@
 - [x] Add dry-run-first metadata replacement helper for public repo URL, DOI,
       and release date.
 - [x] Publish public GitHub repository, push `main`, verify live CI, and
-      create the `v0.1.0` GitHub release.
+      create the `v0.1.1` GitHub release for Zenodo ingestion.
 - [x] Add DOI finalization handoff for Zenodo account-side publication.
 - [ ] Complete remaining external blockers: Zenodo DOI and SoftwareX final
       submission package.
@@ -37,7 +37,7 @@ Verified public release state:
 
 - Repository: https://github.com/KKKKJ687/ArtifactGate-EDA
 - Passing CI run: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27919622621
-- Release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.0
+- Release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.1
 
 Zenodo DOI finalization steps are in `docs/zenodo_doi_finalization.md`.
 
@@ -46,6 +46,6 @@ After Zenodo publication, run the external checker with the real DOI:
 ```bash
 .venv/bin/python scripts/external_release_check.py \
   --repo KKKKJ687/ArtifactGate-EDA \
-  --tag v0.1.0 \
+  --tag v0.1.1 \
   --doi 10.xxxx/zenodo.xxxxxxx
 ```

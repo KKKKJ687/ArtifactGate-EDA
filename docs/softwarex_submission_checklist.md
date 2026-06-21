@@ -17,13 +17,13 @@ organization.
 | Maximum six figures | Local pass | 4 generated figures under `paper/figures/` |
 | Five main templated sections | Local pass skeleton | Motivation, Software description, Illustrative examples, Impact, Conclusions |
 | Metadata table C1-C8 | Local pass with blockers marked | `paper/softwarex_manuscript.md` |
-| Repository archive and DOI | Partial external pass | GitHub release exists at https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.0; Zenodo DOI remains pending |
+| Repository archive and DOI | Partial external pass | GitHub release exists at https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.1; Zenodo DOI remains pending |
 
 ## Verified External State
 
 - Public repository: https://github.com/KKKKJ687/ArtifactGate-EDA
 - Passing CI run: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27919622621
-- GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.0
+- GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.1
 
 ## External Sources Checked
 

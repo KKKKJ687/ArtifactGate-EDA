@@ -24,7 +24,7 @@ grep -R "<windows-user-home>" . --exclude-dir=.git --exclude-dir=.venv --exclude
 | Gate | Check | Score | Threshold | Pass/Fail | Evidence | Critical Flaws | Revision Actions |
 |---|---|---:|---:|---|---|---|---|
 | G1 | clean repo | 100 | 100 | Pass | `find . -name '._*'` returned 0; local path grep returned no private user-home or Windows user-home hits. | None local. | Keep generated metadata out of `repo/src`. |
-| G2 | install | 100 | 100 | Pass | `make install`; `.venv/bin/artifactgate --version` returned `0.1.0`. | None local. | None. |
+| G2 | install | 100 | 100 | Pass | `make install`; `.venv/bin/artifactgate --version` returned `0.1.1`. | None local. | None. |
 | G3 | CLI | 95 | 90 | Pass | CLI exposes `ingest`, `validate`, `replay`, `claim-check`, `report`, `package`, `compare`, plus local summary helpers. | Core commands are intentionally minimal. | Expand API ergonomics only after release blocker work. |
 | G4 | tests/lint | 100 | 100 | Pass | `make reproduce-all` ran `ruff`, `compileall`, and `pytest`: 14 passed. | None local. | None. |
 | G5 | CI | 100 | 100 | Pass external | Public GitHub Actions run `27919622621` passed on `main`: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27919622621. | None external. | Keep CI green after DOI metadata commit. |

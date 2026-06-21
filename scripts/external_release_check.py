@@ -128,8 +128,8 @@ def check_local_artifacts(checks: list[dict[str, Any]]) -> None:
         "release/ngspice_minimal_artifactgate.zip",
         "release/hdl_icarus_artifactgate.zip",
         "release/yosys_artifactgate.zip",
-        "dist/artifactgate_eda-0.1.0.tar.gz",
-        "dist/artifactgate_eda-0.1.0-py3-none-any.whl",
+        "dist/artifactgate_eda-0.1.1.tar.gz",
+        "dist/artifactgate_eda-0.1.1-py3-none-any.whl",
     ]
     missing = [path for path in required if not (ROOT / path).exists()]
     if missing:
@@ -202,7 +202,7 @@ def check_github(checks: list[dict[str, Any]], repo: str | None, tag: str) -> No
 def main() -> int:
     parser = argparse.ArgumentParser(description="Check external release gates for ArtifactGate-EDA.")
     parser.add_argument("--repo", help="GitHub repository in owner/name form. Defaults to origin when available.")
-    parser.add_argument("--tag", default="v0.1.0")
+    parser.add_argument("--tag", default="v0.1.1")
     parser.add_argument("--doi", help="Published Zenodo DOI to verify in release metadata.")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()

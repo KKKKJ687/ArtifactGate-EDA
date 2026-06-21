@@ -62,8 +62,8 @@ Important generated outputs include:
 - `paper/figures/*.png`
 - `release/*_artifactgate.zip`
 - `release/artifactgate_eda_supplementary_artifacts.zip`
-- `dist/artifactgate_eda-0.1.0.tar.gz`
-- `dist/artifactgate_eda-0.1.0-py3-none-any.whl`
+- `dist/artifactgate_eda-0.1.1.tar.gz`
+- `dist/artifactgate_eda-0.1.1-py3-none-any.whl`
 
 Generated release and distribution artifacts are ignored by Git and should be
 rebuilt from source after checkout.

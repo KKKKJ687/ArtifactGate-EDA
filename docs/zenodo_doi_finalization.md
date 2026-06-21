@@ -7,7 +7,7 @@ external state.
 ## Current Verified State
 
 - Public repository: https://github.com/KKKKJ687/ArtifactGate-EDA
-- GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.0
+- GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.1
 - Public CI: passing on `main`
 - Local release preflight: passing
 - Zenodo DOI: pending
@@ -43,15 +43,14 @@ Required account-side actions:
 2. Open the Zenodo GitHub integration page.
 3. Sync GitHub repositories if `ArtifactGate-EDA` is not visible.
 4. Enable the repository toggle for `KKKKJ687/ArtifactGate-EDA`.
-5. Select the repository in Zenodo and process the `v0.1.0` GitHub release.
+5. Select the repository in Zenodo and process the `v0.1.1` GitHub release.
 6. Wait for Zenodo to finish processing the release.
 7. Copy the version DOI, for example `10.5281/zenodo.xxxxxxx`.
 8. Confirm the Zenodo record links back to the GitHub release/repository.
 
-Do not move or rewrite the existing `v0.1.0` Git tag after Zenodo has archived
-it. If a DOI-bearing source snapshot is required after metadata is committed,
-create a follow-up release such as `v0.1.1` instead of mutating the archived
-tag.
+Do not move or rewrite existing Git tags after Zenodo has archived them. If a
+DOI-bearing source snapshot is required after metadata is committed, create a
+follow-up patch release instead of mutating an archived tag.
 
 ## Local Finalization After DOI
 
@@ -68,7 +67,7 @@ make preflight
 
 .venv/bin/python scripts/external_release_check.py \
   --repo KKKKJ687/ArtifactGate-EDA \
-  --tag v0.1.0 \
+  --tag v0.1.1 \
   --doi 10.xxxx/zenodo.xxxxxxx
 ```
 
