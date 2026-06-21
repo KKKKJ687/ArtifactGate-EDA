@@ -36,7 +36,7 @@ make preflight
 Verified public release state:
 
 - Repository: https://github.com/KKKKJ687/ArtifactGate-EDA
-- Passing CI run: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27920587432
+- Public CI: verified by `scripts/external_release_check.py`
 - Release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.1
 - Zenodo DOI: https://doi.org/10.5281/zenodo.20789288
 

@@ -67,7 +67,7 @@ public GitHub, GitHub Actions, release, and Zenodo state.
 ## Verified External State
 
 - Public repository: https://github.com/KKKKJ687/ArtifactGate-EDA
-- Passing CI run: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27920587432
+- Public CI: verified by `scripts/external_release_check.py`
 - GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.1
 - Zenodo DOI: https://doi.org/10.5281/zenodo.20789288
 

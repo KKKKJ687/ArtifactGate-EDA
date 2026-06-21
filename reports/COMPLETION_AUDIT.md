@@ -15,7 +15,7 @@ author-side submission metadata.
 | G2 | Editable install succeeds. | `make install` passed. | Pass local |
 | G3 | Seven core CLI commands available. | `artifactgate ingest`, `validate`, `replay`, `claim-check`, `report`, `package`, and `compare` all expose help and JSON output. | Pass local |
 | G4 | Tests pass. | `make preflight` ran `pytest`: 19 passed. | Pass local |
-| G5 | GitHub Actions pass. | Public CI passed on `main`: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27920587432. | Pass external |
+| G5 | GitHub Actions pass. | Public CI on `main` is verified by `scripts/external_release_check.py`. | Pass external |
 | G6 | Examples pass for ngspice, Icarus, Yosys, and Verilator. | `make ingest-all` and `make preflight` passed. | Pass local |
 | G7 | Forbidden claims are blocked. | `make negative-claims` checks 52 injected claims and returns expected unsupported-claim failure. | Pass local |
 | G8 | Corrupted artifacts are detected. | `make corrupted-tests` detects seven injected cases with expected failure classes. | Pass local |
@@ -38,7 +38,7 @@ author-side submission metadata.
 | 6 | codemeta.json | `codemeta.json`. | Pass local metadata |
 | 7 | pyproject.toml | `pyproject.toml`. | Pass local |
 | 8 | Dockerfile or environment.yml | Both `Dockerfile` and `environment.yml` exist. | Pass local |
-| 9 | GitHub Actions CI | Public CI passed on `main`: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27920587432. | Pass external |
+| 9 | GitHub Actions CI | Public CI on `main` is verified by `scripts/external_release_check.py`. | Pass external |
 | 10 | CLI docs | `docs/cli_reference.md`. | Pass local |
 | 11 | API docs | `docs/api_reference.md`. | Pass local |
 | 12 | Schema docs | `docs/schema_reference.md`. | Pass local |

@@ -27,7 +27,7 @@ grep -R "<windows-user-home>" . --exclude-dir=.git --exclude-dir=.venv --exclude
 | G2 | install | 100 | 100 | Pass | `make install`; `.venv/bin/artifactgate --version` returned `0.1.1`. | None local. | None. |
 | G3 | CLI | 95 | 90 | Pass | CLI exposes `ingest`, `validate`, `replay`, `claim-check`, `report`, `package`, `compare`, plus local summary helpers. | Core commands are intentionally minimal. | Expand API ergonomics only after release blocker work. |
 | G4 | tests/lint | 100 | 100 | Pass | `make preflight` ran `ruff`, `compileall`, and `pytest`: 19 passed. | None local. | None. |
-| G5 | CI | 100 | 100 | Pass external | Public GitHub Actions run `27920587432` passed on `main`: https://github.com/KKKKJ687/ArtifactGate-EDA/actions/runs/27920587432. | None external. | Keep CI green after DOI metadata commit. |
+| G5 | CI | 100 | 100 | Pass external | Public GitHub Actions on `main` is verified by `scripts/external_release_check.py`. | None external. | Keep CI green after release metadata changes. |
 | G6 | examples | 100 | 100 | Pass | `make ingest-all`: ngspice, icarus, yosys, verilator, plecs, logisim all passed. | None local. | None. |
 | G7 | claim-check | 100 | 100 | Pass | `make negative-claims`: 52 dangerous claims checked; expected unsupported-claim failure observed. | None local. | None. |
 | G8 | corrupted tests | 100 | 100 | Pass | `make corrupted-tests`: 7 injected cases hit expected failure classes. | None local. | None. |
@@ -44,7 +44,7 @@ grep -R "<windows-user-home>" . --exclude-dir=.git --exclude-dir=.venv --exclude
 
 | Agent | Score | Pass/Fail | Critical Flaws | Minor Issues | Revision Actions | Change Skill/Resource? | Reduce Claim/Scope? | Next Iteration Target |
 |---|---:|---|---|---|---|---|---|---|
-| Engineering Mentor | 98 | Pass external | None for repository release gates. | Package implementation is minimal but coherent. | Keep CI green after DOI metadata commit. | No. | No. | Author metadata. |
+| Engineering Mentor | 98 | Pass external | None for repository release gates. | Package implementation is minimal but coherent. | Keep CI green after release metadata changes. | No. | No. | Author metadata. |
 | Codex Validator | 96 | Pass local | Final SoftwareX submission still needs author-side metadata. | Forbidden wording gate relies on context review. | Keep author-side placeholders explicit. | No. | No. | Submission packet. |
 | Reviewer | 91 | Pass skeleton | Manuscript still requires author declarations and final prose polish. | Figures are generated and source-backed but not externally reviewed. | Expand/polish manuscript only from generated reports. | No. | No. | SoftwareX submission polish. |
 
