@@ -12,17 +12,17 @@ make package-release
 
 | file | role | sha256 | rebuild_command |
 |---|---|---|---|
-| paper/softwarex_manuscript.md | manuscript_source | `1e8381ff4cc89deef66f6334fb48b4761abdc40afaec73f0d00d9d1c9765ea9a` | `manual edit, then make manuscript-package` |
-| paper/softwarex_manuscript.tex | manuscript_source | `403a06f420606756fe0e516b364db8617196a4cddda1fcfa4cbeee39a3091c38` | `manual edit, then make manuscript-package` |
+| paper/softwarex_manuscript.md | manuscript_source | `e2fe4cbb6cbaae502d0296ce75525e4c0ea02a423569bfe10a3bfcb307c9a879` | `manual edit, then make manuscript-package` |
+| paper/softwarex_manuscript.tex | manuscript_source | `fac9722a8d53114f616187195689e89f303c7dec600b5c091fcfbc7885bf5a17` | `manual edit, then make manuscript-package` |
 | paper/figures/architecture.png | generated_figure | `6b508a854d3b895cdd8d82fdcce2ca2e7e93a94a5a4e5553ad781dd909673aec` | `make figures` |
 | paper/figures/evidence_levels.png | generated_figure | `9551b12cf1bd545c8cdd115143595b79935b0d965088162fe41a512f0913c640` | `make figures` |
 | paper/figures/experiment_matrix.png | generated_figure | `662f92fa208a9f9967a3f5f779cb789cd9ba1fdf604b3860fe2ff3ab86263ecd` | `make figures` |
 | paper/figures/workflow.png | generated_figure | `f48012d93ef2dc6e6f167a90c0607d15c9187f30e8732dde7809deca31263315` | `make figures` |
-| reports/e1_multi_adapter_summary.csv | generated_report | `ac2d2a591c55f6b3d331c48928d51d97308a20cb467bfaa748b1ccb8730ebdc6` | `make reproduce-all` |
-| reports/e2_replay_summary.csv | generated_report | `5091c125f0c92bbb9aa7d871e3aa1ce9713f668caa4dcfa699e13b81ebc4d59c` | `make reproduce-all` |
-| reports/e3_negative_claim_detection_summary.csv | generated_report | `42f8c9c64aa8d7850e5fdd5367bec1042881879b76dd39addd0e07486b2f271e` | `make reproduce-all` |
-| reports/e5_scalability_memory.csv | generated_report | `426e4c2b6d2dfb1e45b24ec189147510f43baadd59bb5e3cb12a045db0b64214` | `make reproduce-all` |
-| reports/e5_scalability_runtime.csv | generated_report | `08ea5855d59ff2d579c604d863bf9b40bf689a3fe40b48c04688dcec820e2a92` | `make reproduce-all` |
+| reports/e1_multi_adapter_summary.csv | generated_report | `3e460000d08a98d71df92f5632e135fa9bc4f431c112edee6430999823c5c119` | `make reproduce-all` |
+| reports/e2_replay_summary.csv | generated_report | `43c6518518cc5ee57c382edeef1a3bc9675651bad4aa721f0b98bb3d9e365418` | `make reproduce-all` |
+| reports/e3_negative_claim_detection_summary.csv | generated_report | `b8a46bef0e0a2f03c26db7f2baf04ee70bb1efc5dd42413982b7c624e43342f4` | `make reproduce-all` |
+| reports/e5_scalability_memory.csv | generated_report | `4b412f50d064103148d879aad5918f546824111612aa584637a1cf4b3c1f6cad` | `make reproduce-all` |
+| reports/e5_scalability_runtime.csv | generated_report | `1a25b47c4c962be9679afa561de8111a15b0b029f7b75b6897ff27c85ac5d1f2` | `make reproduce-all` |
 | reports/e6_baseline_comparison.csv | generated_report | `0cd5b35717cd31e414fff169e43e1760ce3bbd865044fbe09b0c4c572977d098` | `make reproduce-all` |
 | reports/e2_replay_acceptance_report.md | generated_report | `5fa8c2906de12c5af35efa79711cbf39551d21cef58d380cc0c02a31f6de46a9` | `make reproduce-all` |
 | reports/e5_scalability_summary.md | generated_report | `9e2520f2a46e88bba9b404badb20871df305f83da8979bb0c4b9f0ce9cc46f3b` | `make reproduce-all` |

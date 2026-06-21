@@ -25,7 +25,7 @@ def test_claim_check_blocks_negative_claims(tmp_path):
         tmp_path / "claims",
     )
     assert not result["ok"]
-    assert result["unsupported_count"] >= 45
+    assert result["unsupported_count"] == result["claim_count"]
     report = json.loads((tmp_path / "claims" / "claim_check_report.json").read_text())
-    assert report["result"]["unsupported_count"] >= 45
-
+    assert report["result"]["unsupported_count"] == report["result"]["claim_count"]
+    assert all(row["status"] == "UNSUPPORTED" for row in report["claims"])

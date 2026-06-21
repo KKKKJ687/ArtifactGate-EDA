@@ -6,6 +6,7 @@ hardware_overclaim:
     - "FPGA validated"
     - "board validation"
     - "board-level validation"
+    - "board-level"
     - "real hardware"
     - "real FPGA speedup"
     - "energy saving measured"
@@ -19,6 +20,8 @@ vivado_overclaim:
     - "Vivado timing closure"
     - "Vivado implementation evidence"
     - "Vivado utilization validated"
+    - "Vivado DFX"
+    - "DFX partition compatible"
     - "timing closure achieved"
     - "WNS validated"
     - "TNS validated"
@@ -30,8 +33,10 @@ vivado_overclaim:
 bitstream_overclaim:
   forbidden_patterns:
     - "bitstream generated"
+    - "bitstreams"
     - "full bitstream generated"
     - "partial bitstream generated"
+    - "partial bitstreams"
     - "bitstream verified"
   required_evidence_levels:
     - L6_BITSTREAM
@@ -41,7 +46,9 @@ bitstream_overclaim:
 dfx_overclaim:
   forbidden_patterns:
     - "DFX deployment"
+    - "DFX behavior"
     - "DFX implementation completed"
+    - "DFX partition compatible"
     - "partial reconfiguration deployed"
     - "runtime DFX validated"
     - "partial reconfiguration validated"

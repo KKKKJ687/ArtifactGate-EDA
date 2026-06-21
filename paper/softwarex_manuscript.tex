@@ -1,4 +1,7 @@
 \documentclass[preprint,12pt]{elsarticle}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{url}
 
 \begin{document}
 
@@ -11,13 +14,20 @@
 
 \begin{abstract}
 ArtifactGate-EDA is an open-source Python framework for claim-safe artifact
-evaluation in software-only EDA experiments. It ingests heterogeneous outputs
-from SPICE/ngspice, HDL simulation, and Yosys synthesis workflows; records
-provenance and hashes; generates replay manifests; classifies evidence levels;
-and reports unsupported claims. The software is demonstrated on bounded
-software-level examples, including corrupted-artifact tests and negative
-claim-injection tests. ArtifactGate-EDA does not validate hardware, Vivado
-timing, DFX deployment, bitstreams, or board-level behavior.
+evaluation in software-only EDA experiments. It converts heterogeneous EDA
+experiment folders into portable artifact packages with provenance records,
+SHA-256 hashes, replay manifests, evidence-level labels, claim-evidence tables,
+unsupported-claim ledgers, and reviewer-readable reports. The current release
+supports bounded adapters for ngspice-style SPICE artifacts, Icarus/VVP HDL
+simulation artifacts, Yosys synthesis artifacts, Verilator logs, and
+metadata-only PLECS and Logisim artifacts. Local evaluation exercises
+installation, command-line behavior, multi-adapter ingestion, replay package
+generation, negative claim injection, corrupted artifact detection, synthetic
+scalability outputs, and a baseline comparison against simpler artifact
+management approaches. ArtifactGate-EDA does not validate hardware, Vivado
+timing, DFX deployment, bitstreams, or board-level behavior. Its purpose is to
+make the software evidence boundary explicit so that simulation or synthesis
+artifacts are not promoted into stronger claims.
 \end{abstract}
 
 \begin{keyword}
@@ -34,29 +44,54 @@ EDA \sep artifact evaluation \sep reproducibility \sep claim checking \sep ngspi
 \end{itemize}
 
 \section*{Metadata}
-\begin{tabular}{lll}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.08\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}>{\raggedright\arraybackslash}p{0.48\linewidth}}
 Nr & Code metadata description & Metadata \\
-C1 & Current code version & 0.1.1 \\
-C2 & Permanent repository link & https://github.com/KKKKJ687/ArtifactGate-EDA \\
+C1 & Current code version & 0.1.2 \\
+C2 & Permanent repository link & \url{https://github.com/KKKKJ687/ArtifactGate-EDA} \\
 C3 & Legal code license & Apache-2.0 \\
 C4 & Versioning system & git \\
-C5 & Languages/tools & Python, Makefile, GitHub Actions \\
-C6 & Requirements & Python >=3.10; see pyproject.toml \\
+C5 & Languages/tools & Python, Makefile, GitHub Actions, ngspice-style artifacts, Icarus/VVP-style artifacts, Yosys-style artifacts \\
+C6 & Requirements & Python $\geq$3.10; dependencies listed in pyproject.toml; core replay does not require commercial EDA software \\
 C7 & Documentation & README.md and docs/ \\
 C8 & Support email & Pending author-side release metadata \\
 \end{tabular}
 
 \section{Motivation and significance}
-EDA artifact packages often mix source files, simulator logs, synthesis
-reports, metadata, replay commands, and paper claims. ArtifactGate-EDA provides
-a software layer for indexing these artifacts, assigning evidence levels,
-checking claim support, and generating reviewer-readable reports.
+EDA research artifacts are frequently assembled from source files, simulator
+logs, synthesis reports, tables, scripts, informal notes, and paper claims. A
+reviewer or future author must determine which claims are directly supported by
+the package and which claims would require a stronger evidence layer. In
+software-only experiment packages, this distinction is especially important:
+source files, simulation logs, and open-source synthesis reports can support
+artifact-level replay and inspection, but they cannot by themselves support
+hardware, vendor implementation, bitstream, or board-level claims.
+
+ArtifactGate-EDA addresses this packaging problem as research software rather
+than as a new EDA algorithm. Its central abstraction is an evidence-layered
+artifact record. Each indexed file receives a relative path, artifact type,
+hash, tool label, adapter label, evidence level, claim binding, unsupported
+boundary, and creation command. These records are then used to build replay
+manifests, validation reports, claim-evidence tables, unsupported-claim ledgers,
+and release capsules.
+
+The scope is intentionally narrow. The SoftwareX core is limited to
+software-level and open-source synthesis evidence up to L4\_SYNTHESIS.
+Vendor-implementation, bitstream, and board-measurement layers are represented
+as unsupported boundaries, not as positive results.
 
 \section{Software description}
-The package provides command-line tools for ingestion, validation, replay,
-claim checking, reporting, packaging, and drift comparison. Its adapter layer
-covers ngspice, Icarus/VVP, Yosys, Verilator, and metadata-only supplementary
-adapters.
+The package is organized around seven core command-line operations: ingest,
+validate, replay, claim-check, report, package, and compare. These commands are
+backed by a small file-oriented Python API under artifactgate\_eda.core. The
+implementation does not require a service, database, commercial EDA
+installation, Codex, or MCP runtime for the core reproduction path.
+
+The ingest path walks an example directory through a selected adapter, filters
+files by adapter-specific extensions, copies accepted artifacts into a package
+directory, computes SHA-256 digests, assigns evidence levels, and writes
+artifact\_index.json, artifact\_index.csv, and provenance.json. The validate path
+checks missing artifacts, hash drift, missing evidence levels, missing tool
+version fields, broken claim references, and non-portable local paths.
 
 \begin{figure}
 \centering
@@ -64,17 +99,30 @@ adapters.
 \caption{ArtifactGate-EDA software architecture.}
 \end{figure}
 
+Replay creates a software-only run manifest, resolved manifest, replay summary,
+acceptance report, claim policy, unsupported ledger, and validation report. The
+adapter layer currently covers ngspice, Icarus/VVP, Yosys, Verilator, and
+metadata-only supplementary adapters for PLECS and Logisim. Ltspice and
+vivado\_stub are kept as optional or schema-only boundaries rather than core
+evidence for stronger claims.
+
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{figures/workflow.png}
 \caption{Claim-safe artifact evaluation workflow.}
 \end{figure}
 
+The claim-safety engine uses policy files under
+repo/src/artifactgate\_eda/policies/. The evidence-level policy defines the
+meaning of each layer from metadata through board measurement. The
+forbidden-claim policy lists phrases and classes that are unsupported in the
+current SoftwareX core. The claim-check command reports unsupported claims and
+writes a safe rewrite suggestion when a claim exceeds the available evidence.
+
 \section{Illustrative examples}
 The repository includes bounded examples for ngspice-style SPICE artifacts,
 HDL/Icarus simulation artifacts, Yosys synthesis artifacts, Verilator logs,
-PLECS metadata-only artifacts, and Logisim metadata-only artifacts. Corrupted
-artifact and negative claim examples exercise reviewer-facing failure modes.
+PLECS metadata-only artifacts, and Logisim metadata-only artifacts.
 
 \begin{figure}
 \centering
@@ -82,15 +130,22 @@ artifact and negative claim examples exercise reviewer-facing failure modes.
 \caption{Evidence-level ladder and the SoftwareX evidence ceiling.}
 \end{figure}
 
-\section{Impact}
-ArtifactGate-EDA complements generic reproducibility tooling by adding
-EDA-specific evidence levels, unsupported-claim ledgers, and reviewer-facing
-artifact reports.
+The local experiment matrix is generated by make reproduce-all and checked
+again by make preflight. Multi-adapter ingestion currently indexes 4 ngspice
+artifacts, 10 Icarus artifacts, 12 Yosys artifacts, 3 Verilator artifacts, 3
+PLECS metadata artifacts, and 2 Logisim metadata artifacts. Replay packaging
+generates manifest-backed packages for the ngspice, Icarus, Yosys, and
+Verilator examples without requiring hardware access or commercial dependencies
+in the core path.
 
-\section{Experimental evaluation}
-The repository includes smoke tests, multi-adapter ingestion, replay checks,
-negative claim injection, corrupted package detection, scalability summaries,
-and artifact-management baseline comparison.
+The negative claim suite injects 52 dangerous claims into the claim checker.
+After policy evaluation, all 52 are classified as unsupported and all receive
+safe rewrite suggestions. The corrupted artifact suite checks seven expected
+failure modes: missing files, hash mismatch, missing tool-version metadata,
+broken claim references, non-portable paths, simulation-to-hardware escalation,
+and Yosys-to-vendor-timing escalation. Synthetic scalability outputs are
+generated for 1k, 3k, 5k, and 10k artifact rows; the 10k case is reported as a
+local validation pass with synthetic timing and memory summaries.
 
 \begin{figure}
 \centering
@@ -98,19 +153,55 @@ and artifact-management baseline comparison.
 \caption{Local experiment and gate matrix.}
 \end{figure}
 
+The baseline comparison contrasts ArtifactGate-EDA with a manual ZIP archive, a
+shell-script replay folder, and a checksum manifest. The comparison is
+qualitative and package-oriented: ArtifactGate-EDA combines hash checking,
+evidence-level labels, claim checking, replay manifests, unsupported ledgers,
+and SoftwareX-oriented reporting in one workflow.
+
+\section{Impact}
+ArtifactGate-EDA is intended for authors and reviewers who need to audit EDA
+artifact packages without turning software evidence into stronger experimental
+claims. The software makes the artifact package more inspectable by preserving
+hashes, relative paths, adapter labels, evidence levels, and replay commands in
+machine-readable files. It also makes unsupported claims visible through a
+separate ledger rather than burying them in prose.
+
+For authors, this reduces the chance that an artifact package will accidentally
+overstate what has been checked. For reviewers, it provides a compact path from
+source folder to artifact index, replay manifest, claim-evidence table, and
+release capsule. For future extensions, the adapter interface provides a place
+to add stronger evidence layers, but only when the corresponding artifacts and
+validation reports exist.
+
 \section{Conclusions}
 ArtifactGate-EDA packages heterogeneous software-only EDA artifacts into
-hash-recorded, replay-checkable, and claim-auditable bundles. Local evaluation
-covers installation, multi-adapter ingestion, replay summaries, negative claim
-injection, corrupted artifact detection, scalability summaries, and
-artifact-management baseline comparison.
+hash-recorded, replay-checkable, and claim-auditable bundles. The release
+provides an installable Python package, command-line tools, examples, tests,
+generated reports, documentation, a supplementary artifact package, a public
+GitHub release, and a Zenodo DOI. Local evaluation covers installation,
+multi-adapter ingestion, replay package generation, negative claim injection,
+corrupted artifact detection, synthetic scalability outputs, and artifact
+management baseline comparison. The main contribution is a conservative
+software layer for making evidence boundaries explicit.
 
 \section{Limitations}
-The SoftwareX core is limited to software, simulation, and open-source
-synthesis evidence. Stronger hardware-level claims remain out of scope unless
-future releases add direct evidence and separate validation.
+ArtifactGate-EDA does not validate hardware, Vivado timing, DFX deployment,
+bitstreams, or board-level behavior. The current examples are bounded and
+software-only. The scalability outputs are synthetic package checks rather than
+full performance benchmarks. Metadata-only adapters do not prove executable
+tool flows. Any future stronger claim would require new evidence layers,
+separate artifacts, and separate validation beyond this SoftwareX core release.
 
 \section{Availability}
-Repository: https://github.com/KKKKJ687/ArtifactGate-EDA. Archived release DOI: 10.5281/zenodo.20789288.
+Repository: \url{https://github.com/KKKKJ687/ArtifactGate-EDA}. The v0.1.2
+archived release DOI will be finalized after Zenodo processes the v0.1.2 GitHub
+release.
+
+\section*{Author-side submission metadata}
+Support email, funding statement, competing-interest statement, and CRediT roles
+remain pending author-side confirmation. They are tracked in
+docs/author\_submission\_metadata\_request.md and should be completed before
+journal submission.
 
 \end{document}

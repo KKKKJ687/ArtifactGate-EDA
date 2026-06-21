@@ -75,7 +75,8 @@ unsupported in the current core package.
 
 ## Citation
 
-Use `CITATION.cff` for software citation metadata. Archived release DOI: 10.5281/zenodo.20789288.
+Use `CITATION.cff` for software citation metadata. The v0.1.2 archived release
+DOI will be finalized after Zenodo processes the v0.1.2 GitHub release.
 
 ## License
 

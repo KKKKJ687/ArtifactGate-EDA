@@ -158,7 +158,11 @@ def make_records(root: Path, adapter: str) -> list[ArtifactRecord]:
 def write_csv(records: list[ArtifactRecord], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(asdict(records[0]).keys()) if records else list(ArtifactRecord.__annotations__.keys()))
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=list(asdict(records[0]).keys()) if records else list(ArtifactRecord.__annotations__.keys()),
+            lineterminator="\n",
+        )
         writer.writeheader()
         for record in records:
             writer.writerow(asdict(record))
@@ -580,8 +584,11 @@ def render_experiment_summaries(repo_root: Path, reports_dir: Path) -> dict:
                 "claim_count": result.get("claim_count", 0),
                 "unsupported_count": result.get("unsupported_count", 0),
                 "safe_rewrite_count": sum(1 for row in claims if row.get("safe_rewrite")),
-                "false_negative_count": 0 if result.get("unsupported_count", 0) == result.get("claim_count", 0) else "review",
-                "status": "PASS" if result.get("unsupported_count", 0) >= 50 else "REVIEW",
+                "false_negative_count": max(
+                    int(result.get("claim_count", 0)) - int(result.get("unsupported_count", 0)),
+                    0,
+                ),
+                "status": "PASS" if result.get("unsupported_count", 0) == result.get("claim_count", 0) else "REVIEW",
             }
         )
     else:
@@ -632,7 +639,7 @@ def _write_dict_csv(rows: list[dict], path: Path) -> None:
         fieldnames = ["status"]
         rows = [{"status": "MISSING"}]
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 

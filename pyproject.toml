@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "artifactgate-eda"
-version = "0.1.1"
+version = "0.1.2"
 description = "Claim-safe artifact evaluation framework for software-only EDA experiments"
 readme = "README.md"
 requires-python = ">=3.10"

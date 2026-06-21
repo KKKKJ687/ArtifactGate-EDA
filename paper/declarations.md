@@ -3,7 +3,9 @@
 ## Data And Software Availability
 
 The software, examples, generated reports, and reproducibility commands are
-prepared for release at https://github.com/KKKKJ687/ArtifactGate-EDA. Archived release DOI: 10.5281/zenodo.20789288.
+prepared for release at https://github.com/KKKKJ687/ArtifactGate-EDA. The
+v0.1.2 archived release DOI will be finalized after Zenodo processes the v0.1.2
+GitHub release.
 
 ## Funding
 
@@ -16,6 +18,9 @@ Pending author-side confirmation.
 ## CRediT Author Contributions
 
 Pending author-side confirmation.
+
+The required author-side values are listed in
+`docs/author_submission_metadata_request.md`.
 
 ## AI-Assisted Engineering Disclosure
 

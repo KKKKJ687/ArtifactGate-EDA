@@ -62,6 +62,15 @@ def update_zenodo(text: str, repo_url: str, doi: str) -> tuple[str, list[str]]:
     data = json.loads(text)
     changes: list[str] = []
     related = data.setdefault("related_identifiers", [])
+    filtered_related = [
+        item
+        for item in related
+        if not (item.get("scheme") == "doi" and item.get("relation") == "isIdenticalTo")
+    ]
+    if len(filtered_related) != len(related):
+        data["related_identifiers"] = filtered_related
+        related = filtered_related
+        changes.append("related_identifiers.doi.replace")
     repo_entry = {
         "identifier": repo_url,
         "relation": "isSupplementTo",
@@ -99,6 +108,16 @@ def update_markdown(text: str, repo_url: str, doi: str) -> tuple[str, list[str]]
         text, count = replace(text, old, new)
         if count:
             changes.append(old[:40])
+    text, count = replace_regex(
+        text,
+        r"The v[0-9]+\.[0-9]+\.[0-9]+ archived release DOI will be finalized after Zenodo processes the v[0-9]+\.[0-9]+\.[0-9]+ GitHub release\.",
+        f"Archived release DOI: {doi}.",
+    )
+    if count:
+        changes.append("pending release doi")
+    text, count = replace_regex(text, r"Archived release DOI:\s*10\.5281/zenodo\.\d+\.", f"Archived release DOI: {doi}.")
+    if count:
+        changes.append("replace archived doi")
     if doi not in text and "Archived release DOI" not in text:
         text = text.rstrip() + f"\n\nArchived release DOI: {doi}.\n"
         changes.append("append doi")
@@ -118,6 +137,16 @@ def update_tex(text: str, repo_url: str, doi: str) -> tuple[str, list[str]]:
         text, count = replace(text, old, new)
         if count:
             changes.append(old[:40])
+    text, count = replace_regex(
+        text,
+        r"The v[0-9]+\.[0-9]+\.[0-9]+\s+archived release DOI will be finalized after Zenodo processes the v[0-9]+\.[0-9]+\.[0-9]+ GitHub\s+release\.",
+        f"Archived release DOI: {doi}.",
+    )
+    if count:
+        changes.append("pending release doi")
+    text, count = replace_regex(text, r"Archived release DOI:\s*10\.5281/zenodo\.\d+\.", f"Archived release DOI: {doi}.")
+    if count:
+        changes.append("replace archived doi")
     if doi not in text and "Archived release DOI" not in text:
         text = text.replace("\\end{document}", f"Archived release DOI: {doi}.\n\n\\end{{document}}")
         changes.append("append doi")
