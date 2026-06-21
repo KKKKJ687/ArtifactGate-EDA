@@ -92,6 +92,7 @@ The original execution plan is not complete until:
 1. The Zenodo DOI exists and is publicly accessible.
 2. DOI metadata is present in the repository and manuscript files.
 3. `make preflight` passes after DOI metadata application.
-4. `scripts/external_release_check.py --doi <real DOI>` passes.
+4. `scripts/external_release_check.py --doi <real DOI>` passes, including the
+   public Zenodo record check.
 5. The final SoftwareX submission checklist has no unresolved external DOI
    blocker.

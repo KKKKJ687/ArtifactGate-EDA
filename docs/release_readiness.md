@@ -89,6 +89,7 @@ and DOI metadata application.
 - local release zips and Python distribution files exist
 - repository and release placeholders have been replaced in local metadata
 - a Zenodo DOI has been supplied and recorded
+- the supplied Zenodo DOI resolves to a public record for ArtifactGate-EDA
 - `gh` is authenticated
 - the target GitHub repository exists and is public
 - the latest `main` GitHub Actions run completed successfully

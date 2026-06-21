@@ -5,6 +5,8 @@ import json
 import re
 import shutil
 import subprocess
+import urllib.error
+import urllib.request
 from pathlib import Path
 from typing import Any
 
@@ -40,6 +42,21 @@ def read(path: str) -> str:
     return (ROOT / path).read_text(encoding="utf-8")
 
 
+def fetch_json(url: str, timeout: int = 20) -> tuple[dict[str, Any] | None, str | None]:
+    request = urllib.request.Request(
+        url,
+        headers={
+            "Accept": "application/json",
+            "User-Agent": "ArtifactGate-EDA external release checker",
+        },
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            return json.loads(response.read().decode("utf-8")), None
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+        return None, str(exc)
+
+
 def check_local_metadata(checks: list[dict[str, Any]], doi: str | None) -> None:
     citation = read("CITATION.cff")
     codemeta = read("codemeta.json")
@@ -66,6 +83,43 @@ def check_local_metadata(checks: list[dict[str, Any]], doi: str | None) -> None:
             add_check(checks, "doi_recorded", "PASS", doi)
     else:
         add_check(checks, "doi_recorded", "BLOCKED", "provide --doi after Zenodo publication")
+
+
+def check_public_doi(checks: list[dict[str, Any]], doi: str | None, repo: str | None) -> None:
+    if not doi:
+        return
+
+    match = re.fullmatch(r"10\.5281/zenodo\.(?P<record_id>\d+)", doi)
+    if not match:
+        add_check(checks, "zenodo_record", "BLOCKED", f"{doi} is not a Zenodo DOI in 10.5281/zenodo.<id> form")
+        return
+
+    record_id = match.group("record_id")
+    record, error = fetch_json(f"https://zenodo.org/api/records/{record_id}")
+    if error or record is None:
+        add_check(checks, "zenodo_record", "BLOCKED", error or f"Zenodo record {record_id} is not readable")
+        return
+
+    record_doi = record.get("doi")
+    if record_doi != doi:
+        add_check(checks, "zenodo_record", "BLOCKED", f"record DOI is {record_doi!r}, expected {doi}")
+        return
+
+    metadata = record.get("metadata") or {}
+    title = metadata.get("title") or ""
+    repo_url = f"https://github.com/{repo}" if repo else ""
+    searchable = json.dumps(metadata, sort_keys=True)
+    if "ArtifactGate-EDA" not in title and repo_url not in searchable:
+        add_check(
+            checks,
+            "zenodo_record",
+            "BLOCKED",
+            f"Zenodo record {record_id} does not reference ArtifactGate-EDA or {repo_url}",
+        )
+        return
+
+    url = (record.get("links") or {}).get("self_html", f"https://zenodo.org/records/{record_id}")
+    add_check(checks, "zenodo_record", "PASS", f"{url} ({title})")
 
 
 def check_local_artifacts(checks: list[dict[str, Any]]) -> None:
@@ -157,6 +211,7 @@ def main() -> int:
     checks: list[dict[str, Any]] = []
     check_local_artifacts(checks)
     check_local_metadata(checks, args.doi)
+    check_public_doi(checks, args.doi, repo)
     check_github(checks, repo, args.tag)
 
     blocked = [check for check in checks if check["status"] == "BLOCKED"]
