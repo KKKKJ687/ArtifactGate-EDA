@@ -4,7 +4,7 @@
 
 The software, examples, generated reports, and reproducibility commands are
 released at https://github.com/KKKKJ687/ArtifactGate-EDA. The archived release
-DOI is 10.5281/zenodo.20789516.
+DOI is 10.5281/zenodo.20798200.
 
 ## Funding
 

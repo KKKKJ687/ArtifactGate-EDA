@@ -1,6 +1,10 @@
 file,line_no,section,matched_term,context,status
 paper/manuscript_ist.md,269,threats to validity,hardware validation,"hardware validation, or vendor timing closure. The baseline and ablation",ALLOWED
+paper/manuscript_ist.md,336,reproducibility and data availability,DFX deployment,"add hardware validation, vendor timing closure, bitstream, DFX deployment, or",ALLOWED
+paper/manuscript_ist.md,336,reproducibility and data availability,hardware validation,"add hardware validation, vendor timing closure, bitstream, DFX deployment, or",ALLOWED
 paper/manuscript_ist.tex,147,threats to validity,hardware validation,"execution, circuit correctness, hardware validation, or vendor timing closure.",ALLOWED
+paper/manuscript_ist.tex,168,reproducibility and data availability,hardware validation,"package and generated-data snapshot. It does not add hardware validation,",ALLOWED
+paper/manuscript_ist.tex,169,reproducibility and data availability,DFX deployment,"vendor timing closure, bitstream, DFX deployment, or board-validation evidence.",ALLOWED
 paper/manuscript_ist.md,169,results,RQ_RESULT_REPORT_REFERENCE,RQ1 generated `reports/rq1_multi_adapter_ingestion.md` and CSV metrics for,ALLOWED
 paper/manuscript_ist.md,171,results,RQ_RESULT_REPORT_REFERENCE,"adapter. RQ2 generated replay reports for ngspice minimal, CircuitFaultBench",ALLOWED
 paper/manuscript_ist.md,178,results,RQ_RESULT_REPORT_REFERENCE,`reports/rq2_docker_ci_status.csv` without claiming a local Docker pass. RQ3 evaluated 1300 ClaimBench-EDA rows and,ALLOWED

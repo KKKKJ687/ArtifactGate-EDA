@@ -2,7 +2,7 @@
 
 | Metric | Value |
 |---|---:|
-| boundary term hits | 2 |
+| boundary term hits | 6 |
 | RQ result reference checks | 17 |
 | violations | 0 |
 

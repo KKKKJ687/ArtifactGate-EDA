@@ -292,8 +292,10 @@ schema-only fallback behavior.
 
 ## 10. Reproducibility and Data Availability
 
-The software baseline is archived with DOI `10.5281/zenodo.20789516`. The IST
-evaluation layer is generated from the repository with:
+The SoftwareX baseline is archived with DOI `10.5281/zenodo.20789516`. The IST
+evaluation snapshot is archived as version `v0.1.3` with DOI
+`10.5281/zenodo.20798200`. The IST evaluation layer is regenerated from the
+repository with:
 
 ```bash
 make install
@@ -330,5 +332,6 @@ The generated data and reports are local repository artifacts:
 - `reports/rq10_reviewer_walkthrough_command_log.csv`
 - `reports/ist_empirical_evaluation_summary.md`
 
-If the IST version is submitted as a new archival package, it should be released
-as a new version rather than mutating the existing archived SoftwareX release.
+The IST archive is a software package and generated-data snapshot. It does not
+add hardware validation, vendor timing closure, bitstream, DFX deployment, or
+board-validation evidence.

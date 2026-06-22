@@ -32,9 +32,10 @@ workflow for the IST stronger optimization plan.
   verification.
 - The IST layer does not claim device-side validation, vendor implementation
   signoff, reconfiguration deployment, board evidence, completed human/expert
-  study evidence, or a new IST DOI.
+  study evidence.
 - The existing `v0.1.2` archive and DOI remain the SoftwareX baseline and were
-  not mutated.
+  not mutated; the IST evaluation snapshot is archived separately as `v0.1.3`
+  with DOI `10.5281/zenodo.20798200`.
 
 ## Selected Skill Summary
 
@@ -77,12 +78,12 @@ Status terms:
 ## Hard Stops
 
 The four workflow-governor hard stops are satisfied for Codex execution because
-the user explicitly directed execution of the selected plan. A new hard stop is
-active for any external publication action:
+the user explicitly directed execution of the selected plan. A hard stop remains
+active for any future external publication action:
 
 - Do not create, move, or overwrite any tag or release without explicit user
   approval.
-- Do not update manuscript data-availability wording with a new IST DOI until
+- Do not update manuscript data-availability wording with any future DOI until
   that DOI exists and resolves.
 - Do not mark G13 complete until real author/expert evidence exists.
 
@@ -95,4 +96,3 @@ Durable hard-stop packets:
 ## Blocking Missing Information
 
 - G13: author/expert walkthrough evidence.
-- G15: new IST release archive and DOI.

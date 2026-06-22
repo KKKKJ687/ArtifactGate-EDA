@@ -10,7 +10,7 @@
 | evidence-level coverage | 1.000 |
 | private absolute path hits | 47 |
 | private absolute path leaks | 5 |
-| claim-boundary term hits | 9386 |
+| claim-boundary term hits | 9392 |
 
 ## Roles
 

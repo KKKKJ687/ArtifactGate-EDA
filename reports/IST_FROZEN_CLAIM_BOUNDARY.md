@@ -27,9 +27,9 @@ The current IST layer supports claims about:
 
 Complete the Codex-verifiable IST stronger-plan engineering package within the
 local S4-S11 evidence scope while keeping the evidence ceiling below
-human/expert study completion and below new external release/DOI publication.
-The full IST stronger-plan objective remains incomplete until real G13
-author/expert evidence and real G15 external release/DOI evidence exist.
+human/expert study completion. The full IST stronger-plan objective remains
+incomplete until real G13 author/expert evidence exists. G15 external release
+evidence exists separately as `v0.1.3` / `10.5281/zenodo.20798200`.
 
 ## Boundary
 
@@ -48,7 +48,8 @@ Disallowed evidence escalation:
 - no completed reconfiguration deployment;
 - no board evidence;
 - no human/expert walkthrough evidence unless supplied by a real evaluator;
-- no new IST DOI or external archive unless explicitly authorized and created.
+- no future IST DOI or external archive unless explicitly authorized and
+  created.
 
 ## Unsupported Claims
 
@@ -61,15 +62,17 @@ The current worktree must not claim that ArtifactGate-EDA:
   universal EDA workflow remain unsupported;
 - converts generated reviewer dry-run rows into real human/expert evidence;
 - uses ReconfigRT-I or LA-DFX as core IST results;
-- has a new IST public DOI or external archive beyond the existing SoftwareX
-  baseline DOI.
+- derives hardware, vendor-tool, or human-study evidence from the new IST
+  `v0.1.3` public DOI.
 
 ## Assumptions
 
-- The current branch is a dirty IST upgrade worktree, not a clean committed
-  release snapshot.
+- The current branch is an IST upgrade worktree; final closure still requires a
+  clean committed snapshot after verification.
 - The SoftwareX baseline archive and DOI remain externally verified and are not
   mutated by this IST layer.
+- The IST evaluation snapshot is archived separately as `v0.1.3` with DOI
+  `10.5281/zenodo.20798200`.
 - Local experiments are deterministic software-evaluation artifacts unless a
   report explicitly states otherwise.
 - Generated walkthrough outputs are author-side preparation only.
@@ -80,12 +83,12 @@ The current worktree must not claim that ArtifactGate-EDA:
 
 | Field | Record |
 | --- | --- |
-| Content to confirm | Freeze the software-only claim boundary above and keep G13/G15 open. |
+| Content to confirm | Freeze the software-only claim boundary above and keep G13 open. |
 | Confirmation pointer | `.codex_workflow/WORKFLOW_STATE.md` records H2 as confirmed for local Codex execution; `.codex_workflow/SESSION_STATE.md` records user authorization to execute the selected workflow-governor plan. |
 | Risk | Expanding the boundary would create unsupported hardware, human-study, or DOI claims. |
 | Next step after confirmation | Design and execute measurable local gates while preserving the boundary. |
 | Allowed actions after confirmation | Edit local code, reports, packages, and workflow artifacts inside the approved branch; run local checks; use subagent review. |
-| Still forbidden | Author metadata fabrication, real expert-walkthrough fabrication, tag/release mutation, DOI mutation, hardware/Vivado/DFX/board positive claims. |
+| Still forbidden | Author metadata fabrication, real expert-walkthrough fabrication, unapproved tag/release mutation, DOI mutation, hardware/Vivado/DFX/board positive claims. |
 
 ## Evidence Pointers
 

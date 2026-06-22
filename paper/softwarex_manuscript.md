@@ -28,7 +28,7 @@ artifacts are not promoted into stronger claims.
 
 | Nr | Code metadata description | Metadata |
 |---|---|---|
-| C1 | Current code version | 0.1.2 |
+| C1 | Current code version | 0.1.3 |
 | C2 | Permanent link to code/repository used for this code version | https://github.com/KKKKJ687/ArtifactGate-EDA |
 | C3 | Legal code license | Apache-2.0 |
 | C4 | Code versioning system used | git |
@@ -183,8 +183,7 @@ separate artifacts, and separate validation beyond this SoftwareX core release.
 
 ## Availability
 
-Repository: https://github.com/KKKKJ687/ArtifactGate-EDA. Archived release DOI:
-10.5281/zenodo.20789516.
+Repository: https://github.com/KKKKJ687/ArtifactGate-EDA. Archived release DOI: 10.5281/zenodo.20798200.
 
 ## Author-Side Submission Metadata
 

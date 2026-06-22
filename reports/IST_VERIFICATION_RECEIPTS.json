@@ -3,6 +3,7 @@
   "git_head": "4350fbc",
   "scope": "IST stronger-plan local verification receipts for ArtifactGate-EDA feature/ist-upgrade",
   "external_release_mutated": false,
+  "new_ist_external_release_created": true,
   "commands": [
     {
       "command": "make lint",
@@ -52,7 +53,7 @@
     {
       "command": "make ist-strong-l2",
       "observed_status": "PASS",
-      "observed_summary": "indexed 12063 admissible files; evidence graph 21980 nodes and 171667 edges; boundary scan 8214 hits with 0 leaks; IST manuscript claim gate 0 violations"
+      "observed_summary": "indexed 12063 admissible files; evidence graph 21985 nodes and 171674 edges; boundary scan 8218 hits with 0 leaks; IST manuscript claim gate 0 violations"
     },
     {
       "command": "make preflight",
@@ -62,7 +63,7 @@
     {
       "command": "make external-release-check",
       "observed_status": "PASS",
-      "observed_summary": "existing SoftwareX baseline release and Zenodo DOI verified; existing v0.1.2 release was not mutated"
+      "observed_summary": "IST v0.1.3 GitHub release and Zenodo DOI 10.5281/zenodo.20798200 verified; existing v0.1.2 release was not mutated"
     }
   ],
   "e6_g9_metrics": {
@@ -135,10 +136,15 @@
   },
   "g15_external_release": {
     "local_ist_archive": "release/artifactgate_eda_ist_evaluation_artifacts.zip",
-    "new_ist_external_doi_created": false,
+    "new_ist_external_release_created": true,
+    "new_ist_external_doi_created": true,
+    "new_ist_tag": "v0.1.3",
+    "new_ist_github_release": "https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.3",
+    "new_ist_zenodo_record": "https://zenodo.org/records/20798200",
+    "new_ist_doi": "10.5281/zenodo.20798200",
     "existing_softwarex_doi": "10.5281/zenodo.20789516",
     "existing_v0_1_2_release_mutated": false,
-    "status": "EXTERNAL_REQUIRED",
+    "status": "PASS",
     "author_completion_packet": "docs/ist_author_external_completion_packet.md"
   },
   "workflow_governor_reaudit": {
@@ -161,7 +167,7 @@
       "S11": "019eef63-e3dc-7d20-a5ff-bf4146e47c4e"
     },
     "s11_final_acceptance_status": "FAIL",
-    "s11_blockers": ["G13_AUTHOR_REQUIRED", "G15_EXTERNAL_REQUIRED"],
+    "s11_blockers": ["G13_AUTHOR_REQUIRED"],
     "status_vocabulary_drift_corrected": true,
     "stale_gate_label_corrected": "G14 -> G10 for scalability reflection"
   },
@@ -174,12 +180,45 @@
       "make external-release-check"
     ],
     "observed_status": "PASS_WITH_OPEN_AUTHOR_EXTERNAL_GATES",
-    "l2_observed_summary": "12063 admissible files; 21980 evidence graph nodes; 171667 edges; 8214 boundary hits; 0 leaks; 0 IST manuscript violations",
+    "l2_observed_summary": "12063 admissible files; 21985 evidence graph nodes; 171674 edges; 8218 boundary hits; 0 leaks; 0 IST manuscript violations",
     "preflight_observed_summary": "compileall, ruff, 37 pytest cases, smoke/replay/negative/corruption/scalability/report/package/build/release-preflight checks passed",
     "ist_zip_observed_summary": "184 entries; required control artifacts present; no resource forks; no plan snapshot; no private path payload hits",
-    "external_release_observed_summary": "existing v0.1.2 GitHub release and Zenodo DOI 10.5281/zenodo.20789516 verified; no external release mutation performed",
+    "external_release_observed_summary": "v0.1.3 GitHub release and Zenodo DOI 10.5281/zenodo.20798200 verified; existing v0.1.2 GitHub release and Zenodo DOI 10.5281/zenodo.20789516 were not mutated",
     "s11_status_after_verification": "FAIL",
-    "remaining_open_gates": ["G13_AUTHOR_REQUIRED", "G15_EXTERNAL_REQUIRED"]
+    "remaining_open_gates": ["G13_AUTHOR_REQUIRED"]
+  },
+  "g15_release_verification_2026_06_22": {
+    "verified_at_utc": "2026-06-22T13:45:00Z",
+    "tag": "v0.1.3",
+    "github_release": "https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.3",
+    "zenodo_record": "https://zenodo.org/records/20798200",
+    "zenodo_doi": "10.5281/zenodo.20798200",
+    "existing_v0_1_2_release_mutated": false,
+    "external_release_check_command": ".venv/bin/python scripts/external_release_check.py --repo KKKKJ687/ArtifactGate-EDA --tag v0.1.3 --doi 10.5281/zenodo.20798200",
+    "status": "PASS",
+    "remaining_open_gates": ["G13_AUTHOR_REQUIRED"]
+  },
+  "post_g15_subagent_audit_2026_06_22": {
+    "submission_boundary_audit_session": "019eef96-2694-7521-a63c-6b538d938777",
+    "package_consistency_audit_session": "019eef96-6adc-7c61-8c59-a984be989259",
+    "initial_findings": [
+      "G13 remains AUTHOR_REQUIRED and cannot be closed by generated dry-run or agent output",
+      "supplementary reports needed current v0.1.3 DOI wording",
+      "shipped zip payloads should avoid content-level macOS metadata token hits"
+    ],
+    "corrections_applied": [
+      "updated current DOI/version wording in SoftwareX readiness and gate reports while preserving v0.1.2 as historical baseline",
+      "removed literal macOS metadata token wording from shipped docs/reports",
+      "rebuilt IST and supplementary zips"
+    ],
+    "post_correction_zip_scan": {
+      "ist_zip_entries": 184,
+      "supplementary_zip_entries": 127,
+      "bad_archive_entries": 0,
+      "forbidden_payload_token_hits": 0,
+      "private_path_payload_hits": 0
+    },
+    "status": "PASS_WITH_G13_OPEN"
   },
   "claim_boundary": {
     "hardware_validation_claimed": false,

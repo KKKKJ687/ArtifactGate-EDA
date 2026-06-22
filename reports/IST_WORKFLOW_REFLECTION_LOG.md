@@ -295,3 +295,71 @@ post-hoc scores.
   reviewer; no selected workflow skill/resource changed.
 - Preventive check next time: Ask a submission-readiness subagent to review any
   author/external packet before treating it as ready for handoff.
+
+## Reflection Log Entry
+
+- Date: 2026-06-22
+- Project: ArtifactGate-EDA IST stronger-plan execution
+- Gate: G15 external IST release and DOI closure
+- Initial review status: EXTERNAL_REQUIRED
+- Final review status: PASS_WITH_G13_OPEN
+- Failure type: External archive state not yet created
+- Root cause: Before explicit user approval, the IST package could only be
+  verified locally; it could not be assigned a new public DOI without changing
+  external release state.
+- Minimal correction path: Create a new versioned IST release without moving or
+  mutating the existing `v0.1.2` SoftwareX baseline archive.
+- Revision actions:
+  - Created and published GitHub release `v0.1.3` for the IST evaluation
+    snapshot.
+  - Verified Zenodo version DOI `10.5281/zenodo.20798200` at
+    `https://zenodo.org/records/20798200`.
+  - Updated citation metadata, data-availability wording, and workflow-governor
+    state files to record G15 as externally verified.
+  - Kept G13 as `AUTHOR_REQUIRED` because no real author/expert walkthrough
+    evidence has been supplied.
+- Remaining limitation: S11 remains failed until G13 is completed by real
+  author/expert action and re-reviewed.
+- New rule: A DOI can close an external archive gate only after the public
+  record resolves and local metadata names the exact DOI.
+- Skill/resource change: No selected workflow skill/resource change.
+- Preventive check next time: After a DOI is created, rerun
+  `make preflight`, `make ist-strong-l2`, `make ist-package`, and the explicit
+  `external_release_check.py --tag <tag> --doi <doi>` command before updating
+  final acceptance.
+
+## Reflection Log Entry
+
+- Date: 2026-06-22
+- Project: ArtifactGate-EDA IST stronger-plan execution
+- Gate: Post-G15 package and metadata consistency
+- Initial review status: FAIL
+- Final review status: PASS_WITH_G13_OPEN
+- Failure type: Package wording and supplementary-report drift
+- Root cause: The v0.1.3 DOI refresh updated primary metadata first, but
+  supplementary-package reports still contained v0.1.2 wording in current-state
+  positions, and packaged documentation contained literal macOS metadata tokens
+  that could be misread by content-level payload scans.
+- Minimal correction path: Update packaged reports and docs only; preserve
+  v0.1.2 as historical baseline evidence and do not mutate the v0.1.2 external
+  archive.
+- Revision actions:
+  - Updated `reports/COMPLETION_AUDIT.md`, `reports/GATE_REVIEW.md`,
+    `docs/softwarex_submission_checklist.md`, and `docs/release_readiness.md`
+    to use `v0.1.3` / `10.5281/zenodo.20798200` for current release metadata
+    while retaining v0.1.2 only as a historical baseline note.
+  - Reworded packaged hygiene descriptions to avoid literal macOS metadata
+    token hits in archive payloads.
+  - Rebuilt `release/artifactgate_eda_ist_evaluation_artifacts.zip` and
+    `release/artifactgate_eda_supplementary_artifacts.zip`.
+  - Reran `make preflight`, `make ist-strong-l2`, `make ist-package`,
+    `scripts/release_preflight.py`, `make external-release-check`, JSON
+    validation, and direct zip payload scans.
+- Remaining limitation: G13 remains `AUTHOR_REQUIRED`; no real author/expert
+  walkthrough evidence has been supplied.
+- New rule: After external DOI updates, scan shipped archive payload text for
+  stale current-state DOI wording and private-path/resource-fork token hits, not
+  only for bad archive member names.
+- Skill/resource change: No selected workflow skill/resource change.
+- Preventive check next time: Run a read-only package consistency agent before
+  committing any DOI-refresh release snapshot.

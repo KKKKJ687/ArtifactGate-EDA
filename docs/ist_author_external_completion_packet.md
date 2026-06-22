@@ -7,8 +7,8 @@ complete by invention:
 - G15: new external IST release archive and DOI.
 
 The current repository contains a generated RQ10 dry run, not completed expert
-walkthrough evidence. The current external archive is the SoftwareX baseline
-`v0.1.2` DOI, not a new IST DOI.
+walkthrough evidence. The IST external archive has now been created separately
+from the SoftwareX baseline as `v0.1.3` with DOI `10.5281/zenodo.20798200`.
 
 ## Current Codex-Verifiable State
 
@@ -19,7 +19,7 @@ walkthrough evidence. The current external archive is the SoftwareX baseline
 | Claim-boundary gate | `make ist-strong-l2` receipt in `reports/IST_VERIFICATION_RECEIPTS.json` | PASS |
 | Existing SoftwareX DOI | `10.5281/zenodo.20789516` | Published baseline DOI |
 | G13 expert walkthrough | Author or expert must perform and sign the walkthrough | AUTHOR_REQUIRED |
-| G15 new IST DOI | New external release and Zenodo DOI required | EXTERNAL_REQUIRED |
+| G15 new IST DOI | `v0.1.3`; `10.5281/zenodo.20798200`; https://zenodo.org/records/20798200 | PASS |
 
 ## G13 Author/Expert Walkthrough Protocol
 
@@ -159,19 +159,24 @@ If six or more participants are used, do not merge those results into the
 manuscript until the author confirms consent, anonymization, and reporting
 scope.
 
-## G15 New IST Release and DOI Protocol
+## G15 New IST Release and DOI Record
 
 Do not move, rewrite, or re-upload the existing `v0.1.2` GitHub release or
-Zenodo DOI. The existing DOI is the SoftwareX baseline archive:
+Zenodo DOI. The existing DOI remains the SoftwareX baseline archive:
 
 ```text
 10.5281/zenodo.20789516
 ```
 
-For a DOI-bearing IST snapshot, create a new version after explicit author
-approval, for example `v0.1.3` or a later tag chosen by the author.
+The DOI-bearing IST snapshot was created only after explicit user approval:
 
-### Pre-Release Local Checks
+```text
+GitHub release: https://github.com/KKKKJ687/ArtifactGate-EDA/releases/tag/v0.1.3
+Zenodo record: https://zenodo.org/records/20798200
+Zenodo DOI: 10.5281/zenodo.20798200
+```
+
+### Future Pre-Release Local Checks
 
 Run these before creating a new external release:
 
@@ -187,13 +192,15 @@ git status --short --branch
 Confirm that:
 
 - `release/artifactgate_eda_ist_evaluation_artifacts.zip` exists.
-- The package contains no `.git`, `.venv`, `__MACOSX`, cache directories, or
-  `._*` resource-fork files.
+- The package contains no repository metadata, virtual-environment directories,
+  macOS archive metadata directories, cache directories, or macOS resource-fork
+  sidecar files.
 - No local user-home absolute path appears in reproducible materials.
-- `reports/IST_GAP_AUDIT.md` no longer has G13 or G15 marked as required if
-  the author/external actions have been completed.
+- `reports/IST_GAP_AUDIT.md` no longer has G15 marked as required after the
+  `v0.1.3` DOI is verified. Keep G13 marked as author-required until real
+  walkthrough evidence exists.
 
-### External Release Steps
+### Future External Release Steps
 
 These steps require author approval and authenticated GitHub/Zenodo access:
 
@@ -230,8 +237,9 @@ records.
 
 ## Required Closure Rerun After Real G13/G15 Updates
 
-After real G13 evidence and, if applicable, a new G15 tag/release/DOI are added,
-run the full local and external closure sequence before changing final status:
+After real G13 evidence is added, or if any future G15-style tag/release/DOI is
+added, run the full local and external closure sequence before changing final
+status:
 
 ```bash
 make ist-strong-l2
@@ -244,8 +252,7 @@ make preflight
 git status --short --branch
 ```
 
-If G13 is updated but G15 is still not created, do not use a placeholder DOI.
-Run the local checks above and keep G15 as `EXTERNAL_REQUIRED`.
+Do not use a placeholder DOI for any future release.
 
 After those commands pass, refresh these state and audit artifacts from the real
 outputs:
@@ -257,9 +264,9 @@ reports/IST_FINAL_ACCEPTANCE_AUDIT.md
 .codex_workflow/WORKFLOW_STATE.md
 ```
 
-Then request a read-only subagent re-review of G13/G15. The re-review must check
-that no human-study, hardware, Vivado, DFX, bitstream, board, or
-external-EDA-execution overclaim was introduced.
+Then request a read-only subagent re-review of G13 and the already-created G15
+release state. The re-review must check that no human-study, hardware, Vivado,
+DFX, bitstream, board, or external-EDA-execution overclaim was introduced.
 
 ## Final Completion Rule
 
@@ -267,7 +274,7 @@ The IST stronger-plan objective can be marked complete only when:
 
 1. A real G13 author/expert walkthrough or approved participant study has been
    added and reviewed.
-2. A new G15 external IST release archive and DOI exist and have been verified.
+2. The G15 external IST release archive and DOI exist and have been verified.
 3. `make lint`, `make test`, `make ist-all`, `make ist-strong-l2`, and
    `make ist-package` pass after those updates.
 4. A subagent re-review confirms that no human-study, hardware, Vivado, DFX,

@@ -16,7 +16,7 @@ confirmation state without changing the scientific claim boundary.
 | Task type | Research-code, empirical-evaluation, manuscript-package, release-readiness workflow. |
 | Complexity | High: project execution, paper claims, local packages, release checks, and subagent reviews. |
 | Initial objective | Complete the IST stronger-plan Codex-verifiable work using workflow-governor gates and subagent review. |
-| Known open final-acceptance blockers | G13 real author/expert walkthrough evidence; G15 new IST release and DOI. |
+| Known open final-acceptance blockers | G13 real author/expert walkthrough evidence. |
 | Gate result | PASS after durable recording; missing information is known and isolated from Codex-completable work. |
 
 ## S1 Brainstorming Route Selection
@@ -59,8 +59,8 @@ Workflow corrections:
 
 - Treat the IST plan as the target plan, but treat the current worktree as the
   authoritative artifact state when names or counts have drifted.
-- Keep G13 and G15 as open gates instead of trying to satisfy them with generated
-  artifacts.
+- Keep G13 as an open gate instead of trying to satisfy it with generated
+  artifacts; record G15 only from real external release/DOI evidence.
 - Require subagent review for failure discovery and follow-up acceptance.
 - Require package-payload scanning for release cleanliness.
 - Require a formal S11 audit even when final acceptance is not reached.
@@ -108,7 +108,7 @@ Index evidence:
 
 Coverage gap:
 
-- No skill can complete G13 or G15 without real author/external action.
+- No skill can complete G13 without real author/expert action.
 - No skill should create hardware, Vivado, DFX, bitstream, or board-validation
   evidence.
 
@@ -149,7 +149,7 @@ Resource index evidence:
 | Mentor/failure control | `workflow_governor/mentor_agents.md` and `failure_handling.md` | 9 | 10 | 1 | 3 | Yes | Defines subagent/mentor review and reflection rules. | None. |
 | Project state | `.codex_workflow/WORKFLOW_STATE.md` | 9 | 9 | 2 | 2 | Yes | Current stage, selected artifacts, and open gates. | Must be updated only after gate review. |
 | Gate evidence | `reports/IST_GAP_AUDIT.md` and `reports/IST_VERIFICATION_RECEIPTS.json` | 10 | 9 | 2 | 5 | Yes | Maps gates to current evidence and commands. | Counts must stay synchronized. |
-| Author/external protocol | `docs/ist_author_external_completion_packet.md` | 9 | 9 | 2 | 3 | Yes | Defines G13/G15 closure conditions. | Must not be treated as completed evidence. |
+| Author/external protocol | `docs/ist_author_external_completion_packet.md` | 9 | 9 | 2 | 3 | Yes | Defines G13/G15 closure conditions. | G15 closure must stay tied to real external DOI evidence; G13 must not be treated as completed evidence. |
 | Raw external repos | Downloaded community workflow repositories | 3 | 5 | 8 | 8 | No | Not needed for this locked project state. | Could introduce untrusted instructions or scope drift. |
 | Commercial/vendor tools | PLECS, LTspice, Vivado as core dependencies | 2 | 4 | 9 | 6 | No | Not required for reproducibility claims. | Forbidden as core reproducibility dependencies. |
 
@@ -158,7 +158,7 @@ Forbidden resources:
 | Resource | Forbidden reason | Bad match scenario | Alternative |
 | --- | --- | --- | --- |
 | Unreviewed community install scripts | Could mutate local/global environment. | Running setup hooks while preparing a paper package. | Use local manuals and current repo scripts. |
-| External release/tag mutation tools | Would change archive state without explicit user approval. | Moving `v0.1.2` or editing Zenodo to satisfy G15. | Keep G15 `EXTERNAL_REQUIRED`. |
+| External release/tag mutation tools | Would change archive state without explicit user approval. | Moving `v0.1.2` or editing Zenodo to satisfy G15. | Use only explicitly approved new-version releases such as the completed `v0.1.3` path. |
 | Hardware/Vivado/board logs not present in repo | Would fabricate or imply unavailable evidence. | Treating stubs or negative fixtures as validation. | Keep unsupported-claim ledgers and boundary wording. |
 
 H1 confirmation record:

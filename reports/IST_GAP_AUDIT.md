@@ -37,8 +37,8 @@ rows are crosswalked below.
 | G12-strong / G16-local | Ablation | 10 deterministic ablation variants across E3/E4/E5/E8; 32860 generated observation rows; per-experiment Cohen's h effect sizes and bootstrap 95% drop CIs in `reports/rq8_ablation_effect_sizes.csv`; summary in `reports/rq8_ablation.md` | PASS_WITH_LIMITATION |
 | G13-strong / G17-local | Structured reviewer walkthrough | RQ10 generated a reviewer-walkthrough dry run with 16 observations across manual-package and ArtifactGate-package conditions, with command-log timestamps in `reports/rq10_reviewer_walkthrough_command_log.csv`; `docs/ist_author_external_completion_packet.md` defines the required author/expert walkthrough evidence; no measured human timing or participant data is claimed | AUTHOR_REQUIRED |
 | G17 | Reports | RQ1-RQ10 plus IST summary generated | PASS |
-| G18 | Data availability | SoftwareX release DOI exists; IST generated data is reproducible by `make ist-all` and locally archived as `release/artifactgate_eda_ist_evaluation_artifacts.zip` | PASS |
-| G15-strong / external release | New IST release archive + DOI | Local IST archive exists, and `docs/ist_author_external_completion_packet.md` records the required new-tag/new-DOI protocol; no new external IST DOI has been created, and the existing v0.1.2 GitHub/Zenodo archive was not mutated | EXTERNAL_REQUIRED |
+| G18 | Data availability | SoftwareX baseline DOI exists; the IST v0.1.3 DOI `10.5281/zenodo.20798200` exists; IST generated data is reproducible by `make ist-all` and archived as `release/artifactgate_eda_ist_evaluation_artifacts.zip` | PASS |
+| G15-strong / external release | New IST release archive + DOI | IST tag/release `v0.1.3` exists, the GitHub release is non-draft, Zenodo DOI `10.5281/zenodo.20798200` resolves, and the existing v0.1.2 GitHub/Zenodo baseline archive was not mutated | PASS |
 | G19 | License | Apache-2.0 license present | PASS |
 | G20 | Citation metadata | `CITATION.cff` and `codemeta.json` present | PASS |
 | G21 | Boundary | No positive claim beyond software-only evidence is introduced by the IST layer | PASS |
@@ -56,7 +56,7 @@ workflow-governor ledger and final acceptance checks.
 | G11 Baseline execution | `G11-strong / G15-local` | >=80 | Claiming human timing or external EDA execution from generated-output baselines. |
 | G12 Ablation | `G12-strong / G16-local` | >=80 | Treating deterministic ablation observations as human-study evidence. |
 | G13 Author/expert walkthrough | `G13-strong / G17-local` | AUTHOR_REQUIRED | Marking generated dry-run outputs as real author or expert evidence. |
-| G15 External IST release | `G15-strong / external release` | EXTERNAL_REQUIRED | Mutating `v0.1.2`, GitHub release, or Zenodo without explicit user approval. |
+| G15 External IST release | `G15-strong / external release` | PASS | Reusing or mutating `v0.1.2`, using a placeholder DOI, or recording a DOI before it resolves publicly. |
 
 ## Local Gate Threshold and Veto Matrix
 
@@ -66,7 +66,7 @@ crosswalk above; the rows below cover the remaining local gates.
 
 | Local gate | Threshold | One-vote-fail condition |
 | --- | --- | --- |
-| G1 Repository hygiene | `make ist-all` E0 inventory exists; no forbidden release payload contamination | `.git`, `.venv`, `__MACOSX`, cache, resource-fork, or private-path payload appears in release materials. |
+| G1 Repository hygiene | `make ist-all` E0 inventory exists; no forbidden release payload contamination | Repository metadata, virtual-environment directories, macOS archive metadata, cache files, resource-fork sidecars, or private-path payload appears in release materials. |
 | G2 Installation | compile/test path in `make preflight` and `make ist-all` passes | Python package cannot build/import or required local tests fail. |
 | G3 CLI | listed CLI commands are available and exercised by tests or preflight | Required CLI command is missing, broken, or undocumented in the local package. |
 | G4 Unit tests | current pytest suite passes; latest receipt records 37 passed tests | Any pytest failure or receipt/test-count mismatch. |

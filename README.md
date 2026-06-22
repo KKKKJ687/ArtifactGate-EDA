@@ -135,8 +135,7 @@ make preflight
 
 ## Citation
 
-Use `CITATION.cff` for software citation metadata. Archived release DOI:
-10.5281/zenodo.20789516.
+Use `CITATION.cff` for software citation metadata. Archived release DOI: 10.5281/zenodo.20798200.
 
 ## License
 

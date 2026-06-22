@@ -6,12 +6,13 @@ Updated: 2026-06-22
 
 ## Current Stage
 
-S11 Final Acceptance audit / Awaiting G13 and G15 external evidence.
+S11 Final Acceptance audit / Awaiting G13 author/expert evidence.
 
 The Codex-verifiable engineering, manuscript-package, reproducibility, and
 claim-boundary gates are passing in the current worktree, including the
-workflow-governor S0-S10 local repair loop. The full IST stronger-plan objective
-is not complete because G13 and G15 require author or external actions.
+workflow-governor S0-S10 local repair loop. G15 has a new `v0.1.3` release and
+Zenodo DOI, but the full IST stronger-plan objective is not complete because
+G13 requires real author or expert action.
 
 ## Confirmed Flags
 
@@ -25,7 +26,7 @@ is not complete because G13 and G15 require author or external actions.
 | Subagent review used for failure and final checks | confirmed |
 | Dedicated per-stage subagent coverage recorded in stage audit | confirmed |
 | Author/expert walkthrough completed | not confirmed |
-| New IST DOI created | not confirmed |
+| New IST DOI created | confirmed: `10.5281/zenodo.20798200` |
 
 ## Selected Skills
 
@@ -88,6 +89,8 @@ Latest recorded local receipt:
   bootstrap intervals.
 - RQ10 was downgraded from completed expert evidence to generated dry-run
   preparation and G13 remains `AUTHOR_REQUIRED`.
+- G15 external release evidence was created as tag/release `v0.1.3` with Zenodo
+  DOI `10.5281/zenodo.20798200`; the v0.1.2 SoftwareX baseline was not mutated.
 - IST package/data availability mismatch was fixed by adding manuscript-listed
   artifacts to the package.
 - Release preflight was tightened so positive claim surfaces are not blanket
@@ -101,7 +104,7 @@ Latest recorded local receipt:
 ## Forbidden Actions
 
 - Do not fabricate author metadata, author/expert walkthrough data, funding,
-  competing-interest, support-contact, CRediT, consent, or DOI fields.
+  competing-interest, support-contact, CRediT, consent, or future DOI fields.
 - Do not mutate the existing `v0.1.2` GitHub release or SoftwareX DOI.
 - Do not promote generated dry-run artifacts into real human/expert evidence.
 - Do not add device-side or vendor-tool completion claims beyond the current
@@ -109,5 +112,5 @@ Latest recorded local receipt:
 
 ## Next Action
 
-Wait for author/external inputs for G13 and G15, or continue only with
+Wait for real author/expert input for G13, or continue only with
 non-claim-expanding documentation, packaging, and review-hardening work.

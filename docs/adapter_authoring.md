@@ -10,7 +10,7 @@ classified.
 Each adapter must:
 
 - discover accepted files under a case directory
-- ignore `.git`, `__pycache__`, `.DS_Store`, and `._*` files
+- ignore repository metadata, Python cache files, and macOS metadata sidecars
 - assign an `artifact_type`
 - compute SHA-256
 - record a tool name and tool-version field

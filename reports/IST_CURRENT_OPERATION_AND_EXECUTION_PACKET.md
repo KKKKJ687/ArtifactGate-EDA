@@ -38,7 +38,7 @@ source plan are superseded by the current files above.
 | 3 | `make ist-strong-l2` | File inventory, evidence graph, boundary scan, and manuscript claim gate pass. |
 | 4 | `make ist-package` | IST archive is rebuilt with private-path payload self-test. |
 | 5 | `make preflight` | SoftwareX baseline packaging and release preflight pass with the tightened zip scanner. |
-| 6 | `make external-release-check` | Existing SoftwareX release and DOI are verified without mutation. |
+| 6 | `make external-release-check` | Published release and DOI metadata are verified without mutating the v0.1.2 baseline. |
 | 7 | Subagent review | Failed gates are reflected and re-reviewed. |
 
 ### Verification Plan
@@ -48,7 +48,7 @@ source plan are superseded by the current files above.
 | Unit and integration checks | `make test`/`make preflight` receipts with 37 collected pytest cases passing. | One full run per correction pass. |
 | IST generation | `make ist-all` and `make ist-package` receipts plus zip self-test and payload scan. | One full regeneration per correction pass. |
 | L2 gates | `make ist-strong-l2` receipt with inventory, graph, boundary, and manuscript-claim counts. | One full L2 run per correction pass. |
-| External baseline | `make external-release-check` verifies the existing SoftwareX release/DOI only. | One check after local package or metadata-affecting edits. |
+| External release metadata | `make external-release-check` verifies the selected release tag and DOI. | One check after local package or metadata-affecting edits. |
 | Subagent review | Read-only S-stage or gate-specific review with score, threshold, pass/fail, flaws, and required revision. | One focused follow-up after each material correction. |
 
 ### Local Gate Thresholds and One-Vote-Fail Conditions
@@ -59,7 +59,7 @@ source plan are superseded by the current files above.
 | S4 claim/objective/boundary | >=85 | Any unverifiable or hardware/Vivado/DFX/bitstream/board positive claim. |
 | S5-S8 execution design and execution | >=80 | Unmeasurable gate, missing rollback/verification packet, private-path payload, or protected release mutation. |
 | S9-S10 review and iteration | >=80 | Missing numeric score, mentor review, failed-gate reflection, or follow-up revision action. |
-| S11 final acceptance | >=90 | Any open G13 author/expert evidence gate or G15 new external IST DOI/archive gate. |
+| S11 final acceptance | >=90 | Any open G13 author/expert evidence gate. |
 
 ### Attempt and Runtime Budget
 
@@ -68,7 +68,7 @@ source plan are superseded by the current files above.
 | Local gate rerun attempts before reflection | 2 attempts per failing gate before escalating. |
 | Same-gate repeated failure threshold | 3 failures triggers scope reduction, re-routing, or user escalation. |
 | Long command budget | Prefer one complete run per command family; avoid repeated polling; use the runtime ceilings in the verification plan. |
-| External publication actions | 0 attempts without explicit user approval. |
+| External publication actions | 0 attempts without explicit user approval; the G15 `v0.1.3` release path was explicitly approved. |
 | Author/expert evidence fabrication | 0 attempts; not allowed. |
 
 ### Rollback Strategy
@@ -110,18 +110,21 @@ source plan are superseded by the current files above.
 ### Protected Paths
 
 - Existing external release state, Git tags, GitHub release records, and Zenodo
-  records.
+  records, except the explicitly approved `v0.1.3` G15 release path.
 - Existing SoftwareX manuscript author metadata fields unless the author
   supplies values.
 - Existing release archives under `release/`.
 
-Named release exception:
+Named release exceptions:
 
 - The generated local IST archive
   `release/artifactgate_eda_ist_evaluation_artifacts.zip` and normal
   reproducibility zips produced by Make targets may be rebuilt by local Make
   targets. This exception does not permit tag, GitHub release, or Zenodo
   mutation.
+- The user explicitly approved G15 external release work; the resulting IST
+  release is `v0.1.3` with DOI `10.5281/zenodo.20798200`. This does not permit
+  moving or mutating the existing `v0.1.2` SoftwareX baseline release.
 
 ### Allowed Commands
 
@@ -155,16 +158,16 @@ Named release exception:
 | External release | Existing SoftwareX release and DOI are not mutated. |
 | Claim boundary | Software-only boundary is frozen. |
 | G13 | Real author/expert walkthrough remains open. |
-| G15 | New IST release/DOI remains open. |
+| G15 | New IST release/DOI exists as `v0.1.3` / `10.5281/zenodo.20798200`. |
 | Local verification | Use receipts and command output, not intent. |
 
 ### Deviation Report Triggers
 
-Current deviation status: none open for local Codex execution; G13 and G15
-remain open by design.
+Current deviation status: none open for local Codex execution; G13 remains open
+by design.
 
 - Any need to edit author metadata.
-- Any need to create, move, or delete a tag/release/DOI.
+- Any future need to create, move, or delete a tag/release/DOI.
 - Any proposed hardware, Vivado, DFX, bitstream, or board claim.
 - Any command failure in `make preflight`, `make ist-all`,
   `make ist-strong-l2`, or `make external-release-check`.
@@ -178,4 +181,4 @@ remain open by design.
 | Risk | Broad execution could mutate protected release state or create unsupported claims. |
 | Next step | Execute local checks and record results in receipts and gate ledgers. |
 | Allowed actions after confirmation | Local edits, local tests, local package rebuilds, and subagent review. |
-| Still forbidden | External release/DOI mutation and author-side data fabrication. |
+| Still forbidden | Unapproved external release/DOI mutation and author-side data fabrication. |

@@ -32,7 +32,7 @@ gates by inference.
 | S8 Codex execution | Local scripts, reports, package, manuscript layer | summarized `make ist-all`, package, L2, and preflight receipts | PASS_WITH_LIMITATION |
 | S9 Gate review | Machine checks plus subagent review | `reports/IST_WORKFLOW_GOVERNOR_STAGE_AGENT_AUDIT.md` | PASS |
 | S10 Iteration/reflection | Failed gates diagnosed and corrected | `reports/IST_WORKFLOW_REFLECTION_LOG.md` | PASS |
-| S11 Final acceptance | Final acceptance audit | `reports/IST_FINAL_ACCEPTANCE_AUDIT.md`; G13 and G15 remain open | FAIL |
+| S11 Final acceptance | Final acceptance audit | `reports/IST_FINAL_ACCEPTANCE_AUDIT.md`; G13 remains open | FAIL |
 
 ## Strong-Plan Gate Ledger
 
@@ -40,7 +40,7 @@ gates by inference.
 | --- | --- | --- | --- | --- |
 | G0 | Clean package | package zip self-test, no resource forks, no private path payload hits | package reviewer PASS | PASS |
 | G1 | File inventory | `reports/file_inventory_full.csv`, 12063 admissible files | L2 gate PASS | PASS |
-| G2 | Evidence graph | 21980 nodes and 171667 edges | L2 gate PASS | PASS |
+| G2 | Evidence graph | 21985 nodes and 171674 edges | L2 gate PASS | PASS |
 | G3 | Literature matrix | `literature/literature_matrix.csv`, 57 mapped sources | local mapping support artifact; not PRISMA-complete | PASS_WITH_LIMITATION |
 | G4 | Multi-adapter coverage | RQ1 reports and generated coverage examples | local gate PASS | PASS |
 | G5 | Replay | RQ2 reports, 10 repeats per core case, Docker/CI status recorded separately | local gate PASS_WITH_LIMITATION | PASS_WITH_LIMITATION |
@@ -53,7 +53,7 @@ gates by inference.
 | G12 | Ablation | 10 deterministic variants, 32860 observations, 40 effect-size rows; no human timing or external EDA execution is claimed | subagent-reviewed expansion | PASS_WITH_LIMITATION |
 | G13 | Human/expert reviewer gate | generated RQ10 dry run only; no real author/expert walkthrough | subagent downgrade accepted | AUTHOR_REQUIRED |
 | G14 | Manuscript claim gate | `reports/ist_manuscript_claim_gate.md`, 0 violations | L2 gate PASS | PASS |
-| G15 | New IST release archive and DOI | local zip exists; no new DOI exists | completion packet defines protocol | EXTERNAL_REQUIRED |
+| G15 | New IST release archive and DOI | tag/release `v0.1.3` exists; Zenodo DOI `10.5281/zenodo.20798200` resolves; v0.1.2 baseline was not mutated | explicit external-release check PASS | PASS |
 
 ## Subagent Review Record
 
@@ -77,7 +77,9 @@ gates by inference.
 | `019eef23-2d26-7a51-b8a0-791f3147fa2e` | S0-S3 final re-audit | PASS | S3 scored 89/80 after exact non-private index identifiers and H1 confirmation pointer were added |
 | `019eef2c-3af6-7922-bf43-69b22d29d747` | G13/G15 author-external packet audit | FAIL_THEN_PASS | Initial Q3/Q5 gaps were closed by adding required schema/signoff, exact review-material checklist, closure rerun sequence, refresh targets, and subagent re-review requirement |
 | `019eef52-0b45-7583-9595-6af88193cde3` | Strict per-stage workflow-governor coverage re-audit | PASS_WITH_LIMITATION | Confirmed S0-S11 scored rows exist; found and corrected status vocabulary drift, an over-specific control-packet flag, and a stale G10/G14 label |
-| `019eef5b`-`019eef63` dedicated stage agents | Individual S0-S11 workflow-governor audits | PASS_WITH_LIMITATION aggregate | Each S0-S11 stage received a dedicated read-only subagent verdict; local governance wording/threshold/status limitations were corrected, S8 remains `PASS_WITH_LIMITATION`, and S11 remains `FAIL` pending G13/G15 |
+| `019eef5b`-`019eef63` dedicated stage agents | Individual S0-S11 workflow-governor audits | PASS_WITH_LIMITATION aggregate | Each S0-S11 stage received a dedicated read-only subagent verdict; local governance wording/threshold/status limitations were corrected, S8 remains `PASS_WITH_LIMITATION`, and S11 remains `FAIL` pending G13 |
+| `019eef96-2694-7521-a63c-6b538d938777` | G13/G15 submission-boundary audit after G15 DOI refresh | PASS_WITH_G13_OPEN | Confirmed G15 is recorded as real `v0.1.3` / `10.5281/zenodo.20798200`, G13 remains `AUTHOR_REQUIRED`, author-side metadata is not fabricated, and no hardware/vendor-tool positive claim was introduced |
+| `019eef96-6adc-7c61-8c59-a984be989259` | G15 package and metadata consistency audit | FAIL_THEN_PASS | Found package wording and stale v0.1.2 supplementary-report risks; fixed current DOI/version wording, removed content-level macOS metadata token hits from shipped zips, rebuilt packages, and reran release/external checks |
 
 ## Latest Local Verification Snapshot
 
@@ -86,9 +88,11 @@ From `reports/IST_VERIFICATION_RECEIPTS.json`:
 - `make test`: 37 collected, 37 passed.
 - `make ist-all`: PASS.
 - `make ist-package`: 184 zip entries; 27 manuscript-listed data/report artifacts present; workflow-governor control artifacts present; private path payload self-test passed.
-- `make ist-strong-l2`: 12063 admissible files; 21980 evidence graph nodes; 171667 edges; 8214 boundary hits; 0 leaks; 0 IST manuscript violations.
+- `make ist-strong-l2`: 12063 admissible files; 21985 evidence graph nodes; 171674 edges; 8218 boundary hits; 0 leaks; 0 IST manuscript violations.
 - `make preflight`: PASS.
-- `make external-release-check`: PASS for the existing SoftwareX baseline release and DOI.
+- `make external-release-check`: PASS for the published release/DOI metadata;
+  explicit `external_release_check.py --tag v0.1.3 --doi
+  10.5281/zenodo.20798200` also passed.
 
 Additional local checks performed after package rebuild:
 
@@ -96,13 +100,15 @@ Additional local checks performed after package rebuild:
 - Manifest-listed Section 10 artifacts in zip: 27 / 27.
 - Resource-fork entries in zip: 0.
 - Private path payload hits in zip: 0.
+- Content-level scans for macOS archive metadata tokens, resource-fork sidecar
+  tokens, local user-home paths, and Windows user-home paths in the IST and
+  supplementary zips: 0 hits.
 
 ## Open Gates
 
 | Gate | Owner | Required evidence before closure |
 | --- | --- | --- |
 | G13 | Author or real expert reviewer | `reports/g13_author_expert_walkthrough.md`, observations CSV, command log CSV, and subagent review |
-| G15 | Author/external release process | new tag, non-draft release, new public DOI, updated data-availability text, and external-release check |
 
-Until both rows above are closed, the full IST stronger-plan objective remains
+Until the row above is closed, the full IST stronger-plan objective remains
 active and must not be marked complete.
