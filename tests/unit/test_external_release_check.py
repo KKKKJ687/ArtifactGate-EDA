@@ -8,6 +8,39 @@ external_release_check = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(external_release_check)
 
 
+def test_parse_local_doi_reads_first_metadata_match(tmp_path, monkeypatch):
+    monkeypatch.setattr(external_release_check, "ROOT", tmp_path)
+    (tmp_path / "CITATION.cff").write_text("doi: 10.5281/zenodo.123\n", encoding="utf-8")
+    (tmp_path / "codemeta.json").write_text('{"identifier": "10.5281/zenodo.456"}\n', encoding="utf-8")
+
+    assert external_release_check.parse_local_doi() == "10.5281/zenodo.123"
+
+
+def test_parse_local_doi_returns_none_without_metadata_match(tmp_path, monkeypatch):
+    monkeypatch.setattr(external_release_check, "ROOT", tmp_path)
+    (tmp_path / "CITATION.cff").write_text("title: ArtifactGate-EDA\n", encoding="utf-8")
+
+    assert external_release_check.parse_local_doi() is None
+
+
+def test_main_prefers_explicit_doi_over_local_metadata(tmp_path, monkeypatch, capsys):
+    monkeypatch.setattr(external_release_check, "ROOT", tmp_path)
+    (tmp_path / "CITATION.cff").write_text("doi: 10.5281/zenodo.123\n", encoding="utf-8")
+
+    monkeypatch.setattr(external_release_check, "parse_origin_repo", lambda: "KKKKJ687/ArtifactGate-EDA")
+    monkeypatch.setattr(external_release_check, "check_local_artifacts", lambda checks: None)
+    monkeypatch.setattr(external_release_check, "check_local_metadata", lambda checks, doi: None)
+    monkeypatch.setattr(external_release_check, "check_public_doi", lambda checks, doi, repo: None)
+    monkeypatch.setattr(external_release_check, "check_github", lambda checks, repo, tag: None)
+    monkeypatch.setattr(
+        "sys.argv",
+        ["external_release_check.py", "--doi", "10.5281/zenodo.999", "--json"],
+    )
+
+    assert external_release_check.main() == 0
+    assert '"doi": "10.5281/zenodo.999"' in capsys.readouterr().out
+
+
 def test_check_public_doi_passes_for_matching_zenodo_record(monkeypatch):
     def fake_fetch_json(url, timeout=20):
         assert url == "https://zenodo.org/api/records/123"

@@ -72,12 +72,15 @@ public GitHub, GitHub Actions, release, and Zenodo state.
 - Zenodo record: https://zenodo.org/records/20789516
 - Zenodo DOI: 10.5281/zenodo.20789516
 
-## Current Local Blockers
+## Current Codex-Verifiable Status
 
 No local blocker is known after `make reproduce-all`, `make package-release`,
 and `make preflight`. Public repository, v0.1.2 GitHub release, Zenodo DOI,
-and DOI metadata are complete. Author-side SoftwareX submission metadata remains
-to be completed.
+DOI metadata, generated reports, manuscript package, and supplementary package
+are complete.
+
+Author-side SoftwareX submission metadata remains a user-side value packet, not
+a Codex-verifiable engineering blocker.
 
 ## GitHub Connector Status
 

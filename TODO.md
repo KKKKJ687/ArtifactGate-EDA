@@ -24,12 +24,12 @@
 - [x] Publish Zenodo DOI for v0.1.2 and apply DOI metadata.
 - [x] Polish the SoftwareX manuscript draft against released repository and DOI.
 - [x] Add author-side metadata request checklist.
-- [ ] Complete author-side SoftwareX final submission metadata.
+- [x] Complete all Codex-verifiable engineering, release, DOI, report, and
+      manuscript-package gates.
 
 ## Next Gate
 
-Complete the author-side final submission metadata gate. Local reproducibility
-already passes with:
+All Codex-verifiable gates are complete. Local reproducibility passes with:
 
 ```bash
 make preflight
@@ -51,3 +51,15 @@ Final external checker:
   --tag v0.1.2 \
   --doi 10.5281/zenodo.20789516
 ```
+
+## User-Side Submission Values
+
+Final journal submission still requires author-provided values that Codex
+cannot infer safely:
+
+- support email
+- funding statement
+- competing interests declaration
+- CRediT author roles
+
+The request packet is `docs/author_submission_metadata_request.md`.

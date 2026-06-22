@@ -42,6 +42,28 @@ def read(path: str) -> str:
     return (ROOT / path).read_text(encoding="utf-8")
 
 
+def parse_local_doi() -> str | None:
+    doi_pattern = re.compile(r"10\.5281/zenodo\.\d+")
+    candidates = [
+        "CITATION.cff",
+        "codemeta.json",
+        ".zenodo.json",
+        "paper/softwarex_manuscript.md",
+        "README.md",
+    ]
+
+    dois: list[str] = []
+    for candidate in candidates:
+        path = ROOT / candidate
+        if not path.exists():
+            continue
+        for doi in doi_pattern.findall(path.read_text(encoding="utf-8")):
+            if doi not in dois:
+                dois.append(doi)
+
+    return dois[0] if dois else None
+
+
 def fetch_json(url: str, timeout: int = 20) -> tuple[dict[str, Any] | None, str | None]:
     request = urllib.request.Request(
         url,
@@ -208,14 +230,22 @@ def main() -> int:
     args = parser.parse_args()
 
     repo = args.repo or parse_origin_repo()
+    doi = args.doi or parse_local_doi()
     checks: list[dict[str, Any]] = []
     check_local_artifacts(checks)
-    check_local_metadata(checks, args.doi)
-    check_public_doi(checks, args.doi, repo)
+    check_local_metadata(checks, doi)
+    check_public_doi(checks, doi, repo)
     check_github(checks, repo, args.tag)
 
     blocked = [check for check in checks if check["status"] == "BLOCKED"]
-    result = {"ok": not blocked, "status": "PASS" if not blocked else "BLOCKED", "repo": repo, "checks": checks}
+    result = {
+        "ok": not blocked,
+        "status": "PASS" if not blocked else "BLOCKED",
+        "repo": repo,
+        "tag": args.tag,
+        "doi": doi,
+        "checks": checks,
+    }
     if args.json:
         print(json.dumps(result, indent=2, sort_keys=True))
     else:
