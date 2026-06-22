@@ -18,7 +18,7 @@ make package-release
 | paper/figures/evidence_graph_overview.png | generated_figure | `d0180d44f5fcb038caefd3c29737df22bf3ecb54b5f950a7ab78788944f20675` | `make figures` |
 | paper/figures/evidence_levels.png | generated_figure | `9551b12cf1bd545c8cdd115143595b79935b0d965088162fe41a512f0913c640` | `make figures` |
 | paper/figures/experiment_matrix.png | generated_figure | `662f92fa208a9f9967a3f5f779cb789cd9ba1fdf604b3860fe2ff3ab86263ecd` | `make figures` |
-| paper/figures/scalability_fit.png | generated_figure | `8b488e1abfb1734c9b9d901bd096c619e3f0a03a107c642af660c135030de16d` | `make figures` |
+| paper/figures/scalability_fit.png | generated_figure | `1a7ee96ada8c4ac85b1d731b9f67b6ce0304776cbcef5a24f5c648cd5504bfa7` | `make figures` |
 | paper/figures/workflow.png | generated_figure | `f48012d93ef2dc6e6f167a90c0607d15c9187f30e8732dde7809deca31263315` | `make figures` |
 | reports/e0_repository_installation_quality.csv | generated_report | `a8bae12c8a8fa1c88f6734221452bbd642df1fc8623439332173ec7a4f135297` | `make reproduce-all` |
 | reports/e1_multi_adapter_summary.csv | generated_report | `7024355b2ded0287a1ff59e69076359e6f1b8132f65693f40412377c4fdfe48a` | `make reproduce-all` |
@@ -28,7 +28,7 @@ make package-release
 | reports/e5_scalability_runtime.csv | generated_report | `1a25b47c4c962be9679afa561de8111a15b0b029f7b75b6897ff27c85ac5d1f2` | `make reproduce-all` |
 | reports/e6_baseline_comparison.csv | generated_report | `428a2783243547643be9b593d4195612bdd814b47364147664975a4ff260dc1a` | `make reproduce-all` |
 | reports/evidence_graph_edges.csv | generated_report | `8183b89f29c548344d2d17d2464297402d1e4be3bc50817939177b79298a446a` | `make reproduce-all` |
-| reports/evidence_graph_nodes.csv | generated_report | `fdff03363d7766ac0933a9e16693945c2626e33f05fb31983e68bc3417d2031b` | `make reproduce-all` |
+| reports/evidence_graph_nodes.csv | generated_report | `c49608a5c5e2085631a2cfd95b17231ce9d7a76d18a632f6609541cf95a0a9a9` | `make reproduce-all` |
 | reports/e0_repository_installation_quality.md | generated_report | `d9a2b2fe9c7990214437c23284938df9b8d5afac5497236782e07227e29c5272` | `make reproduce-all` |
 | reports/e2_replay_acceptance_report.md | generated_report | `a06eba5e8ff630821ea772180ae6e1be6fbed063b5002289224f5ac7dce172f0` | `make reproduce-all` |
 | reports/e5_scalability_summary.md | generated_report | `9e2520f2a46e88bba9b404badb20871df305f83da8979bb0c4b9f0ce9cc46f3b` | `make reproduce-all` |

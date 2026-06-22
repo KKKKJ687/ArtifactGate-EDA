@@ -133,8 +133,8 @@ ZIP_PRIVATE_PATH_ALLOWLIST = {
 }
 
 DIST_FILES = [
-    "dist/artifactgate_eda-0.1.2.tar.gz",
-    "dist/artifactgate_eda-0.1.2-py3-none-any.whl",
+    "dist/artifactgate_eda-0.1.3.tar.gz",
+    "dist/artifactgate_eda-0.1.3-py3-none-any.whl",
 ]
 
 CAPSULE_REQUIRED = {

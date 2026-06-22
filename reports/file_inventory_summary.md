@@ -3,7 +3,7 @@
 | Metric | Value |
 |---|---:|
 | admissible files | 12063 |
-| git tracked files | 158 |
+| git tracked files | 5356 |
 | files present in release archives | 244 |
 | hash coverage | 1.000 |
 | role coverage | 1.000 |

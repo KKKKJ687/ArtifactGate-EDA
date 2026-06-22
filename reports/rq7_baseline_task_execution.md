@@ -2,8 +2,8 @@
 
 This deterministic task harness runs seven baseline/target emulators on a shared software-only fixture package. Each emulator writes method-specific artifacts under `outputs/rq7_baseline/<method>/`, and the evaluator reads those generated outputs to score the same eight package-review tasks. Manual time is an operator-step estimate computed from generated-output review gaps, not a human-subject timing result.
 
-- fixture package: `outputs/rq10_reviewer_walkthrough/baseline_execution_source/fixture_package`
-- method output root: `outputs/rq10_reviewer_walkthrough/baseline_execution_source`
+- fixture package: `outputs/rq7_baseline/fixture_package`
+- method output root: `outputs/rq7_baseline`
 - task observations: 56
 - external EDA execution: no
 - hardware/Vivado/bitstream/board evidence claimed: no
