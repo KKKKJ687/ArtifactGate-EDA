@@ -12,9 +12,12 @@ PRIVATE_PATH_REDACTION = b"<REDACTED_ABSOLUTE_PATH>"
 
 IST_FILES = [
     "README.md",
+    "Makefile",
     "docs/cli_reference.md",
+    "docs/g13_author_expert_walkthrough_template.md",
     "docs/ist_author_external_completion_packet.md",
     "docs/ist_stronger_plan_source_record.md",
+    "scripts/validate_g13_walkthrough.py",
     "examples/claimbench_eda/claimbench_claims.csv",
     "examples/claimbench_eda/claimbench_gold.csv",
     "examples/negative_claim_cases/claims_full.csv",
@@ -89,9 +92,19 @@ IST_FILES = [
     "reports/IST_FINAL_ACCEPTANCE_AUDIT.md",
     ".codex_workflow/WORKFLOW_STATE.md",
     ".codex_workflow/STAGE_CONTROL_PACKET.md",
+    "paper/MANUSCRIPT_REPRO_PACKAGE.md",
+    "paper/manuscript_artifact_manifest.csv",
+    "reports/evidence_graph_summary.md",
+    "reports/ist_manuscript_claim_gate.md",
     "paper/manuscript_ist.md",
     "paper/manuscript_ist.tex",
     "paper/figures/scalability_fit.png",
+]
+
+G13_EVIDENCE_FILES = [
+    "reports/g13_author_expert_walkthrough.md",
+    "reports/g13_author_expert_walkthrough_observations.csv",
+    "reports/g13_author_expert_walkthrough_command_log.csv",
 ]
 
 
@@ -132,6 +145,8 @@ def main() -> int:
         for path in sorted((ROOT / "outputs" / "rq10_reviewer_walkthrough").rglob("*"))
         if path.is_file() and not path.name.startswith("._")
     ]
+    g13_complete = all((ROOT / rel).exists() for rel in G13_EVIDENCE_FILES)
+    g13_evidence_files = G13_EVIDENCE_FILES if g13_complete else []
     package_files = sorted(
         dict.fromkeys(
             IST_FILES
@@ -139,6 +154,7 @@ def main() -> int:
             + baseline_output_files
             + ablation_output_files
             + walkthrough_output_files
+            + g13_evidence_files
         )
     )
     missing = [rel for rel in IST_FILES if not (ROOT / rel).exists()]

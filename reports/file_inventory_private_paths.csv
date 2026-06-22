@@ -44,5 +44,6 @@ repo/src/artifactgate_eda/core/artifact.py,2012,/Users/example/private/output.lo
 scripts/audit_file_inventory.py,53,/Users/[^\s,"PRIVATE_PATH_RE = re.compile(r""(/Users/[^\s'\""`,;:]+|C:\\Users\\[^\s'\""`,;:]+)"")",tooling regex pattern,ALLOWED
 scripts/package_ist_artifacts.py,10,/Users/[^\s,"PRIVATE_PATH_BYTES_RE = re.compile(rb""(/Users/[^\s'\""`,;:]+|C:\\Users\\[^\s'\""`,;:]+)"")",portable artifact leak,LEAK
 scripts/release_preflight.py,26,/Users/[^\s,"PRIVATE_PATH_PAYLOAD_RE = re.compile(rb""(/Users/[^\s'\""`,;:]+|C:\\Users\\[^\s'\""`,;:]+)"")",portable artifact leak,LEAK
-tests/unit/test_release_preflight.py,59,/Users/example/private/output.log\n,"zip_handle.writestr(""outputs/example.csv"", ""path,/Users/example/private/output.log\n"")",portable artifact leak,LEAK
-tests/unit/test_release_preflight.py,76,/Users/example/private/output.log,"""path,/Users/example/private/output.log,negative fixture\n"",",portable artifact leak,LEAK
+tests/unit/test_g13_walkthrough_validator.py,243,/Users/example/private/evidence.md,"path.write_text(text.replace(""README.md"", ""/Users/example/private/evidence.md"", 1), encoding=""utf-8"")",portable artifact leak,LEAK
+tests/unit/test_release_preflight.py,75,/Users/example/private/output.log\n,"zip_handle.writestr(""outputs/example.csv"", ""path,/Users/example/private/output.log\n"")",portable artifact leak,LEAK
+tests/unit/test_release_preflight.py,92,/Users/example/private/output.log,"""path,/Users/example/private/output.log,negative fixture\n"",",portable artifact leak,LEAK

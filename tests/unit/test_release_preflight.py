@@ -51,6 +51,22 @@ def test_readme_limitation_wording_passes(tmp_path, monkeypatch):
     assert errors == []
 
 
+def test_g13_template_limitation_wording_passes(tmp_path, monkeypatch):
+    monkeypatch.setattr(release_preflight, "ROOT", tmp_path)
+    monkeypatch.setattr(release_preflight, "SOURCE_DIRS", ["docs"])
+    template = tmp_path / "docs" / "g13_author_expert_walkthrough_template.md"
+    template.parent.mkdir()
+    template.write_text(
+        "This attestation does not imply hardware validation, DFX deployment, or board validation.\n",
+        encoding="utf-8",
+    )
+
+    errors = []
+    release_preflight.check_wording_context(errors)
+
+    assert errors == []
+
+
 def test_zip_private_path_payload_fails(tmp_path, monkeypatch):
     monkeypatch.setattr(release_preflight, "ROOT", tmp_path)
     zip_path = tmp_path / "release" / "artifactgate_eda_ist_evaluation_artifacts.zip"
@@ -118,6 +134,8 @@ def test_ist_zip_requires_workflow_artifacts(tmp_path, monkeypatch):
         "release/artifactgate_eda_ist_evaluation_artifacts.zip missing IST workflow artifacts:"
     )
     assert "docs/ist_stronger_plan_source_record.md" in errors[0]
+    assert "docs/g13_author_expert_walkthrough_template.md" in errors[0]
+    assert "scripts/validate_g13_walkthrough.py" in errors[0]
     assert ".codex_workflow/WORKFLOW_STATE.md" in errors[0]
 
 
@@ -137,6 +155,43 @@ def test_ist_zip_rejects_full_plan_snapshot(tmp_path, monkeypatch):
         "release/artifactgate_eda_ist_evaluation_artifacts.zip contains full external plan snapshot: "
         "['docs/IST_ArtifactGate_EDA_Stronger_Optimization_Plan.md']"
     ]
+
+
+def test_ist_zip_rejects_partial_g13_evidence_set(tmp_path, monkeypatch):
+    monkeypatch.setattr(release_preflight, "ROOT", tmp_path)
+    zip_path = tmp_path / "release" / "artifactgate_eda_ist_evaluation_artifacts.zip"
+    zip_path.parent.mkdir()
+    with zipfile.ZipFile(zip_path, "w") as zip_handle:
+        for member in release_preflight.IST_ZIP_REQUIRED:
+            zip_handle.writestr(member, "ok\n")
+        zip_handle.writestr("reports/g13_author_expert_walkthrough_command_log.csv", "partial\n")
+
+    errors = []
+    release_preflight.check_ist_zip(errors)
+
+    assert len(errors) == 1
+    assert errors[0].startswith(
+        "release/artifactgate_eda_ist_evaluation_artifacts.zip contains partial optional artifact set:"
+    )
+    assert "reports/g13_author_expert_walkthrough.md" in errors[0]
+    assert "reports/g13_author_expert_walkthrough_observations.csv" in errors[0]
+
+
+def test_ist_zip_accepts_complete_g13_evidence_set(tmp_path, monkeypatch):
+    monkeypatch.setattr(release_preflight, "ROOT", tmp_path)
+    zip_path = tmp_path / "release" / "artifactgate_eda_ist_evaluation_artifacts.zip"
+    zip_path.parent.mkdir()
+    with zipfile.ZipFile(zip_path, "w") as zip_handle:
+        for member in release_preflight.IST_ZIP_REQUIRED:
+            zip_handle.writestr(member, "ok\n")
+        for optional_set in release_preflight.IST_ZIP_OPTIONAL_COMPLETE_SETS:
+            for member in optional_set:
+                zip_handle.writestr(member, "ok\n")
+
+    errors = []
+    release_preflight.check_ist_zip(errors)
+
+    assert errors == []
 
 
 def test_ist_zip_rejects_resource_fork_entries(tmp_path, monkeypatch):

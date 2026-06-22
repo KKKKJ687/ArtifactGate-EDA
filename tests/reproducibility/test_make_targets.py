@@ -26,5 +26,6 @@ def test_required_make_targets_present():
         "rq9-local-backends",
         "ist-package",
         "ist-all",
+        "g13-check",
     ]:
         assert f"{target}:" in makefile

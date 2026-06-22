@@ -4,15 +4,15 @@ extension,count
 .cfg,1
 .cir,420
 .circ,67
-.csv,1667
+.csv,1669
 .gz,1
 .j2,5
 .json,3161
 .log,2570
-.md,583
+.md,585
 .plecs,63
 .png,6
-.py,51
+.py,53
 .rpt,337
 .sp,2
 .tex,2
@@ -25,4 +25,4 @@ extension,count
 .yml,2
 .ys,319
 .zip,5
-[none],96
+[none],98

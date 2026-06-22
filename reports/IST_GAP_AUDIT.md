@@ -22,7 +22,7 @@ rows are crosswalked below.
 | G1 | Repository hygiene | `make ist-all` E0 report; no resource fork files found | PASS |
 | G2 | Installation | Existing `make preflight` and `make ist-all` compile/test path | PASS |
 | G3 | CLI | `ingest`, `validate`, `replay`, `claim-check`, `report`, `package`, `compare`, `benchmark`, `ablate` | PASS |
-| G4 | Unit tests | 37 pytest cases passed during `make ist-all`; receipt recorded in `reports/IST_VERIFICATION_RECEIPTS.json` | PASS |
+| G4 | Unit tests | 58 pytest cases passed during the latest `make preflight`; receipt recorded in `reports/IST_VERIFICATION_RECEIPTS.json` | PASS |
 | G5 | CI | SoftwareX baseline CI remains externally verified; current IST branch Docker/CI replay is recorded separately and not claimed as fully passed | PASS_WITH_LIMITATION |
 | G6 | Core adapters | ngspice, Icarus, and Yosys pass RQ1/RQ2 commands | PASS |
 | G7 | Strong adapter | Verilator pass in RQ1/RQ2 commands | PASS |
@@ -35,7 +35,7 @@ rows are crosswalked below.
 | G10-strong / scalability | Scalability | Synthetic ArtifactGate manifests are written and row-parsed up to 100k rows; 53 measured manifest-processing runtime observations across 1k, 3k, 5k, 10k, 30k, 50k, and 100k; linear-fit R2 > 0.99; memory values are estimates, not measured process RSS | PASS_WITH_LIMITATION |
 | G11-strong / G15-local | Baseline execution | Deterministic output-driven harness runs 7 baseline/target emulators on one shared software-only fixture, writes per-method artifacts under `outputs/rq7_baseline/`, evaluates the 8 package-review tasks from generated outputs, and produces 56 task observations; manual time is an operator-step estimate from output-review gaps, not a human-subject timing result | PASS_WITH_LIMITATION |
 | G12-strong / G16-local | Ablation | 10 deterministic ablation variants across E3/E4/E5/E8; 32860 generated observation rows; per-experiment Cohen's h effect sizes and bootstrap 95% drop CIs in `reports/rq8_ablation_effect_sizes.csv`; summary in `reports/rq8_ablation.md` | PASS_WITH_LIMITATION |
-| G13-strong / G17-local | Structured reviewer walkthrough | RQ10 generated a reviewer-walkthrough dry run with 16 observations across manual-package and ArtifactGate-package conditions, with command-log timestamps in `reports/rq10_reviewer_walkthrough_command_log.csv`; `docs/ist_author_external_completion_packet.md` defines the required author/expert walkthrough evidence; no measured human timing or participant data is claimed | AUTHOR_REQUIRED |
+| G13-strong / G17-local | Structured reviewer walkthrough | Real author walkthrough evidence added in `reports/g13_author_expert_walkthrough.md`, `reports/g13_author_expert_walkthrough_observations.csv`, and `reports/g13_author_expert_walkthrough_command_log.csv`; `make g13-check` PASS; single-evaluator limitation retained; no measured timing or participant data is claimed | PASS_WITH_LIMITATION |
 | G17 | Reports | RQ1-RQ10 plus IST summary generated | PASS |
 | G18 | Data availability | SoftwareX baseline DOI exists; the IST v0.1.3 DOI `10.5281/zenodo.20798200` exists; IST generated data is reproducible by `make ist-all` and archived as `release/artifactgate_eda_ist_evaluation_artifacts.zip` | PASS |
 | G15-strong / external release | New IST release archive + DOI | IST tag/release `v0.1.3` exists, the GitHub release is non-draft, Zenodo DOI `10.5281/zenodo.20798200` resolves, and the existing v0.1.2 GitHub/Zenodo baseline archive was not mutated | PASS |
@@ -55,7 +55,7 @@ workflow-governor ledger and final acceptance checks.
 | G10 Scalability | `G10-strong / scalability` | >=80 | Treating estimated memory as measured RSS or extrapolating beyond manifest processing. |
 | G11 Baseline execution | `G11-strong / G15-local` | >=80 | Claiming human timing or external EDA execution from generated-output baselines. |
 | G12 Ablation | `G12-strong / G16-local` | >=80 | Treating deterministic ablation observations as human-study evidence. |
-| G13 Author/expert walkthrough | `G13-strong / G17-local` | AUTHOR_REQUIRED | Marking generated dry-run outputs as real author or expert evidence. |
+| G13 Author/expert walkthrough | `G13-strong / G17-local` | PASS_WITH_LIMITATION | Overstating a single-author walkthrough as a participant study or measured timing evidence. |
 | G15 External IST release | `G15-strong / external release` | PASS | Reusing or mutating `v0.1.2`, using a placeholder DOI, or recording a DOI before it resolves publicly. |
 
 ## Local Gate Threshold and Veto Matrix
@@ -69,7 +69,7 @@ crosswalk above; the rows below cover the remaining local gates.
 | G1 Repository hygiene | `make ist-all` E0 inventory exists; no forbidden release payload contamination | Repository metadata, virtual-environment directories, macOS archive metadata, cache files, resource-fork sidecars, or private-path payload appears in release materials. |
 | G2 Installation | compile/test path in `make preflight` and `make ist-all` passes | Python package cannot build/import or required local tests fail. |
 | G3 CLI | listed CLI commands are available and exercised by tests or preflight | Required CLI command is missing, broken, or undocumented in the local package. |
-| G4 Unit tests | current pytest suite passes; latest receipt records 37 passed tests | Any pytest failure or receipt/test-count mismatch. |
+| G4 Unit tests | current pytest suite passes; latest receipt records 58 passed tests | Any pytest failure or receipt/test-count mismatch. |
 | G5 CI | existing SoftwareX baseline CI remains externally verified; IST branch CI is not overclaimed | Claiming unverified IST-branch Docker/CI replay as fully passed. |
 | G6 Core adapters | ngspice, Icarus, and Yosys RQ1/RQ2 commands pass | Core adapter fails ingestion/replay or produces missing report evidence. |
 | G7 Strong adapter | Verilator RQ1/RQ2 commands pass | Verilator adapter fails local software-only ingestion/replay evidence. |

@@ -2,15 +2,15 @@
 
 | Metric | Value |
 |---|---:|
-| admissible files | 12063 |
+| admissible files | 12071 |
 | git tracked files | 5356 |
-| files present in release archives | 244 |
+| files present in release archives | 250 |
 | hash coverage | 1.000 |
 | role coverage | 1.000 |
 | evidence-level coverage | 1.000 |
-| private absolute path hits | 47 |
-| private absolute path leaks | 5 |
-| claim-boundary term hits | 9392 |
+| private absolute path hits | 48 |
+| private absolute path leaks | 6 |
+| claim-boundary term hits | 9421 |
 
 ## Roles
 
@@ -23,9 +23,9 @@
 | policy | 86 |
 | raw_log | 2570 |
 | release_archive | 8 |
-| report | 132 |
+| report | 136 |
 | schema | 68 |
-| source | 69 |
+| source | 73 |
 
 ## Extensions
 
@@ -36,15 +36,15 @@
 | .cfg | 1 |
 | .cir | 420 |
 | .circ | 67 |
-| .csv | 1667 |
+| .csv | 1669 |
 | .gz | 1 |
 | .j2 | 5 |
 | .json | 3161 |
 | .log | 2570 |
-| .md | 583 |
+| .md | 585 |
 | .plecs | 63 |
 | .png | 6 |
-| .py | 51 |
+| .py | 53 |
 | .rpt | 337 |
 | .sp | 2 |
 | .tex | 2 |
@@ -57,4 +57,4 @@
 | .yml | 2 |
 | .ys | 319 |
 | .zip | 5 |
-| [none] | 96 |
+| [none] | 98 |

@@ -1,0 +1,17 @@
+walkthrough_id,evaluator_id,evaluator_role,review_date_utc,condition,task_id,decision,observed_success,elapsed_seconds,evidence_file,hardware_claim_made,attestation_signed,comment
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,manual_package,T1,required_manual_materials_present,true,NA,README.md,false,true,
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,manual_package,T2,zip_integrity_check_passed,true,NA,release/artifactgate_eda_ist_evaluation_artifacts.zip,false,true,
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,manual_package,T3,no_nonportable_local_path_found,true,NA,paper/manuscript_artifact_manifest.csv,false,true,
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,manual_package,T4,no_unsupported_hardware_boundary_claim_found,true,NA,reports/IST_GAP_AUDIT.md,false,true,
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,manual_package,T5,no_unsupported_yosys_to_vendor_escalation_found,true,NA,reports/IST_GAP_AUDIT.md,false,true,
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,manual_package,T6,replay_instructions_and_commands_available,true,NA,README.md,false,true,
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,manual_package,T7,claim_evidence_table_traceable,true,NA,paper/MANUSCRIPT_REPRO_PACKAGE.md,false,true,
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,manual_package,T8,reviewer_ready_status_text_available,true,NA,docs/ist_author_external_completion_packet.md,false,true,
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,artifactgate_package,T1,required_artifactgate_reports_present,true,NA,reports/IST_VERIFICATION_RECEIPTS.json,false,true,
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,artifactgate_package,T2,intentional_negative_fixture_present_no_release_hash_mismatch,true,NA,reports/file_inventory_full.csv,false,true,hash_mismatch entries are intentional negative fixtures and not release-package mismatches
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,artifactgate_package,T3,no_nonportable_local_path_found_after_corrected_check,true,NA,reports/claim_boundary_scan.csv,false,true,initial pipeline check false positive fixed by checking stored MATCHES output
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,artifactgate_package,T4,no_forbidden_positive_hardware_or_vendor_claim_found,true,NA,reports/ist_manuscript_claim_gate.md,false,true,
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,artifactgate_package,T5,no_unsupported_yosys_to_vendor_escalation_found,true,NA,reports/IST_GAP_AUDIT.md,false,true,
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,artifactgate_package,T6,replay_outputs_and_pass_receipts_available,true,NA,reports/IST_WORKFLOW_GOVERNOR_GATE_LEDGER.md,false,true,
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,artifactgate_package,T7,evidence_graph_claim_artifact_traceability_available,true,NA,reports/evidence_graph_summary.md,false,true,
+G13-001,EVAL_AUTHOR_001,author,2026-06-22T14:41:13Z,artifactgate_package,T8,reviewer_report_ready_with_dry_run_limitation,true,NA,reports/rq10_reviewer_walkthrough.md,false,true,

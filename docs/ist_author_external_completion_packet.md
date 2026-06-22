@@ -91,6 +91,12 @@ Use the same task family as RQ10:
 
 ### Required Output Files
 
+Use the fill-in template first:
+
+```text
+docs/g13_author_expert_walkthrough_template.md
+```
+
 After a real walkthrough, add these files:
 
 ```text
@@ -144,6 +150,18 @@ timing_basis: directly_measured | not_measured
 hardware_claim_made: false
 attestation_signed: true
 ```
+
+Before any G13 status update, run:
+
+```bash
+make g13-check
+```
+
+The validator must return `PASS`. If it returns `BLOCKED`, keep G13 as
+`AUTHOR_REQUIRED` and fix the listed evidence gaps from the real walkthrough.
+This validator is necessary but not sufficient for closure: it must be followed
+by the claim-boundary/preflight rerun and a read-only subagent re-review before
+G13 or S11 status changes.
 
 ### Acceptable Gate Update After Author Evidence
 
@@ -237,22 +255,22 @@ records.
 
 ## Required Closure Rerun After Real G13/G15 Updates
 
-After real G13 evidence is added, or if any future G15-style tag/release/DOI is
-added, run the full local and external closure sequence before changing final
+For a G13-only update against the already-published `v0.1.3` IST archive and
+DOI, run the full local and external closure sequence before changing final
 status:
 
 ```bash
+make g13-check
 make ist-strong-l2
 make ist-package
 make preflight
-.venv/bin/python scripts/external_release_check.py \
-  --repo KKKKJ687/ArtifactGate-EDA \
-  --tag <new-ist-tag> \
-  --doi <new-ist-doi>
+make external-release-check
 git status --short --branch
 ```
 
-Do not use a placeholder DOI for any future release.
+If a future G15-style tag/release/DOI is added instead, use the explicit
+external checker command from the Post-DOI Verification section with the real
+new tag and real new DOI. Do not use a placeholder DOI for any future release.
 
 After those commands pass, refresh these state and audit artifacts from the real
 outputs:
@@ -261,7 +279,10 @@ outputs:
 reports/IST_VERIFICATION_RECEIPTS.json
 reports/IST_WORKFLOW_GOVERNOR_GATE_LEDGER.md
 reports/IST_FINAL_ACCEPTANCE_AUDIT.md
+reports/IST_WORKFLOW_GOVERNOR_STAGE_AGENT_AUDIT.md
+reports/IST_GAP_AUDIT.md
 .codex_workflow/WORKFLOW_STATE.md
+.codex_workflow/SESSION_STATE.md
 ```
 
 Then request a read-only subagent re-review of G13 and the already-created G15

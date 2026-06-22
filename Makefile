@@ -6,7 +6,7 @@ PYTEST ?= $(shell if [ -x "$(VENV)/bin/pytest" ]; then printf "%s" "$(VENV)/bin/
 RUFF ?= $(shell if [ -x "$(VENV)/bin/ruff" ]; then printf "%s" "$(VENV)/bin/ruff"; else printf "%s" "ruff"; fi)
 RUFF_FLAGS ?= --no-cache
 
-.PHONY: install test lint smoke ingest-all reproduce-core negative-claims corrupted-tests scalability baseline summaries figures manuscript-package reproduce-all package-release supplementary-package dist-package release-preflight prepare-release-metadata-dry-run external-release-check preflight generate-ist-datasets file-audit ist-manuscript-gate ist-strong-l2 literature-map claimbench corruption-extended external-cases rq0-quality rq1-ingest-all rq2-replay-core rq2-replay-repeats rq3-negative-claims rq4-corrupted-artifacts rq5-evidence-classification rq6-external-cases rq6-scalability rq7-baseline rq8-ablation rq9-local-backends rq10-reviewer-walkthrough ist-reports ist-package ist-all clean
+.PHONY: install test lint smoke ingest-all reproduce-core negative-claims corrupted-tests scalability baseline summaries figures manuscript-package reproduce-all package-release supplementary-package dist-package release-preflight prepare-release-metadata-dry-run external-release-check preflight generate-ist-datasets file-audit ist-manuscript-gate ist-strong-l2 g13-check literature-map claimbench corruption-extended external-cases rq0-quality rq1-ingest-all rq2-replay-core rq2-replay-repeats rq3-negative-claims rq4-corrupted-artifacts rq5-evidence-classification rq6-external-cases rq6-scalability rq7-baseline rq8-ablation rq9-local-backends rq10-reviewer-walkthrough ist-reports ist-package ist-all clean
 
 install:
 	$(PYTHON) -m venv $(VENV)
@@ -77,6 +77,9 @@ ist-manuscript-gate:
 	$(PYTHON_RUN) scripts/check_ist_manuscript_claims.py --policy repo/src/artifactgate_eda/policies/forbidden_claims.yaml --out reports/ist_manuscript_claim_gate.md paper/manuscript_ist.md paper/manuscript_ist.tex
 
 ist-strong-l2: file-audit ist-manuscript-gate
+
+g13-check:
+	$(PYTHON_RUN) scripts/validate_g13_walkthrough.py
 
 literature-map:
 	$(PYTHON_RUN) scripts/search_literature_matrix.py --out literature/literature_matrix.csv

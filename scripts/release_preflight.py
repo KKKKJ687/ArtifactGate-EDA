@@ -45,6 +45,7 @@ ALLOWED_FORBIDDEN_CONTEXTS = (
 LINE_SCOPED_FORBIDDEN_CONTEXTS = {
     "README.md",
     "docs/ist_author_external_completion_packet.md",
+    "docs/g13_author_expert_walkthrough_template.md",
     "paper/softwarex_manuscript.md",
     "paper/softwarex_manuscript.tex",
     "paper/manuscript_ist.md",
@@ -110,19 +111,33 @@ OPTIONAL_RELEASE_ZIPS = [
     "release/artifactgate_eda_ist_evaluation_artifacts.zip",
 ]
 IST_ZIP_REQUIRED = {
-    "docs/ist_stronger_plan_source_record.md",
-    "docs/ist_author_external_completion_packet.md",
+    "Makefile",
     ".codex_workflow/WORKFLOW_STATE.md",
     ".codex_workflow/STAGE_CONTROL_PACKET.md",
+    "docs/g13_author_expert_walkthrough_template.md",
+    "docs/ist_author_external_completion_packet.md",
+    "docs/ist_stronger_plan_source_record.md",
+    "scripts/validate_g13_walkthrough.py",
     "reports/IST_VERIFICATION_RECEIPTS.json",
     "reports/IST_WORKFLOW_GOVERNOR_GATE_LEDGER.md",
     "reports/IST_FINAL_ACCEPTANCE_AUDIT.md",
     "reports/IST_WORKFLOW_REFLECTION_LOG.md",
     "reports/IST_WORKFLOW_GOVERNOR_STAGE_AGENT_AUDIT.md",
+    "paper/MANUSCRIPT_REPRO_PACKAGE.md",
+    "paper/manuscript_artifact_manifest.csv",
+    "reports/evidence_graph_summary.md",
+    "reports/ist_manuscript_claim_gate.md",
 }
 IST_ZIP_FORBIDDEN = {
     "docs/IST_ArtifactGate_EDA_Stronger_Optimization_Plan.md",
 }
+IST_ZIP_OPTIONAL_COMPLETE_SETS = [
+    {
+        "reports/g13_author_expert_walkthrough.md",
+        "reports/g13_author_expert_walkthrough_observations.csv",
+        "reports/g13_author_expert_walkthrough_command_log.csv",
+    }
+]
 IST_MODE_MARKERS = {
     "docs/ist_author_external_completion_packet.md",
     "paper/manuscript_ist.md",
@@ -271,6 +286,11 @@ def check_ist_zip(errors: list[str]) -> None:
     forbidden = sorted(IST_ZIP_FORBIDDEN & names)
     if forbidden:
         errors.append(f"{rel} contains full external plan snapshot: {forbidden}")
+    for optional_set in IST_ZIP_OPTIONAL_COMPLETE_SETS:
+        present = sorted(optional_set & names)
+        missing_optional = sorted(optional_set - names)
+        if present and missing_optional:
+            errors.append(f"{rel} contains partial optional artifact set: present {present}; missing {missing_optional}")
     resource_forks = sorted(
         name for name in names if name.startswith("__MACOSX/") or name.startswith("._") or "/._" in name
     )

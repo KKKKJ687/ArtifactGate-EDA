@@ -9,12 +9,15 @@ AGENTS.md,AGENTS.md,31,real FPGA speedup,- real FPGA speedup or energy saving,re
 README.md,README.md,18,bitstreams,"This software does not validate hardware, Vivado timing, DFX deployment, bitstreams, or board-level behavior.",limitation or boundary section,ALLOWED
 README.md,README.md,18,board-level,"This software does not validate hardware, Vivado timing, DFX deployment, bitstreams, or board-level behavior.",limitation or boundary section,ALLOWED
 README.md,README.md,18,DFX deployment,"This software does not validate hardware, Vivado timing, DFX deployment, bitstreams, or board-level behavior.",limitation or boundary section,ALLOWED
-.codex_workflow/SESSION_STATE.md,.codex_workflow/SESSION_STATE.md,64,board-level,"- No hardware, Vivado, DFX, bitstream, or board-level positive claims.",limitation or safe rewrite context,ALLOWED
+.codex_workflow/SESSION_STATE.md,.codex_workflow/SESSION_STATE.md,73,board-level,"- No hardware, Vivado, DFX, bitstream, or board-level positive claims.",limitation or safe rewrite context,ALLOWED
 .codex_workflow/STAGE_CONTROL_PACKET.md,.codex_workflow/STAGE_CONTROL_PACKET.md,119,hardware validation,"| `fpga-dfx-reviewer` | Forbidden as a route to add hardware/Vivado/DFX evidence. | Turning a claim-boundary audit into hardware validation, timing closure, bitstream, or board-readiness claims. | `research-claim-os` and claim-boundary scan",limitation or safe rewrite context,ALLOWED
 docs/api_reference.md,docs/api_reference.md,72,board-level,"DFX, bitstream, board-level, industrial-deployment, and real-performance claims",documentation of boundary checks,ALLOWED
+docs/g13_author_expert_walkthrough_template.md,docs/g13_author_expert_walkthrough_template.md,36,hardware validation,"hardware validation, vendor timing closure, bitstream generation, DFX",limitation or safe rewrite context,ALLOWED
+docs/g13_author_expert_walkthrough_template.md,docs/g13_author_expert_walkthrough_template.md,37,board validation,"deployment, or board validation.",limitation or safe rewrite context,ALLOWED
+docs/g13_author_expert_walkthrough_template.md,docs/g13_author_expert_walkthrough_template.md,66,DFX deployment,"validation, vendor timing closure, bitstream generation, DFX deployment, board",limitation or safe rewrite context,ALLOWED
 docs/ist_author_external_completion_packet.md,docs/ist_author_external_completion_packet.md,38,DFX deployment,"- Confirmation that no hardware, Vivado timing, DFX deployment, bitstream, or",limitation or safe rewrite context,ALLOWED
 docs/ist_author_external_completion_packet.md,docs/ist_author_external_completion_packet.md,44,hardware validation,hardware validation.,limitation or safe rewrite context,ALLOWED
-docs/ist_author_external_completion_packet.md,docs/ist_author_external_completion_packet.md,121,DFX deployment,"hardware, Vivado timing, DFX deployment, bitstream, or board-validation claim;",limitation or safe rewrite context,ALLOWED
+docs/ist_author_external_completion_packet.md,docs/ist_author_external_completion_packet.md,127,DFX deployment,"hardware, Vivado timing, DFX deployment, bitstream, or board-validation claim;",limitation or safe rewrite context,ALLOWED
 docs/reproducibility.md,docs/reproducibility.md,77,board-level,"timing, DFX runtime use, bitstream creation, board-level behavior, FPGA",documentation of boundary checks,ALLOWED
 docs/schema_reference.md,docs/schema_reference.md,61,board-level,- hardware or board-level acceptance claims,documentation of boundary checks,ALLOWED
 examples/claimbench_eda/claimbench_claims.csv,examples/claimbench_eda/claimbench_claims.csv,302,hardware validation,"CB-EDA-0301,hardware_validation_overclaims,hardware_overclaim,The package provides hardware validation for case 1.,UNSUPPORTED",negative claim test case,ALLOWED
@@ -7697,9 +7700,13 @@ repo/src/artifactgate_eda/policies/forbidden_claims.yaml,repo/src/artifactgate_e
 repo/src/artifactgate_eda/policies/forbidden_claims.yaml,repo/src/artifactgate_eda/policies/forbidden_claims.yaml,53,runtime DFX validated,"- ""runtime DFX validated""",policy definition,ALLOWED
 repo/src/artifactgate_eda/policies/forbidden_claims.yaml,repo/src/artifactgate_eda/policies/forbidden_claims.yaml,54,partial reconfiguration validated,"- ""partial reconfiguration validated""",policy definition,ALLOWED
 repo/src/artifactgate_eda/policies/safe_rewrite_rules.yaml,repo/src/artifactgate_eda/policies/safe_rewrite_rules.yaml,2,DFX deployment,"proves DFX deployment: ""blocks unsupported DFX claims""",policy definition,ALLOWED
+reports/IST_FINAL_ACCEPTANCE_AUDIT.md,reports/IST_FINAL_ACCEPTANCE_AUDIT.md,22,board-level,board-level evidence is claimed.,limitation or safe rewrite context,ALLOWED
+reports/IST_FINAL_ACCEPTANCE_AUDIT.md,reports/IST_FINAL_ACCEPTANCE_AUDIT.md,80,board-level,board-level evidence is claimed.,limitation or safe rewrite context,ALLOWED
 reports/IST_FROZEN_CLAIM_BOUNDARY.md,reports/IST_FROZEN_CLAIM_BOUNDARY.md,58,board validation,- provides hardware validation or board validation;,research boundary record,ALLOWED
 reports/IST_FROZEN_CLAIM_BOUNDARY.md,reports/IST_FROZEN_CLAIM_BOUNDARY.md,58,hardware validation,- provides hardware validation or board validation;,research boundary record,ALLOWED
 reports/IST_FROZEN_CLAIM_BOUNDARY.md,reports/IST_FROZEN_CLAIM_BOUNDARY.md,59,DFX deployment,"- completes Vivado timing, Vivado implementation, DFX deployment, or bitstream",research boundary record,ALLOWED
+reports/IST_WORKFLOW_GOVERNOR_GATE_LEDGER.md,reports/IST_WORKFLOW_GOVERNOR_GATE_LEDGER.md,112,board-level,"| None for Codex-verifiable IST closure | S11 is `PASS_WITH_LIMITATION` after real G13 author walkthrough evidence, validator PASS, and external G15 verification | G13 is a single-author walkthrough only; no multi-participant human study, m",limitation or safe rewrite context,ALLOWED
+reports/g13_author_expert_walkthrough.md,reports/g13_author_expert_walkthrough.md,18,board-level,board-level evidence beyond the listed software artifacts.,limitation or safe rewrite context,ALLOWED
 reports/rq3_claimbench_results.csv,reports/rq3_claimbench_results.csv,302,hardware validation,"hardware_validation_overclaims,CB-EDA-0301,The package provides hardware validation for case 1.,L3_SIMULATION,hardware validation,UNSUPPORTED,software-only simulation/synthesis evidence,UNSUPPORTED",negative claim test case,ALLOWED
 reports/rq3_claimbench_results.csv,reports/rq3_claimbench_results.csv,303,validated on FPGA,"hardware_validation_overclaims,CB-EDA-0302,The design was validated on FPGA for case 2.,L3_SIMULATION,validated on FPGA,UNSUPPORTED,software-only simulation/synthesis evidence,UNSUPPORTED",negative claim test case,ALLOWED
 reports/rq3_claimbench_results.csv,reports/rq3_claimbench_results.csv,306,hardware validation,"hardware_validation_overclaims,CB-EDA-0305,The package provides hardware validation for case 5.,L3_SIMULATION,hardware validation,UNSUPPORTED,software-only simulation/synthesis evidence,UNSUPPORTED",negative claim test case,ALLOWED
@@ -8172,23 +8179,35 @@ scripts/generate_claimbench_eda.py,scripts/generate_claimbench_eda.py,147,Vivado
 scripts/generate_claimbench_eda.py,scripts/generate_claimbench_eda.py,149,DFX deployment,"""DFX deployment is outside the scope for case {i}."",",negative claim test case,ALLOWED
 scripts/generate_ist_datasets.py,scripts/generate_ist_datasets.py,21,bitstream generated,"image_phrase = ""Partial "" + ""bitstream generated""",tooling rule definition,ALLOWED
 scripts/prepare_external_eda_cases.py,scripts/prepare_external_eda_cases.py,235,bitstreams,"""No case requires board hardware, Vivado licensing, bitstreams, vendor timing closure, or FPGA deployment evidence."",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,79,hardware validation,"""hardware validation"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,81,validated on FPGA,"""validated on FPGA"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,83,board validation,"""board validation"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,84,board-level,"""board-level validation"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,84,board-level validation,"""board-level validation"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,85,DFX deployment,"""DFX deployment"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,86,DFX implementation completed,"""DFX implementation completed"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,87,partial reconfiguration validated,"""partial reconfiguration validated"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,88,Vivado timing closure,"""Vivado timing closure"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,89,Vivado implementation evidence,"""Vivado implementation evidence"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,90,bitstream generated,"""full bitstream generated"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,90,full bitstream generated,"""full bitstream generated"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,91,bitstream generated,"""partial bitstream generated"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,91,partial bitstream generated,"""partial bitstream generated"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,92,bitstream verified,"""bitstream verified"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,93,real FPGA speedup,"""real FPGA speedup"",",tooling rule definition,ALLOWED
-scripts/release_preflight.py,scripts/release_preflight.py,94,energy saving measured,"""energy saving measured"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,80,hardware validation,"""hardware validation"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,82,validated on FPGA,"""validated on FPGA"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,84,board validation,"""board validation"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,85,board-level,"""board-level validation"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,85,board-level validation,"""board-level validation"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,86,DFX deployment,"""DFX deployment"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,87,DFX implementation completed,"""DFX implementation completed"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,88,partial reconfiguration validated,"""partial reconfiguration validated"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,89,Vivado timing closure,"""Vivado timing closure"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,90,Vivado implementation evidence,"""Vivado implementation evidence"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,91,bitstream generated,"""full bitstream generated"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,91,full bitstream generated,"""full bitstream generated"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,92,bitstream generated,"""partial bitstream generated"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,92,partial bitstream generated,"""partial bitstream generated"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,93,bitstream verified,"""bitstream verified"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,94,real FPGA speedup,"""real FPGA speedup"",",tooling rule definition,ALLOWED
+scripts/release_preflight.py,scripts/release_preflight.py,95,energy saving measured,"""energy saving measured"",",tooling rule definition,ALLOWED
+scripts/validate_g13_walkthrough.py,scripts/validate_g13_walkthrough.py,54,hardware validation,"""hardware validation"",",tooling rule definition,ALLOWED
+scripts/validate_g13_walkthrough.py,scripts/validate_g13_walkthrough.py,55,board validation,"""board validation"",",tooling rule definition,ALLOWED
+scripts/validate_g13_walkthrough.py,scripts/validate_g13_walkthrough.py,56,DFX deployment,"""dfx deployment"",",tooling rule definition,ALLOWED
+scripts/validate_g13_walkthrough.py,scripts/validate_g13_walkthrough.py,57,Vivado timing closure,"""vivado timing closure"",",tooling rule definition,ALLOWED
+scripts/validate_g13_walkthrough.py,scripts/validate_g13_walkthrough.py,58,Vivado implementation evidence,"""vivado implementation evidence"",",tooling rule definition,ALLOWED
+scripts/validate_g13_walkthrough.py,scripts/validate_g13_walkthrough.py,59,bitstream generated,"""full bitstream generated"",",tooling rule definition,ALLOWED
+scripts/validate_g13_walkthrough.py,scripts/validate_g13_walkthrough.py,59,full bitstream generated,"""full bitstream generated"",",tooling rule definition,ALLOWED
+scripts/validate_g13_walkthrough.py,scripts/validate_g13_walkthrough.py,60,bitstream generated,"""partial bitstream generated"",",tooling rule definition,ALLOWED
+scripts/validate_g13_walkthrough.py,scripts/validate_g13_walkthrough.py,60,partial bitstream generated,"""partial bitstream generated"",",tooling rule definition,ALLOWED
+scripts/validate_g13_walkthrough.py,scripts/validate_g13_walkthrough.py,61,bitstream verified,"""bitstream verified"",",tooling rule definition,ALLOWED
+scripts/validate_g13_walkthrough.py,scripts/validate_g13_walkthrough.py,62,real FPGA speedup,"""real fpga speedup"",",tooling rule definition,ALLOWED
+scripts/validate_g13_walkthrough.py,scripts/validate_g13_walkthrough.py,63,energy saving measured,"""energy saving measured"",",tooling rule definition,ALLOWED
 supplementary/cfb_full_artifact_tables/unsupported_ledger.md,supplementary/cfb_full_artifact_tables/unsupported_ledger.md,7,bitstreams,"| UNSUP-001 | FPGA/DFX/Vivado/partial-bitstream implementation evidence | UNSUPPORTED | No current CFB artifact contains FPGA, Vivado/Vitis, bitstream, timing, or board data. | Separate FPGA project with synthesis/implementation logs, const",unsupported ledger,ALLOWED
 supplementary/cfb_full_artifact_tables/unsupported_ledger.md,supplementary/cfb_full_artifact_tables/unsupported_ledger.md,8,board-level,"| UNSUP-002 | Board-level or hardware diagnostic validation | UNSUPPORTED | Phase6/8 manifests explicitly show hardware_required=false and only SPICE/ngspice simulation. | Board experiment protocol, hardware setup, captured traces, and acce",unsupported ledger,ALLOWED
 supplementary/cfb_full_artifact_tables/unsupported_ledger.md,supplementary/cfb_full_artifact_tables/unsupported_ledger.md,15,hardware validation,"| UNSUP-009 | hardware validation | UNSUPPORTED | No current CFB artifact contains board logs, ILA traces, serial logs, lab setup records, or physical repeatability data. | Board experiment protocol, setup photos/notes, captured traces, rep",unsupported ledger,ALLOWED
@@ -8210,6 +8229,10 @@ supplementary/spec2dfx_full_artifact_tables/unsupported_ledger.md,supplementary/
 supplementary/spec2dfx_full_artifact_tables/unsupported_ledger.md,supplementary/spec2dfx_full_artifact_tables/unsupported_ledger.md,12,board-level,"| S2D-U06 | Board-level DFX behavior validated | serial log, ILA/XRT capture, RM behavior-change evidence, partial loading record | UNSUPPORTED | Board validation is not claimed. | Add board logs and repeatable validation procedure. |",unsupported ledger,ALLOWED
 supplementary/spec2dfx_full_artifact_tables/unsupported_ledger.md,supplementary/spec2dfx_full_artifact_tables/unsupported_ledger.md,12,DFX behavior,"| S2D-U06 | Board-level DFX behavior validated | serial log, ILA/XRT capture, RM behavior-change evidence, partial loading record | UNSUPPORTED | Board validation is not claimed. | Add board logs and repeatable validation procedure. |",unsupported ledger,ALLOWED
 supplementary/spec2dfx_full_artifact_tables/unsupported_ledger.md,supplementary/spec2dfx_full_artifact_tables/unsupported_ledger.md,13,real FPGA speedup,"| S2D-U07 | Real FPGA speedup, energy benefit, or XC7Z010 DFX benefit proven | real measured static-vs-DFX comparison with reconfiguration overhead and repeatability | UNSUPPORTED | Real FPGA benefit is not claimed. | Replace synthetic rows",unsupported ledger,ALLOWED
+tests/unit/test_g13_walkthrough_validator.py,tests/unit/test_g13_walkthrough_validator.py,105,hardware validation,"path.write_text(text + ""\nThe walkthrough demonstrates hardware validation.\n"", encoding=""utf-8"")",test fixture for boundary rejection,ALLOWED
+tests/unit/test_g13_walkthrough_validator.py,tests/unit/test_g13_walkthrough_validator.py,117,hardware validation,"path.write_text(text + ""\nThis walkthrough does not imply hardware validation.\n"", encoding=""utf-8"")",test fixture for boundary rejection,ALLOWED
+tests/unit/test_g13_walkthrough_validator.py,tests/unit/test_g13_walkthrough_validator.py,128,hardware validation,"path.write_text(text.replace(""false,true,"", ""false,true,hardware validation completed"", 1), encoding=""utf-8"")",test fixture for boundary rejection,ALLOWED
+tests/unit/test_g13_walkthrough_validator.py,tests/unit/test_g13_walkthrough_validator.py,140,board validation,"path.write_text(text.replace(""PASS,"", ""PASS,board validation completed"", 1), encoding=""utf-8"")",test fixture for boundary rejection,ALLOWED
 tests/unit/test_release_preflight.py,tests/unit/test_release_preflight.py,13,hardware validation,"text = ""The package demonstrates hardware validation on FPGA boards."".lower()",test fixture for boundary rejection,ALLOWED
 tests/unit/test_release_preflight.py,tests/unit/test_release_preflight.py,14,hardware validation,"index = text.find(""hardware validation"")",test fixture for boundary rejection,ALLOWED
 tests/unit/test_release_preflight.py,tests/unit/test_release_preflight.py,20,hardware validation,"text = ""This software does not claim hardware validation or board evidence."".lower()",test fixture for boundary rejection,ALLOWED
@@ -8217,3 +8240,6 @@ tests/unit/test_release_preflight.py,tests/unit/test_release_preflight.py,21,har
 tests/unit/test_release_preflight.py,tests/unit/test_release_preflight.py,30,hardware validation,"""The package demonstrates hardware validation on FPGA boards.\n"",",test fixture for boundary rejection,ALLOWED
 tests/unit/test_release_preflight.py,tests/unit/test_release_preflight.py,37,hardware validation,"assert errors == [""forbidden wording outside allowed context: README.md:1 (hardware validation)""]",test fixture for boundary rejection,ALLOWED
 tests/unit/test_release_preflight.py,tests/unit/test_release_preflight.py,44,hardware validation,"""This software does not claim hardware validation or board evidence.\n"",",test fixture for boundary rejection,ALLOWED
+tests/unit/test_release_preflight.py,tests/unit/test_release_preflight.py,60,board validation,"""This attestation does not imply hardware validation, DFX deployment, or board validation.\n"",",test fixture for boundary rejection,ALLOWED
+tests/unit/test_release_preflight.py,tests/unit/test_release_preflight.py,60,DFX deployment,"""This attestation does not imply hardware validation, DFX deployment, or board validation.\n"",",test fixture for boundary rejection,ALLOWED
+tests/unit/test_release_preflight.py,tests/unit/test_release_preflight.py,60,hardware validation,"""This attestation does not imply hardware validation, DFX deployment, or board validation.\n"",",test fixture for boundary rejection,ALLOWED
