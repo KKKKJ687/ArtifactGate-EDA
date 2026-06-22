@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D01-07",
+  "category": "Structural",
+  "clean": false,
+  "critical": true,
+  "defect": "missing artifact",
+  "expected_error_code": "MISSING_ARTIFACT",
+  "injection": "delete required log artifact",
+  "severity": 5
+}

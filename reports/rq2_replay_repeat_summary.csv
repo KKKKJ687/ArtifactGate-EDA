@@ -1,0 +1,6 @@
+case,adapter,required_repeats,completed_repeats,passed_repeats,unique_artifact_signatures,drift_detected,artifact_count,duration_mean_s,duration_max_s,hardware_dependency,status
+rq2_ngspice_minimal,ngspice,10,10,10,1,no,79,0.0302049,0.0328818,0,PASS
+rq2_cfb_sample,ngspice,10,10,10,1,no,4,0.00497294,0.00548983,0,PASS
+rq2_icarus,icarus,10,10,10,1,no,90,0.0348711,0.0356556,0,PASS
+rq2_verilator,verilator,10,10,10,1,no,78,0.0303568,0.032837,0,PASS
+rq2_yosys,yosys,10,10,10,1,no,132,0.0507925,0.052646,0,PASS

@@ -1,0 +1,10 @@
+id,candidate,reason,decision
+X01,hardware-only FPGA implementation papers without artifact review scope,E1,exclude until software artifact relevance is shown
+X02,EDA algorithm performance papers without packaging/replay/provenance focus,E2,exclude from claim-safety related work table
+X03,generic academic writing or reproducibility opinion posts,E3,exclude unless tied to artifact evaluation or empirical SE method
+X04,Google Scholar-only hits without accessible metadata,E4,"exclude unless OpenAlex, DOI, publisher, DBLP, or official metadata can verify the candidate"
+X05,IEEE Xplore AI-driven IC design survey results,E2,"exclude because the hit is algorithm/survey oriented, not artifact reproducibility oriented"
+X06,IEEE Xplore netlist extraction from image result,E2,"exclude because it studies extraction accuracy, not artifact packaging or claim evidence"
+X07,OpenLane tutorial videos and secondary blog posts,E4,exclude in favor of official documentation/repository rows
+X08,ResearchGate mirrors of EDA flow papers,E4,"exclude in favor of publisher, arXiv, or official project pages"
+X09,Hardware-only RTL-to-GDSII implementation papers without AE focus,E1,exclude unless the source discusses reproducible software artifacts

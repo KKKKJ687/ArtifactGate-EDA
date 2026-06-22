@@ -1,0 +1,13 @@
+paper_table_row,matrix_source_ids
+ReproZip,S04;S05
+RO-Crate,S06;S07
+Code Ocean,S08
+DVC,S09
+ACM/SIGSOFT AE,S02;S03;S47;S48;S49;S51;S53
+FuseSoC,S16
+Edalize,S17;S18
+OpenROAD/OpenLane,S19;S20;S21
+mflowgen/SiliconCompiler/Hammer,S22;S23;S24;S25;S26;S27
+AutoBench / MLCAD artifacts,S57
+SLSA/in-toto,S35;S36;S37
+ArtifactGate-EDA,local contribution row; not counted as external literature

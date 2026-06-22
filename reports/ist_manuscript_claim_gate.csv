@@ -1,0 +1,20 @@
+file,line_no,section,matched_term,context,status
+paper/manuscript_ist.md,269,threats to validity,hardware validation,"hardware validation, or vendor timing closure. The baseline and ablation",ALLOWED
+paper/manuscript_ist.tex,147,threats to validity,hardware validation,"execution, circuit correctness, hardware validation, or vendor timing closure.",ALLOWED
+paper/manuscript_ist.md,169,results,RQ_RESULT_REPORT_REFERENCE,RQ1 generated `reports/rq1_multi_adapter_ingestion.md` and CSV metrics for,ALLOWED
+paper/manuscript_ist.md,171,results,RQ_RESULT_REPORT_REFERENCE,"adapter. RQ2 generated replay reports for ngspice minimal, CircuitFaultBench",ALLOWED
+paper/manuscript_ist.md,178,results,RQ_RESULT_REPORT_REFERENCE,`reports/rq2_docker_ci_status.csv` without claiming a local Docker pass. RQ3 evaluated 1300 ClaimBench-EDA rows and,ALLOWED
+paper/manuscript_ist.md,183,results,RQ_RESULT_REPORT_REFERENCE,`reports/rq3_claimbench_results.csv`. RQ4 evaluated a deterministic,ALLOWED
+paper/manuscript_ist.md,192,results,RQ_RESULT_REPORT_REFERENCE,`reports/rq4_severity_weighted_detection.md`. RQ5 classified 1000,ALLOWED
+paper/manuscript_ist.md,197,results,RQ_RESULT_REPORT_REFERENCE,in `reports/rq5_evidence_level_holdout_summary.csv`. RQ6 completed all four,ALLOWED
+paper/manuscript_ist.md,217,results,RQ_RESULT_REPORT_REFERENCE,`reports/rq7_baseline_comparison.md`. RQ8 generated ten ablation variants with,ALLOWED
+paper/manuscript_ist.md,221,results,RQ_RESULT_REPORT_REFERENCE,`reports/rq8_ablation_observations.csv`. RQ9 generated an optional-backend status,ALLOWED
+paper/manuscript_ist.md,223,results,RQ_RESULT_REPORT_REFERENCE,`reports/rq9_optional_backend_status.csv`. RQ10 generated a reviewer-walkthrough,ALLOWED
+paper/manuscript_ist.tex,74,results,RQ_RESULT_REPORT_REFERENCE,The generated reports show that all current RQ report files are present. RQ1 is,ALLOWED
+paper/manuscript_ist.tex,75,results,RQ_RESULT_REPORT_REFERENCE,summarized in \texttt{reports/rq1\_multi\_adapter\_ingestion.md}. RQ2 is,ALLOWED
+paper/manuscript_ist.tex,81,results,RQ_RESULT_REPORT_REFERENCE,availability without claiming a local Docker pass. RQ3 evaluates 1300 ClaimBench-EDA,ALLOWED
+paper/manuscript_ist.tex,85,results,RQ_RESULT_REPORT_REFERENCE,negatives in the current generated summary. RQ4 in,ALLOWED
+paper/manuscript_ist.tex,95,results,RQ_RESULT_REPORT_REFERENCE,\texttt{reports/rq4\_severity\_weighted\_detection.md}. RQ5 classifies 1000,ALLOWED
+paper/manuscript_ist.tex,118,results,RQ_RESULT_REPORT_REFERENCE,\texttt{reports/rq7\_baseline\_task\_execution.md}. RQ8 generates ten,ALLOWED
+paper/manuscript_ist.tex,122,results,RQ_RESULT_REPORT_REFERENCE,"\texttt{reports/rq8\_ablation\_observations.csv}. RQ7, RQ8, and RQ9 are",ALLOWED
+paper/manuscript_ist.tex,125,results,RQ_RESULT_REPORT_REFERENCE,\texttt{reports/rq9\_local\_backend\_audit.md}. RQ10 generates a,ALLOWED

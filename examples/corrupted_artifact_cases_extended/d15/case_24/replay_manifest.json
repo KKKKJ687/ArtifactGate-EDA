@@ -1,0 +1,8 @@
+{
+  "commands": [
+    "artifactgate replay fixture"
+  ],
+  "expected_outputs": [
+    "raw_artifacts/missing_output.log"
+  ]
+}

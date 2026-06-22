@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D09-29",
+  "category": "Provenance",
+  "clean": false,
+  "critical": false,
+  "defect": "tool version drift",
+  "expected_error_code": "TOOL_VERSION_DRIFT",
+  "injection": "change recorded tool version between replay records",
+  "severity": 3
+}

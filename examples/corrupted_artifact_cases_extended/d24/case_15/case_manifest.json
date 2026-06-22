@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D24-15",
+  "category": "Portability",
+  "clean": false,
+  "critical": true,
+  "defect": "absolute user path",
+  "expected_error_code": "NON_PORTABLE_PATH",
+  "injection": "insert private absolute user path",
+  "severity": 5
+}

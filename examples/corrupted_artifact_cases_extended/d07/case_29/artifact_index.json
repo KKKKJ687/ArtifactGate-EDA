@@ -1,0 +1,30 @@
+[
+  {
+    "adapter": "ngspice",
+    "artifact_id": "D07-29-ART",
+    "artifact_type": "tool_log",
+    "claim_binding": "software_only_artifact_evidence",
+    "created_by_command": "artifactgate synthetic-corruption-fixture",
+    "evidence_level": "L3_SIMULATION",
+    "relative_path": "raw_artifacts/result.log",
+    "sha256": "2cdfb95cffe7b9aab7dab42568ad353cd8a48f55940050c278bf283cb363cc69",
+    "size_bytes": 30,
+    "tool": "ngspice",
+    "tool_version": "ngspice-fixture-1.0",
+    "unsupported_boundary": "none"
+  },
+  {
+    "adapter": "ngspice",
+    "artifact_id": "D07-29-ART",
+    "artifact_type": "tool_log",
+    "claim_binding": "software_only_artifact_evidence",
+    "created_by_command": "artifactgate synthetic-corruption-fixture",
+    "evidence_level": "L3_SIMULATION",
+    "relative_path": "raw_artifacts/second.log",
+    "sha256": "2cdfb95cffe7b9aab7dab42568ad353cd8a48f55940050c278bf283cb363cc69",
+    "size_bytes": 30,
+    "tool": "ngspice",
+    "tool_version": "ngspice-fixture-1.0",
+    "unsupported_boundary": "none"
+  }
+]

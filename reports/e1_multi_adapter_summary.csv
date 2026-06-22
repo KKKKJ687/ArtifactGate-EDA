@@ -1,7 +1,7 @@
 adapter,case_name,artifact_count,artifact_types,tool_version_detected,hash_coverage,evidence_level_coverage,claim_binding_coverage,status
-ngspice,e1_ngspice,4,report;spice_netlist;table;tool_log,yes,100%,100%,100%,PASS
-icarus,e1_icarus,10,report;structured_data;table;tool_log;verilog_source,yes,100%,100%,100%,PASS
-yosys,e1_yosys,12,report;structured_data;synthesis_report;table;tool_log;verilog_source;yosys_script,yes,100%,100%,100%,PASS
-verilator,e1_verilator,3,report;tool_log;verilog_source,yes,100%,100%,100%,PASS
-plecs,e1_plecs,3,plecs_model;report;table,yes,100%,100%,100%,PASS
-logisim,e1_logisim,2,logisim_circuit;report,yes,100%,100%,100%,PASS
+ngspice,e1_ngspice,79,report;spice_netlist;table;tool_log,yes,100%,100%,100%,PASS
+icarus,e1_icarus,90,report;structured_data;table;tool_log;verilog_source,yes,100%,100%,100%,PASS
+yosys,e1_yosys,132,report;structured_data;synthesis_report;table;tool_log;verilog_source;yosys_script,yes,100%,100%,100%,PASS
+verilator,e1_verilator,78,report;tool_log;verilog_source;xml_artifact,yes,100%,100%,100%,PASS
+plecs,e1_plecs,63,plecs_model;report;table;xml_artifact,yes,100%,100%,100%,PASS
+logisim,e1_logisim,62,logisim_circuit;report;table;xml_artifact,yes,100%,100%,100%,PASS

@@ -1,0 +1,16 @@
+{
+  "case_id": "verilator_make_tracing_c",
+  "commercial_dependency_required": false,
+  "description": "Verilator make_tracing_c top and submodule",
+  "expected_adapter": "verilator",
+  "hardware_required": false,
+  "manual_adapter_fix_required": false,
+  "metadata_only": false,
+  "public_source": true,
+  "replayable_open_source": true,
+  "source_statuses": [
+    "cached",
+    "cached"
+  ],
+  "subset": "verilog_open_core_subset"
+}

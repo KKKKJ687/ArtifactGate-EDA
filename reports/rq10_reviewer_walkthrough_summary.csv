@@ -1,0 +1,3 @@
+condition,source_method,tasks,task_success_rate,estimated_elapsed_seconds_total,human_participants,measurement_scope,status
+manual_package,B1_manual_readme_zip,8,0.25,496,0,"generated dry-run estimate, not expert walkthrough evidence",DRY_RUN
+artifactgate_package,B7_artifactgate_full,8,1,388,0,"generated dry-run estimate, not expert walkthrough evidence",DRY_RUN

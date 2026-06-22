@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D10-28",
+  "category": "Provenance",
+  "clean": false,
+  "critical": true,
+  "defect": "missing command",
+  "expected_error_code": "MISSING_COMMAND",
+  "injection": "remove replay command from manifest",
+  "severity": 4
+}

@@ -1,0 +1,192 @@
+{
+  "generated_at_utc": "2026-06-22T12:40:03Z",
+  "git_head": "4350fbc",
+  "scope": "IST stronger-plan local verification receipts for ArtifactGate-EDA feature/ist-upgrade",
+  "external_release_mutated": false,
+  "commands": [
+    {
+      "command": "make lint",
+      "observed_status": "PASS",
+      "observed_summary": "compileall completed; ruff check passed for repo/src, tests, paper/figure_sources, and scripts"
+    },
+    {
+      "command": "make test",
+      "observed_status": "PASS",
+      "observed_summary": "pytest collected 37 items; 37 passed"
+    },
+    {
+      "command": "make rq6-external-cases",
+      "observed_status": "PASS",
+      "observed_summary": "prepared 10 external cases; ArtifactGate external benchmark evaluated 10 external EDA cases"
+    },
+    {
+      "command": "make rq7-baseline",
+      "observed_status": "PASS",
+      "observed_summary": "generated per-baseline outputs under outputs/rq7_baseline and evaluated 56 task observations from generated files"
+    },
+    {
+      "command": "make rq8-ablation",
+      "observed_status": "PASS",
+      "observed_summary": "generated 10 ablation variants, 32860 observation rows, and per-experiment effect-size/bootstrap-CI rows"
+    },
+    {
+      "command": "make rq10-reviewer-walkthrough",
+      "observed_status": "PASS",
+      "observed_summary": "generated reviewer-walkthrough dry run with 16 observations, 2 conditions, and command-log timestamps; author-side expert walkthrough remains required for G13"
+    },
+    {
+      "command": "make ist-reports",
+      "observed_status": "PASS",
+      "observed_summary": "IST RQ1-RQ10 report summary generated with no warnings"
+    },
+    {
+      "command": "make ist-package",
+      "observed_status": "PASS",
+      "observed_summary": "release/artifactgate_eda_ist_evaluation_artifacts.zip generated with 184 entries; zip self-test passed; 27 manuscript-listed data/report artifacts present; workflow-governor control artifacts present; private path payload self-test passed"
+    },
+    {
+      "command": "make ist-all",
+      "observed_status": "PASS",
+      "observed_summary": "lint, 37 pytest cases, smoke, RQ0-RQ10 reports, output-evaluated baseline suite, 10-variant ablation with effect sizes, reviewer-walkthrough dry run, IST reports, and IST package completed"
+    },
+    {
+      "command": "make ist-strong-l2",
+      "observed_status": "PASS",
+      "observed_summary": "indexed 12063 admissible files; evidence graph 21980 nodes and 171667 edges; boundary scan 8214 hits with 0 leaks; IST manuscript claim gate 0 violations"
+    },
+    {
+      "command": "make preflight",
+      "observed_status": "PASS",
+      "observed_summary": "compileall, ruff, 37 pytest cases, smoke, core replay/negative/corruption/scalability/baseline/report/figure/package/dist checks, and release preflight passed"
+    },
+    {
+      "command": "make external-release-check",
+      "observed_status": "PASS",
+      "observed_summary": "existing SoftwareX baseline release and Zenodo DOI verified; existing v0.1.2 release was not mutated"
+    }
+  ],
+  "e6_g9_metrics": {
+    "external_cases": 10,
+    "open_source_replayable_cases": 8,
+    "case_success_rate": 1.0,
+    "adapter_success_rate": 1.0,
+    "observed_manual_adapter_fix_rate": 0.0,
+    "observed_hardware_dependency_count": 0,
+    "observed_commercial_dependency_count": 0,
+    "open_source_artifactgate_replay_package_success_rate": 1.0,
+    "metadata_only_success_rate": 1.0
+  },
+  "e7_g10_metrics": {
+    "max_synthetic_manifest_rows": 100000,
+    "scales": [1000, 3000, 5000, 10000, 30000, 50000, 100000],
+    "runtime_observations": 53,
+    "repeats_at_100000": 3,
+    "linear_fit_r_squared_threshold": ">0.99",
+    "artifactgate_manifest_processing_only": true,
+    "measured_runtime_scope": "CSV synthetic manifest write and row-parse wall time",
+    "allocated_phase_times_are_modeled": true,
+    "memory_values_are_estimated_not_measured_rss": true,
+    "eda_algorithm_performance_claimed": false
+  },
+  "e8_g11_metrics": {
+    "baseline_methods": 7,
+    "package_review_tasks": 8,
+    "task_observations": 56,
+    "baseline_run_artifacts_generated": true,
+    "baseline_output_root": "outputs/rq7_baseline",
+    "output_evaluated_task_observations": 56,
+    "static_capability_table_used_for_task_success": false,
+    "report_completeness_from_generated_files": true,
+    "target_method": "B7_artifactgate_full",
+    "target_task_success_rate": 1.0,
+    "time_measurement_scope": "operator-step estimate computed from generated-output review gaps",
+    "human_subject_timing_claimed": false
+  },
+  "e9_g12_metrics": {
+    "ablation_variants": 10,
+    "experiments_repeated": ["E3_claimbench", "E4_corruption", "E5_evidence_classification", "E8_baseline_tasks"],
+    "observations_per_variant": 3286,
+    "generated_observation_rows": 32860,
+    "effect_size_rows": 40,
+    "effect_size_metric": "Cohen's h against A0_full",
+    "bootstrap_resamples_per_effect_row": 200,
+    "bootstrap_ci_reported": true,
+    "human_timing_claimed": false,
+    "external_eda_execution_claimed": false,
+    "hardware_evidence_claimed": false,
+    "deterministic_ablation_harness": true
+  },
+  "e10_g13_metrics": {
+    "walkthrough_conditions": ["manual_package", "artifactgate_package"],
+    "task_observations": 16,
+    "tasks_per_condition": 8,
+    "command_log_recorded": true,
+    "command_timestamps_recorded": true,
+    "manual_package_task_success_rate": 0.25,
+    "artifactgate_package_task_success_rate": 1.0,
+    "human_participants": 0,
+    "multi_participant_human_study_claimed": false,
+    "measured_human_timing_claimed": false,
+    "time_measurement_scope": "operator-step estimate only",
+    "single_evaluator_bias_declared": true,
+    "g13_completion_status": "AUTHOR_REQUIRED",
+    "expert_walkthrough_completed": false,
+    "author_completion_packet": "docs/ist_author_external_completion_packet.md"
+  },
+  "g15_external_release": {
+    "local_ist_archive": "release/artifactgate_eda_ist_evaluation_artifacts.zip",
+    "new_ist_external_doi_created": false,
+    "existing_softwarex_doi": "10.5281/zenodo.20789516",
+    "existing_v0_1_2_release_mutated": false,
+    "status": "EXTERNAL_REQUIRED",
+    "author_completion_packet": "docs/ist_author_external_completion_packet.md"
+  },
+  "workflow_governor_reaudit": {
+    "strict_per_stage_subagent_session": "019eef52-0b45-7583-9595-6af88193cde3",
+    "strict_per_stage_subagent_status": "PASS_WITH_LIMITATION",
+    "s0_to_s10_local_governance_status": "PASS_WITH_LIMITATION",
+    "s8_limitation": "S8 command evidence is preserved as summarized receipts, not a complete raw command-output log.",
+    "dedicated_per_stage_subagent_sessions": {
+      "S0": "019eef5b-b13f-7183-bcf2-45a1ceb3b08f",
+      "S1": "019eef5b-f325-7c03-8f5c-515da38ff6bc",
+      "S2": "019eef5c-3a18-7180-8e2a-8272a6a26e6d",
+      "S3": "019eef5c-7fa3-7ed0-a797-b02d79199e19",
+      "S4": "019eef5c-c0ec-7eb3-aaa0-2e21733964aa",
+      "S5": "019eef5f-99f8-7220-b36a-bb29cf93e8c3",
+      "S6": "019eef5f-dba1-74d3-b65a-eb2fef08db9b",
+      "S7": "019eef60-1f44-7650-a4e3-f0cc8b4f2530",
+      "S8": "019eef60-6244-7771-a0bd-94be9df84a01",
+      "S9": "019eef60-a688-7d70-a04b-52f72d0173dd",
+      "S10": "019eef63-9dd2-7cf2-ad8b-3fd4789f506b",
+      "S11": "019eef63-e3dc-7d20-a5ff-bf4146e47c4e"
+    },
+    "s11_final_acceptance_status": "FAIL",
+    "s11_blockers": ["G13_AUTHOR_REQUIRED", "G15_EXTERNAL_REQUIRED"],
+    "status_vocabulary_drift_corrected": true,
+    "stale_gate_label_corrected": "G14 -> G10 for scalability reflection"
+  },
+  "continuation_verification_2026_06_22": {
+    "verified_at_utc": "2026-06-22T13:05:47Z",
+    "commands_rerun_after_dedicated_stage_audit": [
+      "make ist-strong-l2",
+      "make preflight",
+      "make ist-package",
+      "make external-release-check"
+    ],
+    "observed_status": "PASS_WITH_OPEN_AUTHOR_EXTERNAL_GATES",
+    "l2_observed_summary": "12063 admissible files; 21980 evidence graph nodes; 171667 edges; 8214 boundary hits; 0 leaks; 0 IST manuscript violations",
+    "preflight_observed_summary": "compileall, ruff, 37 pytest cases, smoke/replay/negative/corruption/scalability/report/package/build/release-preflight checks passed",
+    "ist_zip_observed_summary": "184 entries; required control artifacts present; no resource forks; no plan snapshot; no private path payload hits",
+    "external_release_observed_summary": "existing v0.1.2 GitHub release and Zenodo DOI 10.5281/zenodo.20789516 verified; no external release mutation performed",
+    "s11_status_after_verification": "FAIL",
+    "remaining_open_gates": ["G13_AUTHOR_REQUIRED", "G15_EXTERNAL_REQUIRED"]
+  },
+  "claim_boundary": {
+    "hardware_validation_claimed": false,
+    "vivado_timing_claimed": false,
+    "dfx_deployment_claimed": false,
+    "bitstream_claimed": false,
+    "board_validation_claimed": false,
+    "external_tool_execution_claimed_for_e6": false
+  }
+}

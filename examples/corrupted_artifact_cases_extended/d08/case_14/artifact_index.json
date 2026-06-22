@@ -1,0 +1,16 @@
+[
+  {
+    "adapter": "ngspice",
+    "artifact_id": "D08-14-ART",
+    "artifact_type": "tool_log",
+    "claim_binding": "software_only_artifact_evidence",
+    "created_by_command": "artifactgate synthetic-corruption-fixture",
+    "evidence_level": "L3_SIMULATION",
+    "relative_path": "raw_artifacts/result.log",
+    "sha256": "47e816fff4c7b6e429bf7553e41920a72ff775b61e84474945881af5e2cb7a74",
+    "size_bytes": 30,
+    "tool": "ngspice",
+    "tool_version": "",
+    "unsupported_boundary": "none"
+  }
+]

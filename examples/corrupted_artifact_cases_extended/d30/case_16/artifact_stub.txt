@@ -1,0 +1,1 @@
+D30-16: release contains cache/venv/git

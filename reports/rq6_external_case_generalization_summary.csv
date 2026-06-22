@@ -1,0 +1,10 @@
+metric,value,target,status
+external_cases,10,>=10,PASS
+open_source_replayable_cases,8,>=6,PASS
+case_success_rate,1,>=0.95,PASS
+adapter_success_rate,1,>=0.95,PASS
+manual_adapter_fix_rate,0,<=0.10,PASS
+hardware_dependency_count,0,0,PASS
+commercial_dependency_count,0,0,PASS
+open_source_artifactgate_replay_package_success_rate,1,>=0.95,PASS
+metadata_only_success_rate,1,>=0.95,PASS

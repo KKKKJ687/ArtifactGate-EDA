@@ -1,0 +1,4 @@
+{
+  "expected_output_dir": "outputs/replay",
+  "observed_output_dir": "outputs/drifted"
+}

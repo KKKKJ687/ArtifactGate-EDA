@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D13-28",
+  "category": "Replay",
+  "clean": false,
+  "critical": false,
+  "defect": "output directory drift",
+  "expected_error_code": "PACKAGE_STRUCTURE_DRIFT",
+  "injection": "change expected output directory structure",
+  "severity": 3
+}

@@ -1,0 +1,15 @@
+{
+  "case_id": "logisim_combinational_circuit",
+  "commercial_dependency_required": false,
+  "description": "Public Logisim combinational circuit bundle",
+  "expected_adapter": "logisim",
+  "hardware_required": false,
+  "manual_adapter_fix_required": false,
+  "metadata_only": true,
+  "public_source": true,
+  "replayable_open_source": false,
+  "source_statuses": [
+    "cached"
+  ],
+  "subset": "logisim_sample_subset"
+}

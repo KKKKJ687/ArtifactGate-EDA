@@ -26,7 +26,7 @@ grep -R "<windows-user-home>" . --exclude-dir=.git --exclude-dir=.venv --exclude
 | G1 | clean repo | 100 | 100 | Pass | `find . -name '._*'` returned 0; local path grep returned no private user-home or Windows user-home hits. | None local. | Keep generated metadata out of `repo/src`. |
 | G2 | install | 100 | 100 | Pass | `make install`; `.venv/bin/artifactgate --version` returned `0.1.2`. | None local. | None. |
 | G3 | CLI | 95 | 90 | Pass | CLI exposes `ingest`, `validate`, `replay`, `claim-check`, `report`, `package`, `compare`, plus local summary helpers. | Core commands are intentionally minimal. | Expand API ergonomics only after release blocker work. |
-| G4 | tests/lint | 100 | 100 | Pass | `make preflight` ran `ruff`, `compileall`, and `pytest`: 24 passed. | None local. | None. |
+| G4 | tests/lint | 100 | 100 | Pass | Baseline `make preflight` ran `ruff`, `compileall`, and `pytest`; current IST verification receipts record `make test`: 26 passed. | None local. | Keep `reports/IST_VERIFICATION_RECEIPTS.json` aligned after test-count changes. |
 | G5 | CI | 100 | 100 | Pass external | `scripts/external_release_check.py` verifies the latest `main` CI run before final acceptance. | None local. | None. |
 | G6 | examples | 100 | 100 | Pass | `make ingest-all`: ngspice, icarus, yosys, verilator, plecs, logisim all passed. | None local. | None. |
 | G7 | claim-check | 100 | 100 | Pass | `make negative-claims`: 52 dangerous claims checked; all 52 classified as unsupported with safe rewrite suggestions. | None local. | None. |

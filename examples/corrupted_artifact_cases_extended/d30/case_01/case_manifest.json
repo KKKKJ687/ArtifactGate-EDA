@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D30-01",
+  "category": "Package",
+  "clean": false,
+  "critical": true,
+  "defect": "release contains cache/venv/git",
+  "expected_error_code": "RELEASE_CONTAMINATION",
+  "injection": "add cache or virtual-environment path to release manifest",
+  "severity": 5
+}

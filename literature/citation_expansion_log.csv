@@ -1,0 +1,7 @@
+seed_id,seed_title,expansion_type,candidate_ids,status,note
+S04,ReproZip,tool_lineage,S05;S06;S08;S10;S12;S13;S52,mapped,Expanded from computational reproducibility packaging to research-object and container approaches.
+S02,ACM Artifact Review and Badging,artifact_evaluation_practice,S03;S14;S15;S47;S48;S49;S50;S51;S53,mapped,"Expanded from policy to software engineering, systems, FPGA, and MLCAD artifact-evaluation practice."
+S16,FuseSoC,eda_tool_lineage,S17;S18;S19;S20;S21;S22;S23;S24;S25;S26;S27;S28;S29,mapped,Expanded from HDL build tooling to EDA flow/build-system tools.
+S39,GQM,empirical_se_method,S40;S41;S42;S43;S54;S55;S56,mapped,"Expanded from measurement framing to empirical SE methods, experiments, cases, and mapping studies."
+S35,SLSA provenance,provenance_attestation,S36;S37;S38,mapped,Expanded from supply-chain provenance to attestation and general provenance vocabulary.
+openalex_citation_network,Google Scholar-compatible citation-network follow-up,forward_backward_citation,S47;S48;S49;S50;S51;S53;S57,mapped_with_accessible_metadata,Direct Google Scholar querying was not machine-accessible; OpenAlex/DOI/publisher metadata closed the forward-backward expansion check.

@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D17-03",
+  "category": "Policy",
+  "clean": false,
+  "critical": true,
+  "defect": "simulation-to-hardware escalation",
+  "expected_error_code": "EVIDENCE_LEVEL_ESCALATION",
+  "injection": "bind software simulation evidence to board-level claim",
+  "severity": 5
+}

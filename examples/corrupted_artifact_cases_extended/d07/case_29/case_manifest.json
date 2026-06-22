@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D07-29",
+  "category": "Integrity",
+  "clean": false,
+  "critical": true,
+  "defect": "duplicated artifact id",
+  "expected_error_code": "DUPLICATE_ARTIFACT_ID",
+  "injection": "duplicate artifact identifier across records",
+  "severity": 5
+}

@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D22-14",
+  "category": "Evidence",
+  "clean": false,
+  "critical": true,
+  "defect": "broken claim reference",
+  "expected_error_code": "BROKEN_CLAIM_REFERENCE",
+  "injection": "point claim binding to missing artifact id",
+  "severity": 5
+}

@@ -1,0 +1,58 @@
+id,type,category,source_class,use_in_manuscript,quality_note
+S01,journal_scope,empirical_se_methodology,tool_policy_or_repository,cite_for_tool_scope,Venue fit only; not an artifact tool.
+S02,policy,artifact_evaluation_badging,tool_policy_or_repository,cite_for_tool_scope,Defines artifact quality and badges but does not automate EDA evidence levels.
+S03,guidance,artifact_evaluation_badging,tool_policy_or_repository,cite_for_tool_scope,Requires claim support descriptions but leaves binding manual.
+S04,paper,computational_reproducibility_packaging,scholarly_or_standard,cite_for_gap,Packages and replays experiments but does not model EDA claim sufficiency.
+S05,official_docs,computational_reproducibility_packaging,tool_policy_or_repository,cite_for_tool_scope,Captures command dependencies rather than paper claim boundaries.
+S06,specification,computational_reproducibility_packaging,scholarly_or_standard,cite_for_gap,Metadata packaging does not provide EDA evidence-level policy.
+S07,specification,computational_reproducibility_packaging,scholarly_or_standard,cite_for_gap,Research-object aggregation without hardware-overclaim blocking.
+S08,official_docs,computational_reproducibility_packaging,tool_policy_or_repository,cite_for_tool_scope,Compute capsule verification is domain-general and not EDA claim aware.
+S09,official_docs,computational_reproducibility_packaging,tool_policy_or_repository,cite_for_tool_scope,Data and pipeline versioning does not classify EDA evidence levels.
+S10,platform_docs,computational_reproducibility_packaging,tool_policy_or_repository,cite_for_tool_scope,Research-object environment packaging without EDA claim policing.
+S11,paper,computational_reproducibility_packaging,scholarly_or_standard,cite_for_gap,Environment packaging complements but does not replace claim-evidence checking.
+S12,official_docs,computational_reproducibility_packaging,tool_policy_or_repository,cite_for_tool_scope,Launches executable environments; no EDA artifact evidence lattice.
+S13,official_docs,computational_reproducibility_packaging,tool_policy_or_repository,cite_for_tool_scope,Builds environments from repositories without claim-boundary analysis.
+S14,artifact_evaluation,eda_fpga_artifact_practice,tool_policy_or_repository,cite_for_tool_scope,Provides EDA-community AE practice but not automated evidence sufficiency.
+S15,artifact_evaluation,eda_fpga_artifact_practice,tool_policy_or_repository,cite_for_tool_scope,Community AE process is manual and can include hardware artifacts outside this scope.
+S16,official_docs,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,HDL package/build manager; ArtifactGate is complementary claim-safety layer.
+S17,official_docs,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Tool abstraction does not judge paper claim sufficiency.
+S18,repository,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Interface library; not a reviewer-ready claim ledger.
+S19,official_docs,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,EDA flow execution is outside ArtifactGate's claim-safety purpose.
+S20,repository,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Flow automation rather than manuscript evidence boundary checking.
+S21,repository,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Physical implementation flow; ArtifactGate must not claim to replace it.
+S22,official_docs,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,"Modular flow generator, not claim-overreach detector."
+S23,paper,eda_workflow_build_tools,scholarly_or_standard,cite_for_gap,Reusable flow concern differs from software-only claim sufficiency.
+S24,official_docs,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Build-system manifests do not block unsupported manuscript claims.
+S25,repository,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Flow automation and results tracking are complementary.
+S26,official_docs,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,"VLSI flow backend, not software-only artifact claim checker."
+S27,project_site,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Targets physical design tasks beyond ArtifactGate's evidence ceiling.
+S28,project_site,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Compiler infrastructure does not address artifact-package claim boundaries.
+S29,repository,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,"Reusable compiler infrastructure, not artifact review ledger."
+S30,tool_docs,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Core backend source; not an artifact packaging framework.
+S31,tool_docs,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Open-source synthesis evidence provider; not a claim-safety layer.
+S32,repository,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Provides L4 evidence type but no manuscript claim policy.
+S33,repository,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Simulation backend source; no claim-evidence matrix.
+S34,repository,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Backend source; no hardware-overclaim blocking.
+S35,specification,provenance_policy_traceability,scholarly_or_standard,cite_for_gap,Supply-chain provenance differs from scientific claim sufficiency.
+S36,project_site,provenance_policy_traceability,tool_policy_or_repository,cite_for_tool_scope,Attestation framework does not model EDA evidence levels.
+S37,technical_article,provenance_policy_traceability,tool_policy_or_repository,cite_for_tool_scope,Attestation context complements but does not replace claim audits.
+S38,standard,provenance_policy_traceability,scholarly_or_standard,cite_for_gap,General provenance model lacks EDA-specific claim-boundary semantics.
+S39,technical_report,empirical_se_methodology,scholarly_or_standard,cite_for_gap,Measurement framing supports evaluation design but not artifact tooling.
+S40,book,empirical_se_methodology,scholarly_or_standard,cite_for_gap,Study-design guidance supports statistics and threats to validity.
+S41,paper,empirical_se_methodology,scholarly_or_standard,cite_for_gap,"Reporting guidance, not a claim-safety tool."
+S42,technical_report,empirical_se_methodology,scholarly_or_standard,cite_for_gap,Methodological basis for mapping; no EDA artifact checking.
+S43,paper,empirical_se_methodology,scholarly_or_standard,cite_for_gap,Supports gap-map method but not ArtifactGate functionality.
+S44,tool_docs,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Optional metadata/backend source only; not core reproducibility dependency.
+S45,repository,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,"Optional educational metadata case, not claim-sufficiency framework."
+S46,tool_docs,eda_workflow_build_tools,tool_policy_or_repository,cite_for_tool_scope,Optional local metadata/backend source; not open-source core dependency.
+S47,paper,artifact_evaluation_badging,scholarly_or_standard,cite_for_gap,AE practice guidance; does not automate EDA evidence-level checking.
+S48,paper,artifact_evaluation_badging,scholarly_or_standard,cite_for_gap,Highlights claim-to-artifact connection needs but remains process-level.
+S49,paper,artifact_evaluation_badging,scholarly_or_standard,cite_for_gap,"Survey evidence for AE expectations, not EDA-specific policy automation."
+S50,paper,eda_fpga_artifact_practice,scholarly_or_standard,cite_for_gap,Direct FPGA AE context; still process/manual rather than automated claim blocking.
+S51,paper,artifact_evaluation_badging,scholarly_or_standard,cite_for_gap,Discusses artifact support for claims but not EDA evidence-level sufficiency.
+S52,paper,computational_reproducibility_packaging,scholarly_or_standard,cite_for_gap,"Reproducible artifact preparation method, not claim-evidence policing."
+S53,paper,artifact_evaluation_badging,scholarly_or_standard,cite_for_gap,Argues AE should focus on substance and evidence; not an EDA-specific tool.
+S54,book_chapter,empirical_se_methodology,scholarly_or_standard,cite_for_gap,Method selection guidance supports study design and threat framing.
+S55,paper,empirical_se_methodology,scholarly_or_standard,cite_for_gap,Guidelines for empirical research quality; not an artifact tool.
+S56,paper,empirical_se_methodology,scholarly_or_standard,cite_for_gap,Supports controlled-experiment validity discussion.
+S57,paper,eda_fpga_artifact_practice,scholarly_or_standard,cite_for_gap,"EDA artifact with public artifact DOI and code, but it evaluates testbench generation rather than claim-evidence sufficiency."

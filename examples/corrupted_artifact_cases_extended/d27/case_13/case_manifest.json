@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D27-13",
+  "category": "Package",
+  "clean": false,
+  "critical": false,
+  "defect": "missing README",
+  "expected_error_code": "PACKAGE_MISSING_README",
+  "injection": "remove package README",
+  "severity": 3
+}

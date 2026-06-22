@@ -1,0 +1,3 @@
+read_verilog counter_015.v
+proc
+opt

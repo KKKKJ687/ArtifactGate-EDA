@@ -23,6 +23,7 @@ make ingest-all
 make reproduce-core
 make negative-claims
 make corrupted-tests
+make rq6-external-cases
 make scalability
 make baseline
 make summaries
@@ -36,9 +37,10 @@ These commands regenerate the E0-E6 local experiment evidence:
 | E1 multi-adapter ingestion | `make ingest-all` | ngspice, Icarus, Yosys, Verilator, PLECS metadata, Logisim metadata |
 | E2 replay reproducibility | `make reproduce-core` | replay manifests and acceptance reports |
 | E3 negative claim injection | `make negative-claims` | unsupported-claim ledgers and claim table |
-| E4 corrupted artifacts | `make corrupted-tests` | expected failures for missing files, hash drift, non-portable paths, and claim escalation |
-| E5 scalability | `make scalability` | synthetic 1k, 3k, 5k, and 10k artifact-row summaries |
-| E6 baseline comparison | `make baseline` | artifact-management comparison table |
+| E4 corrupted artifacts | `make corrupted-tests`; IST extension: `make rq4-corrupted-artifacts` | expected failures plus the 30-class corruption benchmark |
+| E5 scalability | `make scalability`; IST extension: `make rq6-scalability` | synthetic manifest processing up to 100k rows in the IST extension |
+| E6 external cases | `make rq6-external-cases` | 10 public software-only EDA cases with 8 open-source ArtifactGate replay-package/validation cases |
+| E7 baseline comparison | `make baseline` | artifact-management comparison table |
 
 ## Release Preflight
 

@@ -1,0 +1,6 @@
+{
+  "commands": [],
+  "expected_outputs": [
+    "raw_artifacts/result.log"
+  ]
+}

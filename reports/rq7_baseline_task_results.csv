@@ -1,0 +1,57 @@
+method,task_id,task,task_type,observed_success,expected_signal,evidence_file,false_positive,false_negative,evidence_source
+B1_manual_readme_zip,T1,identify missing file,defect,yes,MISSING_ARTIFACT,B1_manual_readme_zip/detected_defects.csv,no,no,evaluated generated baseline output
+B1_manual_readme_zip,T2,identify hash mismatch,defect,no,HASH_MISMATCH,B1_manual_readme_zip/detected_defects.csv,no,yes,evaluated generated baseline output
+B1_manual_readme_zip,T3,identify non-portable path,defect,no,NON_PORTABLE_PATH,B1_manual_readme_zip/detected_defects.csv,no,yes,evaluated generated baseline output
+B1_manual_readme_zip,T4,identify unsupported hardware-boundary claim,claim,no,UNSUPPORTED_CLAIM,B1_manual_readme_zip/claim_results.csv,no,yes,evaluated generated baseline output
+B1_manual_readme_zip,T5,identify Yosys-to-Vivado evidence escalation,claim,no,EVIDENCE_LEVEL_ESCALATION,B1_manual_readme_zip/claim_results.csv,no,yes,evaluated generated baseline output
+B1_manual_readme_zip,T6,generate replay manifest,package,no,NONEMPTY_COMMANDS,B1_manual_readme_zip/replay_manifest.json,no,no,evaluated generated baseline output
+B1_manual_readme_zip,T7,generate claim-evidence table,report,no,NONEMPTY_ROWS,B1_manual_readme_zip/claim_evidence_table.csv,no,no,evaluated generated baseline output
+B1_manual_readme_zip,T8,generate reviewer-ready report,report,yes,REVIEWER_READY_TEXT,B1_manual_readme_zip/reviewer_report.md,no,no,evaluated generated baseline output
+B2_plain_checksum_manifest,T1,identify missing file,defect,yes,MISSING_ARTIFACT,B2_plain_checksum_manifest/detected_defects.csv,no,no,evaluated generated baseline output
+B2_plain_checksum_manifest,T2,identify hash mismatch,defect,yes,HASH_MISMATCH,B2_plain_checksum_manifest/detected_defects.csv,no,no,evaluated generated baseline output
+B2_plain_checksum_manifest,T3,identify non-portable path,defect,no,NON_PORTABLE_PATH,B2_plain_checksum_manifest/detected_defects.csv,no,yes,evaluated generated baseline output
+B2_plain_checksum_manifest,T4,identify unsupported hardware-boundary claim,claim,no,UNSUPPORTED_CLAIM,B2_plain_checksum_manifest/claim_results.csv,no,yes,evaluated generated baseline output
+B2_plain_checksum_manifest,T5,identify Yosys-to-Vivado evidence escalation,claim,no,EVIDENCE_LEVEL_ESCALATION,B2_plain_checksum_manifest/claim_results.csv,no,yes,evaluated generated baseline output
+B2_plain_checksum_manifest,T6,generate replay manifest,package,no,NONEMPTY_COMMANDS,B2_plain_checksum_manifest/replay_manifest.json,no,no,evaluated generated baseline output
+B2_plain_checksum_manifest,T7,generate claim-evidence table,report,no,NONEMPTY_ROWS,B2_plain_checksum_manifest/claim_evidence_table.csv,no,no,evaluated generated baseline output
+B2_plain_checksum_manifest,T8,generate reviewer-ready report,report,no,REVIEWER_READY_TEXT,B2_plain_checksum_manifest/reviewer_report.md,no,no,evaluated generated baseline output
+B3_ad_hoc_shell_replay,T1,identify missing file,defect,yes,MISSING_ARTIFACT,B3_ad_hoc_shell_replay/detected_defects.csv,no,no,evaluated generated baseline output
+B3_ad_hoc_shell_replay,T2,identify hash mismatch,defect,yes,HASH_MISMATCH,B3_ad_hoc_shell_replay/detected_defects.csv,no,no,evaluated generated baseline output
+B3_ad_hoc_shell_replay,T3,identify non-portable path,defect,no,NON_PORTABLE_PATH,B3_ad_hoc_shell_replay/detected_defects.csv,no,yes,evaluated generated baseline output
+B3_ad_hoc_shell_replay,T4,identify unsupported hardware-boundary claim,claim,no,UNSUPPORTED_CLAIM,B3_ad_hoc_shell_replay/claim_results.csv,no,yes,evaluated generated baseline output
+B3_ad_hoc_shell_replay,T5,identify Yosys-to-Vivado evidence escalation,claim,no,EVIDENCE_LEVEL_ESCALATION,B3_ad_hoc_shell_replay/claim_results.csv,no,yes,evaluated generated baseline output
+B3_ad_hoc_shell_replay,T6,generate replay manifest,package,yes,NONEMPTY_COMMANDS,B3_ad_hoc_shell_replay/replay_manifest.json,no,no,evaluated generated baseline output
+B3_ad_hoc_shell_replay,T7,generate claim-evidence table,report,no,NONEMPTY_ROWS,B3_ad_hoc_shell_replay/claim_evidence_table.csv,no,no,evaluated generated baseline output
+B3_ad_hoc_shell_replay,T8,generate reviewer-ready report,report,yes,REVIEWER_READY_TEXT,B3_ad_hoc_shell_replay/reviewer_report.md,no,no,evaluated generated baseline output
+B4_simple_json_manifest,T1,identify missing file,defect,yes,MISSING_ARTIFACT,B4_simple_json_manifest/detected_defects.csv,no,no,evaluated generated baseline output
+B4_simple_json_manifest,T2,identify hash mismatch,defect,yes,HASH_MISMATCH,B4_simple_json_manifest/detected_defects.csv,no,no,evaluated generated baseline output
+B4_simple_json_manifest,T3,identify non-portable path,defect,yes,NON_PORTABLE_PATH,B4_simple_json_manifest/detected_defects.csv,no,no,evaluated generated baseline output
+B4_simple_json_manifest,T4,identify unsupported hardware-boundary claim,claim,no,UNSUPPORTED_CLAIM,B4_simple_json_manifest/claim_results.csv,no,yes,evaluated generated baseline output
+B4_simple_json_manifest,T5,identify Yosys-to-Vivado evidence escalation,claim,no,EVIDENCE_LEVEL_ESCALATION,B4_simple_json_manifest/claim_results.csv,no,yes,evaluated generated baseline output
+B4_simple_json_manifest,T6,generate replay manifest,package,yes,NONEMPTY_COMMANDS,B4_simple_json_manifest/replay_manifest.json,no,no,evaluated generated baseline output
+B4_simple_json_manifest,T7,generate claim-evidence table,report,no,NONEMPTY_ROWS,B4_simple_json_manifest/claim_evidence_table.csv,no,no,evaluated generated baseline output
+B4_simple_json_manifest,T8,generate reviewer-ready report,report,yes,REVIEWER_READY_TEXT,B4_simple_json_manifest/reviewer_report.md,no,no,evaluated generated baseline output
+B5_ro_crate_style_metadata,T1,identify missing file,defect,yes,MISSING_ARTIFACT,B5_ro_crate_style_metadata/detected_defects.csv,no,no,evaluated generated baseline output
+B5_ro_crate_style_metadata,T2,identify hash mismatch,defect,yes,HASH_MISMATCH,B5_ro_crate_style_metadata/detected_defects.csv,no,no,evaluated generated baseline output
+B5_ro_crate_style_metadata,T3,identify non-portable path,defect,yes,NON_PORTABLE_PATH,B5_ro_crate_style_metadata/detected_defects.csv,no,no,evaluated generated baseline output
+B5_ro_crate_style_metadata,T4,identify unsupported hardware-boundary claim,claim,no,UNSUPPORTED_CLAIM,B5_ro_crate_style_metadata/claim_results.csv,no,yes,evaluated generated baseline output
+B5_ro_crate_style_metadata,T5,identify Yosys-to-Vivado evidence escalation,claim,no,EVIDENCE_LEVEL_ESCALATION,B5_ro_crate_style_metadata/claim_results.csv,no,yes,evaluated generated baseline output
+B5_ro_crate_style_metadata,T6,generate replay manifest,package,yes,NONEMPTY_COMMANDS,B5_ro_crate_style_metadata/replay_manifest.json,no,no,evaluated generated baseline output
+B5_ro_crate_style_metadata,T7,generate claim-evidence table,report,yes,NONEMPTY_ROWS,B5_ro_crate_style_metadata/claim_evidence_table.csv,no,no,evaluated generated baseline output
+B5_ro_crate_style_metadata,T8,generate reviewer-ready report,report,yes,REVIEWER_READY_TEXT,B5_ro_crate_style_metadata/reviewer_report.md,no,no,evaluated generated baseline output
+B6_artifactgate_without_claim_policy,T1,identify missing file,defect,yes,MISSING_ARTIFACT,B6_artifactgate_without_claim_policy/detected_defects.csv,no,no,evaluated generated baseline output
+B6_artifactgate_without_claim_policy,T2,identify hash mismatch,defect,yes,HASH_MISMATCH,B6_artifactgate_without_claim_policy/detected_defects.csv,no,no,evaluated generated baseline output
+B6_artifactgate_without_claim_policy,T3,identify non-portable path,defect,yes,NON_PORTABLE_PATH,B6_artifactgate_without_claim_policy/detected_defects.csv,no,no,evaluated generated baseline output
+B6_artifactgate_without_claim_policy,T4,identify unsupported hardware-boundary claim,claim,no,UNSUPPORTED_CLAIM,B6_artifactgate_without_claim_policy/claim_results.csv,no,yes,evaluated generated baseline output
+B6_artifactgate_without_claim_policy,T5,identify Yosys-to-Vivado evidence escalation,claim,no,EVIDENCE_LEVEL_ESCALATION,B6_artifactgate_without_claim_policy/claim_results.csv,no,yes,evaluated generated baseline output
+B6_artifactgate_without_claim_policy,T6,generate replay manifest,package,yes,NONEMPTY_COMMANDS,B6_artifactgate_without_claim_policy/replay_manifest.json,no,no,evaluated generated baseline output
+B6_artifactgate_without_claim_policy,T7,generate claim-evidence table,report,yes,NONEMPTY_ROWS,B6_artifactgate_without_claim_policy/claim_evidence_table.csv,no,no,evaluated generated baseline output
+B6_artifactgate_without_claim_policy,T8,generate reviewer-ready report,report,yes,REVIEWER_READY_TEXT,B6_artifactgate_without_claim_policy/reviewer_report.md,no,no,evaluated generated baseline output
+B7_artifactgate_full,T1,identify missing file,defect,yes,MISSING_ARTIFACT,B7_artifactgate_full/detected_defects.csv,no,no,evaluated generated baseline output
+B7_artifactgate_full,T2,identify hash mismatch,defect,yes,HASH_MISMATCH,B7_artifactgate_full/detected_defects.csv,no,no,evaluated generated baseline output
+B7_artifactgate_full,T3,identify non-portable path,defect,yes,NON_PORTABLE_PATH,B7_artifactgate_full/detected_defects.csv,no,no,evaluated generated baseline output
+B7_artifactgate_full,T4,identify unsupported hardware-boundary claim,claim,yes,UNSUPPORTED_CLAIM,B7_artifactgate_full/claim_results.csv,no,no,evaluated generated baseline output
+B7_artifactgate_full,T5,identify Yosys-to-Vivado evidence escalation,claim,yes,EVIDENCE_LEVEL_ESCALATION,B7_artifactgate_full/claim_results.csv,no,no,evaluated generated baseline output
+B7_artifactgate_full,T6,generate replay manifest,package,yes,NONEMPTY_COMMANDS,B7_artifactgate_full/replay_manifest.json,no,no,evaluated generated baseline output
+B7_artifactgate_full,T7,generate claim-evidence table,report,yes,NONEMPTY_ROWS,B7_artifactgate_full/claim_evidence_table.csv,no,no,evaluated generated baseline output
+B7_artifactgate_full,T8,generate reviewer-ready report,report,yes,REVIEWER_READY_TEXT,B7_artifactgate_full/reviewer_report.md,no,no,evaluated generated baseline output

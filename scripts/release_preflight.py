@@ -23,18 +23,56 @@ PRIVATE_PATH_PATTERNS = [re.escape(str(Path.home()))]
 if os.environ.get("USERPROFILE"):
     PRIVATE_PATH_PATTERNS.append(re.escape(os.environ["USERPROFILE"]))
 PRIVATE_PATH_RE = re.compile("|".join(PRIVATE_PATH_PATTERNS))
+PRIVATE_PATH_PAYLOAD_RE = re.compile(rb"(/Users/[^\s'\"`,;:]+|C:\\Users\\[^\s'\"`,;:]+)")
 
 ALLOWED_FORBIDDEN_CONTEXTS = (
     "repo/src/artifactgate_eda/policies/",
+    "repo/src/artifactgate_eda/core/artifact.py",
     "examples/negative_claim_cases/",
     "examples/corrupted_artifact_cases/",
+    "examples/claimbench_eda/",
+    "examples/corrupted_artifact_cases_extended/",
     "examples/ngspice_circuitfaultbench_sample/unsupported_ledger.md",
     "examples/hdl_icarus_yosys_minimal/unsupported_ledger.md",
     "supplementary/cfb_full_artifact_tables/unsupported_ledger.md",
     "supplementary/spec2dfx_full_artifact_tables/unsupported_ledger.md",
+    "reports/claim_boundary_scan.csv",
+    "reports/evidence_graph_nodes.csv",
+    "reports/ist_manuscript_claim_gate.csv",
+    "reports/rq3_claimbench_results.csv",
+)
+
+LINE_SCOPED_FORBIDDEN_CONTEXTS = {
     "README.md",
+    "docs/ist_author_external_completion_packet.md",
     "paper/softwarex_manuscript.md",
     "paper/softwarex_manuscript.tex",
+    "paper/manuscript_ist.md",
+    "paper/manuscript_ist.tex",
+    "reports/rq6_external_case_generalization.md",
+    "reports/rq8_ablation.md",
+    "reports/IST_FROZEN_CLAIM_BOUNDARY.md",
+    "reports/IST_CURRENT_OPERATION_AND_EXECUTION_PACKET.md",
+    "reports/IST_WORKFLOW_GOVERNOR_STAGE_AGENT_AUDIT.md",
+    "reports/IST_FINAL_ACCEPTANCE_AUDIT.md",
+    ".codex_workflow/STAGE_CONTROL_PACKET.md",
+}
+
+BOUNDARY_CONTEXT_MARKERS = (
+    "cannot",
+    "does not",
+    "do not",
+    "must not",
+    "no ",
+    "not ",
+    "not claimed",
+    "not evidence",
+    "not promoted",
+    "not treated as",
+    "unsupported",
+    "boundary",
+    "limitation",
+    "stronger evidence",
 )
 
 FORBIDDEN_PATTERNS = [
@@ -68,6 +106,31 @@ RELEASE_ZIPS = [
     "release/yosys_artifactgate.zip",
     "release/artifactgate_eda_supplementary_artifacts.zip",
 ]
+OPTIONAL_RELEASE_ZIPS = [
+    "release/artifactgate_eda_ist_evaluation_artifacts.zip",
+]
+IST_ZIP_REQUIRED = {
+    "docs/ist_stronger_plan_source_record.md",
+    "docs/ist_author_external_completion_packet.md",
+    ".codex_workflow/WORKFLOW_STATE.md",
+    ".codex_workflow/STAGE_CONTROL_PACKET.md",
+    "reports/IST_VERIFICATION_RECEIPTS.json",
+    "reports/IST_WORKFLOW_GOVERNOR_GATE_LEDGER.md",
+    "reports/IST_FINAL_ACCEPTANCE_AUDIT.md",
+    "reports/IST_WORKFLOW_REFLECTION_LOG.md",
+    "reports/IST_WORKFLOW_GOVERNOR_STAGE_AGENT_AUDIT.md",
+}
+IST_ZIP_FORBIDDEN = {
+    "docs/IST_ArtifactGate_EDA_Stronger_Optimization_Plan.md",
+}
+IST_MODE_MARKERS = {
+    "docs/ist_author_external_completion_packet.md",
+    "paper/manuscript_ist.md",
+    "reports/IST_GAP_AUDIT.md",
+}
+ZIP_PRIVATE_PATH_ALLOWLIST = {
+    ("release/artifactgate_eda_supplementary_artifacts.zip", "reports/file_inventory_private_paths.csv"),
+}
 
 DIST_FILES = [
     "dist/artifactgate_eda-0.1.2.tar.gz",
@@ -137,8 +200,25 @@ def check_wording_context(errors: list[str]) -> None:
         text = read_text(path).lower()
         if not text:
             continue
-        if any(pattern in text for pattern in lower_patterns) and not rel.startswith(ALLOWED_FORBIDDEN_CONTEXTS):
-            errors.append(f"forbidden wording outside allowed context: {rel}")
+        if rel.startswith(ALLOWED_FORBIDDEN_CONTEXTS):
+            continue
+        for pattern in lower_patterns:
+            start = 0
+            while True:
+                index = text.find(pattern, start)
+                if index == -1:
+                    break
+                if rel in LINE_SCOPED_FORBIDDEN_CONTEXTS and is_boundary_context(text, index):
+                    start = index + len(pattern)
+                    continue
+                line_no = text.count("\n", 0, index) + 1
+                errors.append(f"forbidden wording outside allowed context: {rel}:{line_no} ({pattern})")
+                start = index + len(pattern)
+
+
+def is_boundary_context(text: str, index: int) -> bool:
+    window = text[max(0, index - 220) : min(len(text), index + 220)]
+    return any(marker in window for marker in BOUNDARY_CONTEXT_MARKERS)
 
 
 def check_zip(path: Path, required: set[str], errors: list[str]) -> None:
@@ -156,6 +236,46 @@ def check_release_zips(errors: list[str]) -> None:
     for rel in RELEASE_ZIPS[:3]:
         check_zip(ROOT / rel, CAPSULE_REQUIRED, errors)
     check_zip(ROOT / RELEASE_ZIPS[3], SUPPLEMENTARY_REQUIRED, errors)
+    for rel in RELEASE_ZIPS + OPTIONAL_RELEASE_ZIPS:
+        path = ROOT / rel
+        if path.exists():
+            check_zip_private_paths(path, errors)
+    check_ist_zip(errors)
+
+
+def check_zip_private_paths(path: Path, errors: list[str]) -> None:
+    rel_zip = path.relative_to(ROOT).as_posix()
+    with zipfile.ZipFile(path) as zip_handle:
+        for member in zip_handle.namelist():
+            if member.endswith("/") or (rel_zip, member) in ZIP_PRIVATE_PATH_ALLOWLIST:
+                continue
+            if PRIVATE_PATH_PAYLOAD_RE.search(zip_handle.read(member)):
+                errors.append(f"private path payload found in {rel_zip}:{member}")
+
+
+def check_ist_zip(errors: list[str]) -> None:
+    rel = "release/artifactgate_eda_ist_evaluation_artifacts.zip"
+    path = ROOT / rel
+    if not path.exists():
+        if any((ROOT / marker).exists() for marker in IST_MODE_MARKERS):
+            errors.append(f"missing IST evaluation zip: {rel}")
+        return
+    with zipfile.ZipFile(path) as zip_handle:
+        bad_member = zip_handle.testzip()
+        names = set(zip_handle.namelist())
+    if bad_member:
+        errors.append(f"{rel} corrupt member: {bad_member}")
+    missing = sorted(IST_ZIP_REQUIRED - names)
+    if missing:
+        errors.append(f"{rel} missing IST workflow artifacts: {missing}")
+    forbidden = sorted(IST_ZIP_FORBIDDEN & names)
+    if forbidden:
+        errors.append(f"{rel} contains full external plan snapshot: {forbidden}")
+    resource_forks = sorted(
+        name for name in names if name.startswith("__MACOSX/") or name.startswith("._") or "/._" in name
+    )
+    if resource_forks:
+        errors.append(f"{rel} contains macOS resource fork entries: {resource_forks[:5]}")
 
 
 def check_dist_files(errors: list[str]) -> None:

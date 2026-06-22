@@ -1,0 +1,169 @@
+\documentclass[preprint,12pt]{elsarticle}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Claim-Safe Artifact Engineering for Software-Only EDA Experiments: Design and Evaluation of ArtifactGate-EDA}
+
+\begin{abstract}
+ArtifactGate-EDA is a software engineering method and tool for preparing,
+validating, replaying, and auditing software-only EDA experiment artifacts. The
+tool indexes artifacts through adapters, records file hashes and provenance,
+assigns bounded evidence levels, checks claims against a policy, builds replay
+manifests, detects corrupted packages, and emits reviewer-facing reports. The
+IST evaluation covers multi-adapter ingestion, replay reproducibility, negative
+claim injection, corrupted artifact detection, evidence-level classification,
+external case generalization, scalability, baseline comparison, ablation, and
+optional-backend audit experiments. The package also includes a generated
+reviewer-walkthrough dry run for author-side protocol preparation; this is not
+used as human or expert-study evidence.
+ArtifactGate-EDA is a software engineering method and tool for making
+software-only EDA experiment artifacts claim-safe, replay-checkable, and
+reviewer-auditable.
+\end{abstract}
+
+\begin{keyword}
+artifact evaluation \sep reproducibility \sep electronic design automation \sep software engineering \sep claim checking
+\end{keyword}
+
+\end{frontmatter}
+
+\section{Introduction}
+
+EDA artifact packages need more than file availability. Reviewers need to know
+which claims are supported by the included software artifacts and which claims
+would require stronger evidence outside the package. ArtifactGate-EDA addresses
+this as a claim-safe artifact engineering problem for software-only EDA
+experiments.
+
+\section{Related Work}
+
+The final submission should add author-verified references for artifact
+evaluation, reproducible software packaging, EDA experiment reproducibility,
+claim-evidence traceability, and empirical software engineering evaluation.
+
+\section{Method}
+
+ArtifactGate-EDA represents each file as an artifact record containing a
+relative path, artifact type, SHA-256 hash, tool label, adapter name, evidence
+level, claim binding, unsupported boundary, and creation command. The method
+combines adapter ingestion, validation, replay packaging, claim checking, and
+report generation.
+
+\section{Tool Implementation}
+
+The command-line interface exposes \texttt{ingest}, \texttt{validate},
+\texttt{replay}, \texttt{claim-check}, \texttt{report}, \texttt{package},
+\texttt{compare}, \texttt{benchmark}, and \texttt{ablate}. Core reproduction
+does not require proprietary local tools.
+
+\section{Evaluation Design}
+
+The evaluation is organized as RQ1--RQ10: multi-adapter ingestion, replay
+reproducibility, ClaimBench-EDA claim checking, corrupted artifact detection,
+evidence-level classification, external case generalization, scalability,
+baseline comparison, ablation, optional-backend audit, and generated reviewer
+dry-run preparation. The full command is \texttt{make ist-all}. The
+ClaimBench-EDA gold standard is policy-seeded rather than independently
+human-rated. The replay repeatability extension records 10 repeated runs for
+each core replay case and reports local Docker availability separately.
+
+\section{Results}
+
+The generated reports show that all current RQ report files are present. RQ1 is
+summarized in \texttt{reports/rq1\_multi\_adapter\_ingestion.md}. RQ2 is
+summarized in \texttt{reports/rq2\_replay\_reproducibility.md} and
+\texttt{reports/rq2\_replay\_summary.csv}; the repeatability extension is
+summarized in \texttt{reports/rq2\_replay\_repeats.md},
+\texttt{reports/rq2\_replay\_repeat\_summary.csv}, and
+\texttt{reports/rq2\_docker\_ci\_status.csv}. The latter records Docker
+availability without claiming a local Docker pass. RQ3 evaluates 1300 ClaimBench-EDA
+rows in \texttt{reports/rq3\_claimbench\_summary.md},
+\texttt{reports/rq3\_confusion\_by\_claim\_type.csv}, and
+\texttt{reports/rq3\_claimbench\_results.csv}, with zero critical false
+negatives in the current generated summary. RQ4 in
+\texttt{reports/rq4\_corrupted\_artifact\_detection.md} evaluates a
+deterministic software-only corruption benchmark with 900 corrupted-artifact
+instances across 30 defect classes, plus 30 clean specificity cases, with the
+confusion matrix in
+\texttt{reports/rq4\_error\_classification\_matrix.csv}. The extended
+taxonomy, instance results, clean specificity set, and severity-weighted score
+are reported in \texttt{reports/rq4\_defect\_taxonomy.md},
+\texttt{reports/rq4\_corruption\_extended\_results.csv},
+\texttt{reports/rq4\_clean\_specificity\_cases.csv}, and
+\texttt{reports/rq4\_severity\_weighted\_detection.md}. RQ5 classifies 1000
+evidence-level rows with holdout and cross-tool holdout labels in
+\texttt{reports/rq5\_evidence\_level\_classification.md} and
+\texttt{reports/rq5\_evidence\_level\_confusion\_matrix.csv}, with split
+metrics in \texttt{reports/rq5\_evidence\_level\_holdout\_summary.csv}. E6/G9
+reports 10 public external cases, 8 open-source ArtifactGate
+replay-package/validation cases, adapter success rate 1.00, observed manual
+adapter fix rate 0, and observed hardware dependency count 0
+in \texttt{reports/rq6\_external\_case\_generalization.md},
+\texttt{reports/rq6\_external\_case\_generalization.csv}, and
+\texttt{reports/rq6\_external\_case\_generalization\_summary.csv}. The
+scalability extension writes and row-parses synthetic ArtifactGate manifests up
+to 100k rows, with 53 measured manifest-processing runtime observations across
+seven scales and linear-fit R2 above 0.99 in
+\texttt{reports/rq7\_scalability\_summary\_extended.md},
+\texttt{reports/rq7\_scalability\_extended\_runtime.csv},
+\texttt{reports/rq7\_scalability\_extended\_memory.csv}, and
+\texttt{reports/rq7\_scalability\_model\_fit.csv}. The baseline extension runs
+seven deterministic baseline/target emulators on one shared software-only
+fixture. Each emulator writes method-specific outputs under
+\texttt{outputs/rq7\_baseline/}, and the evaluator reads those generated outputs
+to produce 56 task observations in
+\texttt{reports/rq7\_baseline\_task\_results.csv} and summary metrics in
+\texttt{reports/rq7\_baseline\_task\_execution.md}. RQ8 generates ten
+ablation variants with observation-level rows, bootstrap confidence intervals,
+and effect sizes in \texttt{reports/rq8\_ablation.md},
+\texttt{reports/rq8\_ablation\_effect\_sizes.csv}, and
+\texttt{reports/rq8\_ablation\_observations.csv}. RQ7, RQ8, and RQ9 are
+anchored in \texttt{reports/rq7\_baseline\_comparison.md},
+\texttt{reports/rq8\_ablation.md}, and
+\texttt{reports/rq9\_local\_backend\_audit.md}. RQ10 generates a
+reviewer-walkthrough dry run with 16 task observations and command-log
+timestamps in \texttt{reports/rq10\_reviewer\_walkthrough.md},
+\texttt{reports/rq10\_reviewer\_walkthrough\_observations.csv}, and
+\texttt{reports/rq10\_reviewer\_walkthrough\_command\_log.csv}. It is
+preparatory material for an author-side expert walkthrough, not completed
+expert-walkthrough evidence, a multi-participant human-subject study, or
+measured human timing result.
+
+\section{Discussion}
+
+The evaluation supports the software engineering claim that ArtifactGate-EDA
+adds a claim-boundary layer beyond ordinary file bundling, checksums, shell
+scripts, and simple manifests.
+
+\section{Threats to Validity}
+
+The claim dataset and corrupted-artifact suite are controlled and deterministic.
+Future work should add independent manuscripts, additional artifact formats, and
+externally reviewed defect cases. The external-case generalization benchmark
+uses public source files and ArtifactGate replay-packaging/validation or
+metadata-only ingestion checks; it does not claim independent EDA tool
+execution, circuit correctness, hardware validation, or vendor timing closure.
+The scalability memory values are estimates derived from manifest size and row
+count, not measured process RSS. The baseline benchmark uses a deterministic
+task harness and operator-step time estimates, not a human-subject timing
+study. The generated reviewer-walkthrough dry run is not evidence that the
+optional G13 expert walkthrough has been completed; participant or
+expert-walkthrough claims require separate author-confirmed human data.
+
+\section{Limitations}
+
+ArtifactGate-EDA checks artifact-level support for bounded claims. It does not
+prove design correctness and does not convert software simulation or synthesis
+artifacts into stronger device-side evidence. The current evidence ceiling is
+\texttt{L4\_SYNTHESIS}.
+
+\section{Reproducibility and Data Availability}
+
+The SoftwareX baseline is archived with DOI \texttt{10.5281/zenodo.20789516}.
+The IST evaluation layer is regenerated with \texttt{make install} and
+\texttt{make ist-all}. If the IST package is archived externally, it should use
+a new version rather than mutating the existing archive.
+
+\end{document}

@@ -1,0 +1,4 @@
+* software-only ngspice fixture 12
+R1 in out 1012
+C1 out 0 1u
+.end

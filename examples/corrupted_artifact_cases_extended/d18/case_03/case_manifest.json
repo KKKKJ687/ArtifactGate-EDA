@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D18-03",
+  "category": "Policy",
+  "clean": false,
+  "critical": true,
+  "defect": "Yosys-to-Vivado escalation",
+  "expected_error_code": "EVIDENCE_LEVEL_ESCALATION",
+  "injection": "bind Yosys synthesis output to vendor timing claim",
+  "severity": 5
+}

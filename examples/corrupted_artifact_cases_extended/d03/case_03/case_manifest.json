@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D03-03",
+  "category": "Structural",
+  "clean": false,
+  "critical": true,
+  "defect": "invalid schema",
+  "expected_error_code": "SCHEMA_INVALID",
+  "injection": "remove required artifact-index field",
+  "severity": 5
+}

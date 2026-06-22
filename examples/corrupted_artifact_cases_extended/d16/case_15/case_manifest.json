@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D16-15",
+  "category": "Policy",
+  "clean": false,
+  "critical": true,
+  "defect": "unsupported hardware claim",
+  "expected_error_code": "UNSUPPORTED_CLAIM",
+  "injection": "add positive hardware-validation claim to package notes",
+  "severity": 5
+}

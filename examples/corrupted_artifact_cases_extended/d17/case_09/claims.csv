@@ -1,0 +1,2 @@
+claim_id,category,claim_text,expected_status
+D17-09,corruption_policy_case,The software simulation proves hardware validation for deployment.,UNSUPPORTED

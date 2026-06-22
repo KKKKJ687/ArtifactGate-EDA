@@ -1,0 +1,1 @@
+D26-25: symlink to external path

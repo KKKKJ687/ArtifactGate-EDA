@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D04-27",
+  "category": "Structural",
+  "clean": false,
+  "critical": true,
+  "defect": "broken relative path",
+  "expected_error_code": "BROKEN_PATH",
+  "injection": "point manifest entry at missing relative path",
+  "severity": 5
+}

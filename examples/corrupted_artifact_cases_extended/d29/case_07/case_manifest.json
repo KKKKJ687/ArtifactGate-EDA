@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D29-07",
+  "category": "Package",
+  "clean": false,
+  "critical": false,
+  "defect": "missing citation metadata",
+  "expected_error_code": "PACKAGE_MISSING_CITATION",
+  "injection": "remove CITATION metadata from package",
+  "severity": 3
+}

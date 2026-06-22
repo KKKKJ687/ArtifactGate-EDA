@@ -1,0 +1,16 @@
+[
+  {
+    "adapter": "ngspice",
+    "artifact_id": "D22-15-ART",
+    "artifact_type": "tool_log",
+    "claim_binding": "artifact:DOES_NOT_EXIST",
+    "created_by_command": "artifactgate synthetic-corruption-fixture",
+    "evidence_level": "L3_SIMULATION",
+    "relative_path": "raw_artifacts/result.log",
+    "sha256": "ee10473e6ca43e2bd535f7039e31d31ae54b9eeb0b314cdd2ded7948229c9812",
+    "size_bytes": 30,
+    "tool": "ngspice",
+    "tool_version": "ngspice-fixture-1.0",
+    "unsupported_boundary": "none"
+  }
+]

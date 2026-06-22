@@ -1,0 +1,11 @@
+variant,removed_component,claim_detection_recall,defect_detection_recall,error_classification_accuracy,baseline_task_success_rate,overall_success_drop,overall_bootstrap_drop_ci,overall_cohen_h_effect_size,report_completeness,manual_step_increase_estimate,manual_correction_effort,risk_score_error,status
+A0_full,none,1,1,1,1,0,"[0, 0]",0,1,0,low,0,PASS
+A1_no_hash_validation,hash validation,1,0.750538,0.75,0.821429,0.149726,"[0.138459, 0.161602]",0.794631,0.88,49,low,1.24892,DEGRADED
+A2_no_evidence_level_model,evidence-level model,0.82,0.830108,0.67,0.714286,0.224589,"[0.210834, 0.238284]",0.987448,0.72,74,medium,2.22978,DEGRADED
+A3_no_forbidden_claim_policy,forbidden claim policy,0,0.92043,0.83,0.75,0.474133,"[0.454922, 0.490886]",1.51904,0.61,156,medium,5.66914,DEGRADED
+A4_no_safe_rewrite,safe rewrite suggestions,1,1,1,0.875,0.00213025,"[0.000608643, 0.00365186]",0.0923421,0.82,1,low,0,DEGRADED
+A5_no_replay_manifest,replay manifest,1,0.9,1,0.696429,0.0334753,"[0.0279976, 0.0389531]",0.367998,0.7,11,low,0.2,DEGRADED
+A6_no_adapter_metadata,adapter metadata extraction,1,0.830108,0.8,0.785714,0.112599,"[0.100715, 0.123562]",0.684394,0.78,37,low,0.939785,DEGRADED
+A7_no_provenance_graph,provenance graph,0.96,1,0.88,0.803571,0.0556908,"[0.0483719, 0.0626902]",0.476472,0.74,18,low,0.56,DEGRADED
+A8_no_boundary_context_filter,boundary context filter,0.9,1,0.93,0.839286,0.0636032,"[0.0569005, 0.0700015]",0.509899,0.76,21,low,0.71,DEGRADED
+A9_no_schema_validation,schema validation,1,0.77957,0.86,0.821429,0.108034,"[0.0970785, 0.118107]",0.669823,0.8,36,low,0.86086,DEGRADED

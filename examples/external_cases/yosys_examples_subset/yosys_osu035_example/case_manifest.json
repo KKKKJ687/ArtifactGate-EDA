@@ -1,0 +1,16 @@
+{
+  "case_id": "yosys_osu035_example",
+  "commercial_dependency_required": false,
+  "description": "Yosys osu035 example subset",
+  "expected_adapter": "yosys",
+  "hardware_required": false,
+  "manual_adapter_fix_required": false,
+  "metadata_only": false,
+  "public_source": true,
+  "replayable_open_source": true,
+  "source_statuses": [
+    "cached",
+    "cached"
+  ],
+  "subset": "yosys_examples_subset"
+}

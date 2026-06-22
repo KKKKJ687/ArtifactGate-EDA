@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D19-24",
+  "category": "Policy",
+  "clean": false,
+  "critical": true,
+  "defect": "allowed limitation misclassified",
+  "expected_error_code": "CONTEXT_FALSE_POSITIVE",
+  "injection": "flag a limitation statement as a positive overclaim",
+  "severity": 4
+}

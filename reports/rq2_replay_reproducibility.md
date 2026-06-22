@@ -1,0 +1,9 @@
+# RQ2 Replay Reproducibility
+
+| case | artifact_count | run_manifest_complete | hash_consistency | nonportable_path_count | hardware_dependency | status |
+| --- | --- | --- | --- | --- | --- | --- |
+| rq2_cfb_sample | 4 | yes | yes | 0 | 0 | PASS |
+| rq2_icarus | 90 | yes | yes | 0 | 0 | PASS |
+| rq2_ngspice_minimal | 79 | yes | yes | 0 | 0 | PASS |
+| rq2_verilator | 78 | yes | yes | 0 | 0 | PASS |
+| rq2_yosys | 132 | yes | yes | 0 | 0 | PASS |

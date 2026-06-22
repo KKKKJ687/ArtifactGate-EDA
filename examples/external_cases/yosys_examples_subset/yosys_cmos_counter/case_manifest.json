@@ -1,0 +1,17 @@
+{
+  "case_id": "yosys_cmos_counter",
+  "commercial_dependency_required": false,
+  "description": "Yosys CMOS counter example subset",
+  "expected_adapter": "yosys",
+  "hardware_required": false,
+  "manual_adapter_fix_required": false,
+  "metadata_only": false,
+  "public_source": true,
+  "replayable_open_source": true,
+  "source_statuses": [
+    "cached",
+    "cached",
+    "cached"
+  ],
+  "subset": "yosys_examples_subset"
+}

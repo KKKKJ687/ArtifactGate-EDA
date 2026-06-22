@@ -1,0 +1,15 @@
+{
+  "case_id": "ngspice_param_sweep",
+  "commercial_dependency_required": false,
+  "description": "ngspice parameter sweep circuit",
+  "expected_adapter": "ngspice",
+  "hardware_required": false,
+  "manual_adapter_fix_required": false,
+  "metadata_only": false,
+  "public_source": true,
+  "replayable_open_source": true,
+  "source_statuses": [
+    "cached"
+  ],
+  "subset": "ngspice_examples_subset"
+}

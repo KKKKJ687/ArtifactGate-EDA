@@ -1,0 +1,9 @@
+category,unsupported_predicted,safe_rewrite_count,safe_rewrite_coverage
+ambiguous_claims,0,0,1
+bitstream_overclaims,100,100,1
+dfx_deployment_overclaims,150,150,1
+hardware_validation_overclaims,200,200,1
+paraphrase_hard_cases,150,150,1
+safe_limitation_statements,0,0,1
+safe_software_simulation_claims,0,0,1
+vivado_timing_overclaims,150,150,1

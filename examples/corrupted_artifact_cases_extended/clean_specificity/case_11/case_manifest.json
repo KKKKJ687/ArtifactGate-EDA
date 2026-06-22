@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "CLEAN-11",
+  "category": "Clean",
+  "clean": true,
+  "critical": false,
+  "defect": "none",
+  "expected_error_code": "NONE",
+  "injection": "none",
+  "severity": 0
+}

@@ -1,0 +1,2 @@
+claim_id,category,claim_text,expected_status
+D16-13,corruption_policy_case,The software-only package proves hardware validation.,UNSUPPORTED

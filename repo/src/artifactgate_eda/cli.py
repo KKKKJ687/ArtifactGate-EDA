@@ -16,6 +16,8 @@ from artifactgate_eda.core.artifact import (
     render_experiment_summaries,
     render_report,
     replay_case,
+    run_ablation_study,
+    run_ist_benchmark,
     validate_artifacts,
 )
 
@@ -98,6 +100,34 @@ def build_parser() -> argparse.ArgumentParser:
     compare.add_argument("--out", required=True)
     compare.add_argument("--json", action="store_true")
 
+    benchmark = sub.add_parser("benchmark", help="Run IST empirical evaluation benchmarks.")
+    benchmark.add_argument(
+        "--suite",
+        default="all",
+        choices=[
+            "repository",
+            "corrupted",
+            "evidence",
+            "external",
+            "scalability",
+            "baseline",
+            "local-backends",
+            "reviewer-walkthrough",
+            "reports",
+            "all",
+        ],
+    )
+    benchmark.add_argument("--repo", default=".")
+    benchmark.add_argument("--out", default="outputs/ist_benchmark")
+    benchmark.add_argument("--reports", default="reports")
+    benchmark.add_argument("--repeats", default=5, type=int)
+    benchmark.add_argument("--json", action="store_true")
+
+    ablate = sub.add_parser("ablate", help="Run IST ablation study.")
+    ablate.add_argument("--out", default="outputs/rq8_ablation")
+    ablate.add_argument("--reports", default="reports")
+    ablate.add_argument("--json", action="store_true")
+
     scale = sub.add_parser("benchmark-scale", help="Generate a synthetic scalability report.")
     scale.add_argument("--base", required=True)
     scale.add_argument("--scale", required=True, type=int)
@@ -152,6 +182,18 @@ def main(argv: list[str] | None = None) -> int:
             return _finish(result, args.json)
         if args.command == "compare":
             result = compare_outputs(Path(args.left), Path(args.right), Path(args.out))
+            return _finish(result, args.json)
+        if args.command == "benchmark":
+            result = run_ist_benchmark(
+                repo_root=Path(args.repo),
+                suite=args.suite,
+                out_dir=Path(args.out),
+                reports_dir=Path(args.reports),
+                repeats=args.repeats,
+            )
+            return _finish(result, args.json)
+        if args.command == "ablate":
+            result = run_ablation_study(Path(args.out), Path(args.reports))
             return _finish(result, args.json)
         if args.command == "benchmark-scale":
             result = benchmark_scale(Path(args.base), args.scale, Path(args.out))

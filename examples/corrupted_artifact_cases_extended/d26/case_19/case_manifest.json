@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D26-19",
+  "category": "Portability",
+  "clean": false,
+  "critical": true,
+  "defect": "symlink to external path",
+  "expected_error_code": "NON_PORTABLE_PATH",
+  "injection": "link package artifact to path outside package root",
+  "severity": 5
+}

@@ -1,0 +1,41 @@
+variant,removed_component,experiment,observations,full_success_rate,variant_success_rate,success_rate_drop,cohen_h_effect_size,bootstrap_drop_ci_low,bootstrap_drop_ci_high
+A0_full,none,E3_claimbench,1300,1,1,0,0,0,0
+A0_full,none,E4_corruption,930,1,1,0,0,0,0
+A0_full,none,E5_evidence_classification,1000,1,1,0,0,0,0
+A0_full,none,E8_baseline_tasks,56,1,1,0,0,0,0
+A1_no_hash_validation,hash validation,E3_claimbench,1300,1,1,0,0,0,0
+A1_no_hash_validation,hash validation,E4_corruption,930,1,0.750538,0.249462,1.04596,0.223656,0.275296
+A1_no_hash_validation,hash validation,E5_evidence_classification,1000,1,0.75,0.25,1.0472,0.226975,0.272
+A1_no_hash_validation,hash validation,E8_baseline_tasks,56,1,0.821429,0.178571,0.872574,0.0892857,0.268304
+A2_no_evidence_level_model,evidence-level model,E3_claimbench,1300,1,0.82,0.18,0.876298,0.159212,0.199308
+A2_no_evidence_level_model,evidence-level model,E4_corruption,930,1,0.830108,0.169892,0.849691,0.147285,0.194624
+A2_no_evidence_level_model,evidence-level model,E5_evidence_classification,1000,1,0.67,0.33,1.22388,0.302,0.35605
+A2_no_evidence_level_model,evidence-level model,E8_baseline_tasks,56,1,0.714286,0.285714,1.12789,0.178571,0.393304
+A3_no_forbidden_claim_policy,forbidden claim policy,E3_claimbench,1300,1,0,1,3.14159,1,1
+A3_no_forbidden_claim_policy,forbidden claim policy,E4_corruption,930,1,0.92043,0.0795699,0.571926,0.0612903,0.0946505
+A3_no_forbidden_claim_policy,forbidden claim policy,E5_evidence_classification,1000,1,0.83,0.17,0.849978,0.14995,0.190025
+A3_no_forbidden_claim_policy,forbidden claim policy,E8_baseline_tasks,56,1,0.75,0.25,1.0472,0.142857,0.357589
+A4_no_safe_rewrite,safe rewrite suggestions,E3_claimbench,1300,1,1,0,0,0,0
+A4_no_safe_rewrite,safe rewrite suggestions,E4_corruption,930,1,1,0,0,0,0
+A4_no_safe_rewrite,safe rewrite suggestions,E5_evidence_classification,1000,1,1,0,0,0,0
+A4_no_safe_rewrite,safe rewrite suggestions,E8_baseline_tasks,56,1,0.875,0.125,0.722734,0.0535714,0.214286
+A5_no_replay_manifest,replay manifest,E3_claimbench,1300,1,1,0,0,0,0
+A5_no_replay_manifest,replay manifest,E4_corruption,930,1,0.9,0.1,0.643501,0.0827957,0.117204
+A5_no_replay_manifest,replay manifest,E5_evidence_classification,1000,1,1,0,0,0,0
+A5_no_replay_manifest,replay manifest,E8_baseline_tasks,56,1,0.696429,0.303571,1.16706,0.196429,0.410714
+A6_no_adapter_metadata,adapter metadata extraction,E3_claimbench,1300,1,1,0,0,0,0
+A6_no_adapter_metadata,adapter metadata extraction,E4_corruption,930,1,0.830108,0.169892,0.849691,0.147285,0.194624
+A6_no_adapter_metadata,adapter metadata extraction,E5_evidence_classification,1000,1,0.8,0.2,0.927295,0.178975,0.22
+A6_no_adapter_metadata,adapter metadata extraction,E8_baseline_tasks,56,1,0.785714,0.214286,0.962551,0.107143,0.321429
+A7_no_provenance_graph,provenance graph,E3_claimbench,1300,1,0.96,0.04,0.402716,0.0299808,0.0523077
+A7_no_provenance_graph,provenance graph,E4_corruption,930,1,1,0,0,0,0
+A7_no_provenance_graph,provenance graph,E5_evidence_classification,1000,1,0.88,0.12,0.707483,0.1,0.139025
+A7_no_provenance_graph,provenance graph,E8_baseline_tasks,56,1,0.803571,0.196429,0.918336,0.0892857,0.303571
+A8_no_boundary_context_filter,boundary context filter,E3_claimbench,1300,1,0.9,0.1,0.643501,0.0860962,0.116923
+A8_no_boundary_context_filter,boundary context filter,E4_corruption,930,1,1,0,0,0,0
+A8_no_boundary_context_filter,boundary context filter,E5_evidence_classification,1000,1,0.93,0.07,0.535527,0.054975,0.086
+A8_no_boundary_context_filter,boundary context filter,E8_baseline_tasks,56,1,0.839286,0.160714,0.82498,0.0714286,0.25
+A9_no_schema_validation,schema validation,E3_claimbench,1300,1,1,0,0,0,0
+A9_no_schema_validation,schema validation,E4_corruption,930,1,0.77957,0.22043,0.977448,0.195699,0.249462
+A9_no_schema_validation,schema validation,E5_evidence_classification,1000,1,0.86,0.14,0.766994,0.119975,0.161
+A9_no_schema_validation,schema validation,E8_baseline_tasks,56,1,0.821429,0.178571,0.872574,0.0892857,0.268304

@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D05-02",
+  "category": "Integrity",
+  "clean": false,
+  "critical": true,
+  "defect": "hash mismatch",
+  "expected_error_code": "HASH_MISMATCH",
+  "injection": "modify CSV result after hashing",
+  "severity": 5
+}

@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D06-15",
+  "category": "Integrity",
+  "clean": false,
+  "critical": true,
+  "defect": "stale checksum",
+  "expected_error_code": "STALE_CHECKSUM",
+  "injection": "reuse checksum from previous artifact revision",
+  "severity": 4
+}

@@ -34,8 +34,10 @@ make ingest-all
 make reproduce-core
 make negative-claims
 make corrupted-tests
+make rq6-external-cases
 make scalability
 make baseline
+make ist-all
 make package-release
 ```
 
@@ -51,6 +53,8 @@ artifactgate claim-check
 artifactgate report
 artifactgate package
 artifactgate compare
+artifactgate benchmark
+artifactgate ablate
 ```
 
 Each command supports `--help`, `--json`, and `--out` where applicable.
@@ -96,6 +100,7 @@ make ingest-all
 make reproduce-core
 make negative-claims
 make corrupted-tests
+make rq6-external-cases
 make scalability
 make baseline
 make package-release
@@ -103,11 +108,21 @@ make package-release
 
 Use `make preflight` before release or submission-package checks.
 
+For the IST-oriented empirical evaluation plan, use:
+
+```bash
+make ist-all
+```
+
+This generates RQ1-RQ10 reports under `reports/` while preserving the
+software-only evidence boundary.
+
 ## Examples
 
 The repository includes bounded ngspice, HDL/Icarus, Yosys, Verilator,
-PLECS metadata-only, Logisim metadata-only, negative claim, corrupted artifact,
-and scalability examples.
+public external software-only cases, PLECS metadata-only, Logisim
+metadata-only, negative claim, corrupted artifact, and scalability examples
+including IST synthetic manifest processing up to 100k rows.
 
 ## Tests
 

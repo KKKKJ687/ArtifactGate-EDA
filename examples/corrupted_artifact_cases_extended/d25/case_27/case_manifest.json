@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D25-27",
+  "category": "Portability",
+  "clean": false,
+  "critical": false,
+  "defect": "OS-specific separator",
+  "expected_error_code": "NON_PORTABLE_PATH",
+  "injection": "insert platform-specific path separator in manifest",
+  "severity": 3
+}

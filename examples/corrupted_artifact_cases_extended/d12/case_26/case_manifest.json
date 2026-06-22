@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D12-26",
+  "category": "Replay",
+  "clean": false,
+  "critical": true,
+  "defect": "incomplete manifest",
+  "expected_error_code": "INCOMPLETE_MANIFEST",
+  "injection": "drop a required replay step",
+  "severity": 5
+}

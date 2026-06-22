@@ -1,0 +1,5 @@
+query_id,seed_or_query,source,returned_count,screened_count,selected_ids,status,note
+CN01,AutoBench Automatic Testbench Generation Evaluation LLMs HDL Design,OpenAlex public API plus IEEE/ACM/arXiv metadata,38,3,S57,verified,OpenAlex returned IEEE DOI 10.1109/MLCAD62225.2024.10740250 and ACM/arXiv records; publisher/preprint metadata records the artifact DOI.
+CN02,artifact evaluation FPGA community ACM TRETS,OpenAlex public API plus ACM DOI metadata,16,3,S50,verified,Used to confirm FPGA/TRETS artifact-evaluation context without adding unsupported hardware-validation claims.
+CN03,artifact evaluation software engineering generative AI,arXiv metadata and DOI/public metadata,10,3,S53,verified,"Used as current SE artifact-evaluation position evidence, not as a core ArtifactGate dependency."
+CN04,Understanding and improving artifact sharing in software engineering research,Springer DOI metadata and OpenAlex title search,>=3,3,S51,verified,Used to connect artifact-sharing concerns to empirical software-engineering literature.

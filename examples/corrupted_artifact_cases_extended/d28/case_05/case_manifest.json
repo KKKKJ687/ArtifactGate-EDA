@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D28-05",
+  "category": "Package",
+  "clean": false,
+  "critical": true,
+  "defect": "missing license",
+  "expected_error_code": "PACKAGE_MISSING_LICENSE",
+  "injection": "remove license file from package",
+  "severity": 4
+}

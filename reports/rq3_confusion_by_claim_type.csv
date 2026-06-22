@@ -1,0 +1,9 @@
+category,expected_status,predicted_status,count
+ambiguous_claims,NEEDS_EXTERNAL_EVIDENCE,NEEDS_EXTERNAL_EVIDENCE,150
+bitstream_overclaims,UNSUPPORTED,UNSUPPORTED,100
+dfx_deployment_overclaims,UNSUPPORTED,UNSUPPORTED,150
+hardware_validation_overclaims,UNSUPPORTED,UNSUPPORTED,200
+paraphrase_hard_cases,UNSUPPORTED,UNSUPPORTED,150
+safe_limitation_statements,SUPPORTED,SUPPORTED,100
+safe_software_simulation_claims,SUPPORTED,SUPPORTED,300
+vivado_timing_overclaims,UNSUPPORTED,UNSUPPORTED,150

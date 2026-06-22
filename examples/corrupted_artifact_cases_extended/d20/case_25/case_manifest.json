@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D20-25",
+  "category": "Evidence",
+  "clean": false,
+  "critical": true,
+  "defect": "missing evidence level",
+  "expected_error_code": "MISSING_EVIDENCE_LEVEL",
+  "injection": "remove evidence-level label from artifact record",
+  "severity": 4
+}

@@ -1,0 +1,4 @@
+check,status,detail
+local_docker_binary,NOT_RUN_ENVIRONMENT_MISSING,docker command not found on this machine
+ci_workflow_present,PASS,.github/workflows/ci.yml
+ci_replay_command_present,PASS,CI includes replay/reproduction command

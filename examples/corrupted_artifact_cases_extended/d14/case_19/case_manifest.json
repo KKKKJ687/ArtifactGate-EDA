@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D14-19",
+  "category": "Replay",
+  "clean": false,
+  "critical": true,
+  "defect": "non-deterministic output",
+  "expected_error_code": "NONDETERMINISTIC_OUTPUT",
+  "injection": "vary output signature across repeated run records",
+  "severity": 4
+}

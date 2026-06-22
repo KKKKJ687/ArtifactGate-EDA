@@ -1,0 +1,2 @@
+claim_id,category,claim_text,expected_status
+D18-21,corruption_policy_case,The Yosys synthesis report proves Vivado timing closure.,UNSUPPORTED

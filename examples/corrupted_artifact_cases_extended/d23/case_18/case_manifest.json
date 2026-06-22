@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D23-18",
+  "category": "Evidence",
+  "clean": false,
+  "critical": true,
+  "defect": "claim without artifact",
+  "expected_error_code": "UNBOUND_CLAIM",
+  "injection": "add claim row without supporting artifact binding",
+  "severity": 5
+}

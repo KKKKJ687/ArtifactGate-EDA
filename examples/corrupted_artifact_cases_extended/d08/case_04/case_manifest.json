@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D08-04",
+  "category": "Provenance",
+  "clean": false,
+  "critical": true,
+  "defect": "missing tool version",
+  "expected_error_code": "MISSING_TOOL_VERSION",
+  "injection": "remove tool version from provenance",
+  "severity": 4
+}

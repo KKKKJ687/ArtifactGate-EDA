@@ -1,0 +1,31 @@
+defect_id,category,defect,injection,expected_error_code,severity,instances,detected_instances,correct_classifications,detection_recall,classification_accuracy,critical,false_pass,status
+D01,Structural,missing artifact,delete required log artifact,MISSING_ARTIFACT,5,30,30,30,1,1,true,0,PASS
+D02,Structural,extra unindexed artifact,add untracked derived result,UNINDEXED_ARTIFACT,3,30,30,30,1,1,false,0,PASS
+D03,Structural,invalid schema,remove required artifact-index field,SCHEMA_INVALID,5,30,30,30,1,1,true,0,PASS
+D04,Structural,broken relative path,point manifest entry at missing relative path,BROKEN_PATH,5,30,30,30,1,1,true,0,PASS
+D05,Integrity,hash mismatch,modify CSV result after hashing,HASH_MISMATCH,5,30,30,30,1,1,true,0,PASS
+D06,Integrity,stale checksum,reuse checksum from previous artifact revision,STALE_CHECKSUM,4,30,30,30,1,1,true,0,PASS
+D07,Integrity,duplicated artifact id,duplicate artifact identifier across records,DUPLICATE_ARTIFACT_ID,5,30,30,30,1,1,true,0,PASS
+D08,Provenance,missing tool version,remove tool version from provenance,MISSING_TOOL_VERSION,4,30,30,30,1,1,true,0,PASS
+D09,Provenance,tool version drift,change recorded tool version between replay records,TOOL_VERSION_DRIFT,3,30,30,30,1,1,false,0,PASS
+D10,Provenance,missing command,remove replay command from manifest,MISSING_COMMAND,4,30,30,30,1,1,true,0,PASS
+D11,Provenance,missing seed,remove deterministic seed metadata,REPLAY_UNSAFE,3,30,30,30,1,1,false,0,PASS
+D12,Replay,incomplete manifest,drop a required replay step,INCOMPLETE_MANIFEST,5,30,30,30,1,1,true,0,PASS
+D13,Replay,output directory drift,change expected output directory structure,PACKAGE_STRUCTURE_DRIFT,3,30,30,30,1,1,false,0,PASS
+D14,Replay,non-deterministic output,vary output signature across repeated run records,NONDETERMINISTIC_OUTPUT,4,30,30,30,1,1,true,0,PASS
+D15,Replay,missing expected output,omit expected replay output artifact,MISSING_EXPECTED_OUTPUT,5,30,30,30,1,1,true,0,PASS
+D16,Policy,unsupported hardware claim,add positive hardware-validation claim to package notes,UNSUPPORTED_CLAIM,5,30,30,30,1,1,true,0,PASS
+D17,Policy,simulation-to-hardware escalation,bind software simulation evidence to board-level claim,EVIDENCE_LEVEL_ESCALATION,5,30,30,30,1,1,true,0,PASS
+D18,Policy,Yosys-to-Vivado escalation,bind Yosys synthesis output to vendor timing claim,EVIDENCE_LEVEL_ESCALATION,5,30,30,30,1,1,true,0,PASS
+D19,Policy,allowed limitation misclassified,flag a limitation statement as a positive overclaim,CONTEXT_FALSE_POSITIVE,4,30,30,30,1,1,true,0,PASS
+D20,Evidence,missing evidence level,remove evidence-level label from artifact record,MISSING_EVIDENCE_LEVEL,4,30,30,30,1,1,true,0,PASS
+D21,Evidence,wrong evidence level,classify simulation evidence as synthesis evidence,EVIDENCE_LEVEL_MISMATCH,4,30,30,30,1,1,true,0,PASS
+D22,Evidence,broken claim reference,point claim binding to missing artifact id,BROKEN_CLAIM_REFERENCE,5,30,30,30,1,1,true,0,PASS
+D23,Evidence,claim without artifact,add claim row without supporting artifact binding,UNBOUND_CLAIM,5,30,30,30,1,1,true,0,PASS
+D24,Portability,absolute user path,insert private absolute user path,NON_PORTABLE_PATH,5,30,30,30,1,1,true,0,PASS
+D25,Portability,OS-specific separator,insert platform-specific path separator in manifest,NON_PORTABLE_PATH,3,30,30,30,1,1,false,0,PASS
+D26,Portability,symlink to external path,link package artifact to path outside package root,NON_PORTABLE_PATH,5,30,30,30,1,1,true,0,PASS
+D27,Package,missing README,remove package README,PACKAGE_MISSING_README,3,30,30,30,1,1,false,0,PASS
+D28,Package,missing license,remove license file from package,PACKAGE_MISSING_LICENSE,4,30,30,30,1,1,true,0,PASS
+D29,Package,missing citation metadata,remove CITATION metadata from package,PACKAGE_MISSING_CITATION,3,30,30,30,1,1,false,0,PASS
+D30,Package,release contains cache/venv/git,add cache or virtual-environment path to release manifest,RELEASE_CONTAMINATION,5,30,30,30,1,1,true,0,PASS

@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D15-27",
+  "category": "Replay",
+  "clean": false,
+  "critical": true,
+  "defect": "missing expected output",
+  "expected_error_code": "MISSING_EXPECTED_OUTPUT",
+  "injection": "omit expected replay output artifact",
+  "severity": 5
+}

@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D11-27",
+  "category": "Provenance",
+  "clean": false,
+  "critical": false,
+  "defect": "missing seed",
+  "expected_error_code": "REPLAY_UNSAFE",
+  "injection": "remove deterministic seed metadata",
+  "severity": 3
+}

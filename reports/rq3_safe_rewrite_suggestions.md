@@ -1,0 +1,192 @@
+# Safe Rewrite Suggestions
+
+- IST-CL-101: software-only simulation/synthesis evidence
+- IST-CL-102: software-only simulation/synthesis evidence
+- IST-CL-103: software-only simulation/synthesis evidence
+- IST-CL-104: software-only simulation/synthesis evidence
+- IST-CL-105: software-only simulation/synthesis evidence
+- IST-CL-106: software-only simulation/synthesis evidence
+- IST-CL-107: software-only simulation/synthesis evidence
+- IST-CL-108: software-only simulation/synthesis evidence
+- IST-CL-109: software-only simulation/synthesis evidence
+- IST-CL-110: software-only simulation/synthesis evidence
+- IST-CL-111: software-only simulation/synthesis evidence
+- IST-CL-112: software-only simulation/synthesis evidence
+- IST-CL-113: software-only simulation/synthesis evidence
+- IST-CL-114: software-only simulation/synthesis evidence
+- IST-CL-115: software-only simulation/synthesis evidence
+- IST-CL-116: software-only simulation/synthesis evidence
+- IST-CL-117: software-only simulation/synthesis evidence
+- IST-CL-118: software-only simulation/synthesis evidence
+- IST-CL-119: software-only simulation/synthesis evidence
+- IST-CL-120: software-only simulation/synthesis evidence
+- IST-CL-121: software-only simulation/synthesis evidence
+- IST-CL-122: software-only simulation/synthesis evidence
+- IST-CL-123: software-only simulation/synthesis evidence
+- IST-CL-124: software-only simulation/synthesis evidence
+- IST-CL-125: software-only simulation/synthesis evidence
+- IST-CL-126: software-only simulation/synthesis evidence
+- IST-CL-127: software-only simulation/synthesis evidence
+- IST-CL-128: software-only simulation/synthesis evidence
+- IST-CL-129: software-only simulation/synthesis evidence
+- IST-CL-130: software-only simulation/synthesis evidence
+- IST-CL-131: software-only simulation/synthesis evidence
+- IST-CL-132: software-only simulation/synthesis evidence
+- IST-CL-133: software-only simulation/synthesis evidence
+- IST-CL-134: software-only simulation/synthesis evidence
+- IST-CL-135: software-only simulation/synthesis evidence
+- IST-CL-136: software-only simulation/synthesis evidence
+- IST-CL-137: software-only simulation/synthesis evidence
+- IST-CL-138: software-only simulation/synthesis evidence
+- IST-CL-139: software-only simulation/synthesis evidence
+- IST-CL-140: software-only simulation/synthesis evidence
+- IST-CL-141: software-only simulation/synthesis evidence
+- IST-CL-142: software-only simulation/synthesis evidence
+- IST-CL-143: software-only simulation/synthesis evidence
+- IST-CL-144: software-only simulation/synthesis evidence
+- IST-CL-145: software-only simulation/synthesis evidence
+- IST-CL-146: software-only simulation/synthesis evidence
+- IST-CL-147: software-only simulation/synthesis evidence
+- IST-CL-148: software-only simulation/synthesis evidence
+- IST-CL-149: software-only simulation/synthesis evidence
+- IST-CL-150: software-only simulation/synthesis evidence
+- IST-CL-151: Yosys/open-source synthesis evidence only
+- IST-CL-152: Yosys/open-source synthesis evidence only
+- IST-CL-153: Yosys/open-source synthesis evidence only
+- IST-CL-154: Yosys/open-source synthesis evidence only
+- IST-CL-155: Yosys/open-source synthesis evidence only
+- IST-CL-156: Yosys/open-source synthesis evidence only
+- IST-CL-157: Yosys/open-source synthesis evidence only
+- IST-CL-158: Yosys/open-source synthesis evidence only
+- IST-CL-159: Yosys/open-source synthesis evidence only
+- IST-CL-160: Yosys/open-source synthesis evidence only
+- IST-CL-161: Yosys/open-source synthesis evidence only
+- IST-CL-162: Yosys/open-source synthesis evidence only
+- IST-CL-163: Yosys/open-source synthesis evidence only
+- IST-CL-164: Yosys/open-source synthesis evidence only
+- IST-CL-165: Yosys/open-source synthesis evidence only
+- IST-CL-166: Yosys/open-source synthesis evidence only
+- IST-CL-167: Yosys/open-source synthesis evidence only
+- IST-CL-168: Yosys/open-source synthesis evidence only
+- IST-CL-169: Yosys/open-source synthesis evidence only
+- IST-CL-170: Yosys/open-source synthesis evidence only
+- IST-CL-171: Yosys/open-source synthesis evidence only
+- IST-CL-172: Yosys/open-source synthesis evidence only
+- IST-CL-173: Yosys/open-source synthesis evidence only
+- IST-CL-174: Yosys/open-source synthesis evidence only
+- IST-CL-175: Yosys/open-source synthesis evidence only
+- IST-CL-176: Yosys/open-source synthesis evidence only
+- IST-CL-177: Yosys/open-source synthesis evidence only
+- IST-CL-178: Yosys/open-source synthesis evidence only
+- IST-CL-179: Yosys/open-source synthesis evidence only
+- IST-CL-180: Yosys/open-source synthesis evidence only
+- IST-CL-181: Yosys/open-source synthesis evidence only
+- IST-CL-182: Yosys/open-source synthesis evidence only
+- IST-CL-183: Yosys/open-source synthesis evidence only
+- IST-CL-184: Yosys/open-source synthesis evidence only
+- IST-CL-185: Yosys/open-source synthesis evidence only
+- IST-CL-186: Yosys/open-source synthesis evidence only
+- IST-CL-187: Yosys/open-source synthesis evidence only
+- IST-CL-188: Yosys/open-source synthesis evidence only
+- IST-CL-189: Yosys/open-source synthesis evidence only
+- IST-CL-190: Yosys/open-source synthesis evidence only
+- IST-CL-191: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-192: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-193: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-194: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-195: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-196: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-197: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-198: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-199: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-200: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-201: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-202: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-203: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-204: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-205: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-206: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-207: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-208: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-209: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-210: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-211: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-212: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-213: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-214: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-215: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-216: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-217: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-218: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-219: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-220: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-221: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-222: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-223: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-224: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-225: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-226: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-227: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-228: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-229: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-230: DFX-related claims are outside the SoftwareX software-only evidence boundary
+- IST-CL-231: no bitstream evidence is claimed
+- IST-CL-232: no bitstream evidence is claimed
+- IST-CL-233: no bitstream evidence is claimed
+- IST-CL-234: no bitstream evidence is claimed
+- IST-CL-235: no bitstream evidence is claimed
+- IST-CL-236: no bitstream evidence is claimed
+- IST-CL-237: no bitstream evidence is claimed
+- IST-CL-238: no bitstream evidence is claimed
+- IST-CL-239: no bitstream evidence is claimed
+- IST-CL-240: no bitstream evidence is claimed
+- IST-CL-241: no bitstream evidence is claimed
+- IST-CL-242: no bitstream evidence is claimed
+- IST-CL-243: no bitstream evidence is claimed
+- IST-CL-244: no bitstream evidence is claimed
+- IST-CL-245: no bitstream evidence is claimed
+- IST-CL-246: no bitstream evidence is claimed
+- IST-CL-247: no bitstream evidence is claimed
+- IST-CL-248: no bitstream evidence is claimed
+- IST-CL-249: no bitstream evidence is claimed
+- IST-CL-250: no bitstream evidence is claimed
+- IST-CL-251: no bitstream evidence is claimed
+- IST-CL-252: no bitstream evidence is claimed
+- IST-CL-253: no bitstream evidence is claimed
+- IST-CL-254: no bitstream evidence is claimed
+- IST-CL-255: no bitstream evidence is claimed
+- IST-CL-256: no bitstream evidence is claimed
+- IST-CL-257: no bitstream evidence is claimed
+- IST-CL-258: no bitstream evidence is claimed
+- IST-CL-259: no bitstream evidence is claimed
+- IST-CL-260: no bitstream evidence is claimed
+- IST-CL-261: software-only simulation/synthesis evidence
+- IST-CL-262: software-only simulation/synthesis evidence
+- IST-CL-263: software-only simulation/synthesis evidence
+- IST-CL-264: software-only simulation/synthesis evidence
+- IST-CL-265: software-only simulation/synthesis evidence
+- IST-CL-266: software-only simulation/synthesis evidence
+- IST-CL-267: software-only simulation/synthesis evidence
+- IST-CL-268: software-only simulation/synthesis evidence
+- IST-CL-269: software-only simulation/synthesis evidence
+- IST-CL-270: software-only simulation/synthesis evidence
+- IST-CL-271: software-only simulation/synthesis evidence
+- IST-CL-272: software-only simulation/synthesis evidence
+- IST-CL-273: software-only simulation/synthesis evidence
+- IST-CL-274: software-only simulation/synthesis evidence
+- IST-CL-275: software-only simulation/synthesis evidence
+- IST-CL-276: software-only simulation/synthesis evidence
+- IST-CL-277: software-only simulation/synthesis evidence
+- IST-CL-278: software-only simulation/synthesis evidence
+- IST-CL-279: software-only simulation/synthesis evidence
+- IST-CL-280: software-only simulation/synthesis evidence
+- IST-CL-281: software-only simulation/synthesis evidence
+- IST-CL-282: software-only simulation/synthesis evidence
+- IST-CL-283: software-only simulation/synthesis evidence
+- IST-CL-284: software-only simulation/synthesis evidence
+- IST-CL-285: software-only simulation/synthesis evidence
+- IST-CL-286: software-only simulation/synthesis evidence
+- IST-CL-287: software-only simulation/synthesis evidence
+- IST-CL-288: software-only simulation/synthesis evidence
+- IST-CL-289: software-only simulation/synthesis evidence
+- IST-CL-290: software-only simulation/synthesis evidence

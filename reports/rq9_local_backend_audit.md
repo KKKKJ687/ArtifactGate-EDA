@@ -1,0 +1,12 @@
+# RQ9 Optional Local Backend Audit
+
+| backend | executable | main_paper_status | local_executable_found | audit_status | claim_boundary | core_reproducibility_dependency |
+| --- | --- | --- | --- | --- | --- | --- |
+| ngspice | ngspice | core | true | LOCAL_EXECUTABLE_AVAILABLE | simulation only | open_source_example_only |
+| icarus | iverilog | core | true | LOCAL_EXECUTABLE_AVAILABLE | simulation only | open_source_example_only |
+| yosys | yosys | core | true | LOCAL_EXECUTABLE_AVAILABLE | synthesis only | open_source_example_only |
+| verilator | verilator | core_or_strong_optional | false | CORE_EXAMPLE_OR_METADATA_FALLBACK | simulation or lint only | no |
+| plecs | plecs | optional_local | false | SKIPPED_OPTIONAL_BACKEND | metadata fallback | no |
+| ltspice | ltspice | optional_local | false | SKIPPED_OPTIONAL_BACKEND | metadata fallback | no |
+| logisim | logisim-evolution | optional_local | false | SKIPPED_OPTIONAL_BACKEND | metadata fallback | no |
+| vivado_stub | vivado | schema_only_boundary | false | SCHEMA_ONLY_UNSUPPORTED_BOUNDARY | unsupported boundary only | no |

@@ -1,0 +1,13 @@
+System/process,Packaging,Replay,Provenance,EDA-aware,Evidence-level model,Claim-evidence binding,Hardware-overclaim blocking
+ReproZip,yes,yes,yes,no,no,no,no
+RO-Crate,yes,partial,metadata,no,no,no,no
+Code Ocean,yes,yes,yes,no,no,no,no
+DVC,data/ML,pipeline,partial,no,no,no,no
+ACM/SIGSOFT AE,process,partial,no,domain-general,no,manual,no
+FuseSoC,HDL build,tool run,partial,yes,no,no,no
+Edalize,no,tool run,partial,yes,no,no,no
+OpenROAD/OpenLane,flow,yes,logs,yes,no,no,no
+mflowgen/SiliconCompiler/Hammer,flow,tool run,manifest/logs,yes,no,no,no
+AutoBench / MLCAD artifact,artifact,yes,artifact DOI,yes,no,manual,no
+SLSA/in-toto,no,no,yes,no,no,no,no
+ArtifactGate-EDA,yes,yes,yes,yes,yes,yes/automated,yes

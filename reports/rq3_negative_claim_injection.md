@@ -1,0 +1,5 @@
+# RQ3 Negative Claim Injection
+
+| claim_count | unsupported_count | precision | recall | f1 | safe_claim_precision | safe_rewrite_coverage | critical_false_negative_count | status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 340 | 190 | 1 | 1 | 1 | 1 | 1 | 0 | PASS |

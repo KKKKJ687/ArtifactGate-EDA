@@ -1,0 +1,11 @@
+{
+  "boundary": "software-only synthetic validator case",
+  "case_id": "D21-30",
+  "category": "Evidence",
+  "clean": false,
+  "critical": true,
+  "defect": "wrong evidence level",
+  "expected_error_code": "EVIDENCE_LEVEL_MISMATCH",
+  "injection": "classify simulation evidence as synthesis evidence",
+  "severity": 4
+}
